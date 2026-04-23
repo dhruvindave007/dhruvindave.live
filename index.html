@@ -4,336 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dhruvin Dave — Full Stack & ML Engineer</title>
-    <meta name="description" content="Portfolio of Dhruvin Krutarthkumar Dave — Full Stack Developer & Machine Learning Engineer from Ahmedabad, India. Building intelligent systems with Django, TensorFlow, and Flutter.">
-    <meta name="keywords" content="Dhruvin Dave, Full Stack Developer, Machine Learning, Django, Python, TensorFlow, Flutter, Portfolio">
+    <meta name="description" content="Dhruvin Dave — Full Stack Developer & Machine Learning Engineer. Building production-grade systems with Django, TensorFlow, and AWS from Ahmedabad, India.">
+    <meta name="keywords" content="Dhruvin Dave, Full Stack Developer, Machine Learning, Django, Python, TensorFlow, Portfolio">
     <meta name="author" content="Dhruvin Krutarthkumar Dave">
-    
-    <!-- Open Graph -->
     <meta property="og:title" content="Dhruvin Dave — Full Stack & ML Engineer">
-    <meta property="og:description" content="Building intelligent systems at the intersection of Full Stack Development and Machine Learning.">
+    <meta property="og:description" content="Building production-grade intelligent systems at the intersection of engineering and machine learning.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dhruvindave.live">
-    
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Styles -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='68' font-size='50' fill='%23fff' text-anchor='middle' font-family='system-ui' font-weight='700'>D</text></svg>">
 </head>
 <body>
-    <!-- Cursor glow effect -->
-    <div class="cursor-glow" id="cursorGlow"></div>
-    
-    <!-- Particle canvas -->
-    <canvas id="particleCanvas"></canvas>
-    
+    <div class="noise"></div>
+    <div class="grain"></div>
+
+    <!-- Cursor follow -->
+    <div class="cursor-dot" id="cursorDot"></div>
+
     <!-- Navigation -->
     <nav class="nav" id="mainNav">
-        <div class="nav__container">
-            <a href="#hero" class="nav__logo">
-                <span class="nav__logo-bracket">{</span>
-                <span class="nav__logo-text">DD</span>
-                <span class="nav__logo-bracket">}</span>
+        <div class="nav-inner">
+            <a href="#" class="nav-logo" aria-label="Home">
+                <span class="nav-logo-mark">D</span>
+                <span class="nav-logo-sep">/</span>
+                <span class="nav-logo-name">Dave</span>
             </a>
-            <div class="nav__links" id="navLinks">
-                <a href="#about" class="nav__link" data-section="about">About</a>
-                <a href="#skills" class="nav__link" data-section="skills">Skills</a>
-                <a href="#projects" class="nav__link" data-section="projects">Projects</a>
-                <a href="#contact" class="nav__link" data-section="contact">Contact</a>
-                <a href="https://github.com/dhruvindave007" target="_blank" rel="noopener" class="nav__link nav__link--github">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                    GitHub
-                </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#work" class="nav-link">Work</a>
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#contact" class="nav-link">Contact</a>
             </div>
-            <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <div class="nav-actions">
+                <a href="Dhruvin_Dave_ML_CV.pdf" download class="nav-resume">Resume</a>
+                <button class="nav-toggle" id="navToggle" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero" id="hero">
-        <div class="hero__container">
-            <div class="hero__badge" data-animate="fade-up">
-                <span class="hero__badge-dot"></span>
-                Available for opportunities
+    <!-- Hero -->
+    <header class="hero" id="hero">
+        <div class="hero-inner">
+            <div class="hero-label" data-reveal>
+                <span class="label-line"></span>
+                <span>Full Stack Developer & ML Engineer</span>
             </div>
-            <h1 class="hero__title" data-animate="fade-up" data-delay="100">
-                <span class="hero__greeting">Hi, I'm</span>
-                <span class="hero__name">Dhruvin Dave</span>
-                <span class="hero__role">
-                    <span class="hero__role-static">I build </span>
-                    <span class="hero__role-dynamic" id="typingText"></span>
-                    <span class="hero__cursor">|</span>
-                </span>
+            <h1 class="hero-title" data-reveal data-delay="1">
+                <span class="hero-line">Building intelligent</span>
+                <span class="hero-line">systems that <em>scale.</em></span>
             </h1>
-            <p class="hero__description" data-animate="fade-up" data-delay="200">
-                Full Stack Developer & Machine Learning Engineer with professional experience at 
-                <span class="text-gradient">2Pointers</span>. Building intelligent systems with 
-                <span class="text-gradient">Django</span>, <span class="text-gradient">TensorFlow</span>, 
-                and <span class="text-gradient">AWS</span> — from Ahmedabad, India.
-            </p>
-            <div class="hero__actions" data-animate="fade-up" data-delay="300">
-                <a href="#projects" class="btn btn--primary">
-                    <span>View My Work</span>
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-                </a>
-                <a href="#contact" class="btn btn--outline">
-                    <span>Get In Touch</span>
-                </a>
-                <a href="Dhruvin_Dave_ML_CV.pdf" download class="btn btn--outline">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-                    <span>Resume</span>
-                </a>
-            </div>
-            <div class="hero__stats" data-animate="fade-up" data-delay="400">
-                <div class="hero__stat">
-                    <span class="hero__stat-number" data-count="14">0</span>
-                    <span class="hero__stat-label">Repositories</span>
-                </div>
-                <div class="hero__stat-divider"></div>
-                <div class="hero__stat">
-                    <span class="hero__stat-number" data-count="3">0</span>
-                    <span class="hero__stat-label">AI/ML Projects</span>
-                </div>
-                <div class="hero__stat-divider"></div>
-                <div class="hero__stat">
-                    <span class="hero__stat-number" data-count="5">0</span>
-                    <span class="hero__stat-label">Full Stack Apps</span>
-                </div>
-            </div>
-        </div>
-        <div class="hero__scroll-indicator" data-animate="fade-up" data-delay="500">
-            <div class="hero__scroll-mouse">
-                <div class="hero__scroll-wheel"></div>
-            </div>
-            <span>Scroll to explore</span>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="section about" id="about">
-        <div class="section__container">
-            <div class="section__header" data-animate="fade-up">
-                <span class="section__tag">// about me</span>
-                <h2 class="section__title">Building at the intersection of<br><span class="text-gradient">Code & Intelligence</span></h2>
-            </div>
-            <div class="about__grid">
-                <div class="about__content" data-animate="fade-up" data-delay="100">
-                    <p class="about__text">
-                        I'm a <strong>Full Stack Developer and Machine Learning Engineer</strong> based in Ahmedabad, Gujarat. 
-                        I recently worked at <strong>2Pointers</strong> as a Full Stack Developer, where I built REST APIs with 
-                        Django and Node.js, designed data pipelines, and optimized database performance.
-                    </p>
-                    <p class="about__text">
-                        My work spans from <strong>government-scale civic platforms</strong> to <strong>AI-driven prediction systems</strong> 
-                        for aviation and <strong>ML-powered recommendation engines</strong> trained on 278K+ tracks. 
-                        I ranked <strong>Top-10 at a university hackathon</strong> and presented ML projects to 800+ at a tech fest.
-                    </p>
-                    <p class="about__text">
-                        I believe in writing clean, maintainable code and building intelligent systems that are robust in production. 
-                        Currently exploring advanced ML architectures and cloud-native deployments with AWS.
-                    </p>
-                    <div class="about__highlights">
-                        <div class="about__highlight">
-                            <div class="about__highlight-icon">🎓</div>
-                            <div>
-                                <strong>B.E. Computer Engineering</strong>
-                                <span>LJ University, Ahmedabad (2022–2026)</span>
-                            </div>
-                        </div>
-                        <div class="about__highlight">
-                            <div class="about__highlight-icon">💼</div>
-                            <div>
-                                <strong>Full Stack Developer @ 2Pointers</strong>
-                                <span>June 2025 – February 2026</span>
-                            </div>
-                        </div>
-                        <div class="about__highlight">
-                            <div class="about__highlight-icon">🏆</div>
-                            <div>
-                                <strong>Top-10 University Hackathon</strong>
-                                <span>Built a working prototype in 36 hours (50+ teams)</span>
-                            </div>
-                        </div>
-                        <div class="about__highlight">
-                            <div class="about__highlight-icon">📍</div>
-                            <div>
-                                <strong>Location</strong>
-                                <span>Ahmedabad, Gujarat, India</span>
-                            </div>
-                        </div>
+            <div class="hero-bottom">
+                <p class="hero-description" data-reveal data-delay="2">
+                    I design and engineer production-grade applications at the 
+                    intersection of full-stack development and machine learning — 
+                    from government platforms to AI prediction systems.
+                </p>
+                <div class="hero-meta" data-reveal data-delay="3">
+                    <div class="hero-meta-item">
+                        <span class="meta-value">Ahmedabad, IN</span>
+                        <span class="meta-label">Based in</span>
                     </div>
-                </div>
-                <div class="about__terminal" data-animate="fade-up" data-delay="200">
-                    <div class="terminal">
-                        <div class="terminal__header">
-                            <div class="terminal__dots">
-                                <span class="terminal__dot terminal__dot--red"></span>
-                                <span class="terminal__dot terminal__dot--yellow"></span>
-                                <span class="terminal__dot terminal__dot--green"></span>
-                            </div>
-                            <span class="terminal__title">dhruvin@portfolio ~ </span>
-                        </div>
-                        <div class="terminal__body" id="terminalBody">
-                            <div class="terminal__line">
-                                <span class="terminal__prompt">$</span>
-                                <span class="terminal__command">whoami</span>
-                            </div>
-                            <div class="terminal__output">Dhruvin Krutarthkumar Dave</div>
-                            <div class="terminal__line">
-                                <span class="terminal__prompt">$</span>
-                                <span class="terminal__command">cat skills.json | jq '.top'</span>
-                            </div>
-                            <div class="terminal__output terminal__output--json">
-                                {<br>
-                                &nbsp;&nbsp;"languages": ["Python", "JavaScript"],<br>
-                                &nbsp;&nbsp;"frameworks": ["Django", "Node.js", "TensorFlow"],<br>
-                                &nbsp;&nbsp;"cloud": ["AWS EC2", "S3", "Docker"],<br>
-                                &nbsp;&nbsp;"databases": ["PostgreSQL", "MongoDB", "MySQL"]<br>
-                                }
-                            </div>
-                            <div class="terminal__line">
-                                <span class="terminal__prompt">$</span>
-                                <span class="terminal__command">echo $STATUS</span>
-                            </div>
-                            <div class="terminal__output terminal__output--success">✓ Open to opportunities</div>
-                            <div class="terminal__line">
-                                <span class="terminal__prompt">$</span>
-                                <span class="terminal__cursor-block">█</span>
-                            </div>
-                        </div>
+                    <div class="hero-meta-item">
+                        <span class="meta-value">2Pointers</span>
+                        <span class="meta-label">Previously at</span>
+                    </div>
+                    <div class="hero-meta-item">
+                        <span class="meta-value">LJ University</span>
+                        <span class="meta-label">B.E. Computer Eng.</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section class="section skills" id="skills">
-        <div class="section__container">
-            <div class="section__header" data-animate="fade-up">
-                <span class="section__tag">// tech stack</span>
-                <h2 class="section__title">Skills & <span class="text-gradient">Technologies</span></h2>
-            </div>
-            <div class="skills__grid" data-animate="fade-up" data-delay="100">
-                <!-- Languages -->
-                <div class="skill-card" data-animate="fade-up" data-delay="100">
-                    <div class="skill-card__icon">⚡</div>
-                    <h3 class="skill-card__title">Languages</h3>
-                    <div class="skill-card__tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">HTML/CSS</span>
-                        <span class="skill-tag">SQL</span>
-                    </div>
-                </div>
-                
-                <!-- Frameworks -->
-                <div class="skill-card" data-animate="fade-up" data-delay="150">
-                    <div class="skill-card__icon">🔧</div>
-                    <h3 class="skill-card__title">Frameworks</h3>
-                    <div class="skill-card__tags">
-                        <span class="skill-tag">Django</span>
-                        <span class="skill-tag">Django REST</span>
-                        <span class="skill-tag">Node.js</span>
-                        <span class="skill-tag">Flutter</span>
-                        <span class="skill-tag">REST APIs</span>
-                    </div>
-                </div>
-                
-                <!-- AI / ML -->
-                <div class="skill-card" data-animate="fade-up" data-delay="200">
-                    <div class="skill-card__icon">🧠</div>
-                    <h3 class="skill-card__title">AI / ML</h3>
-                    <div class="skill-card__tags">
-                        <span class="skill-tag">TensorFlow</span>
-                        <span class="skill-tag">scikit-learn</span>
-                        <span class="skill-tag">Pandas</span>
-                        <span class="skill-tag">NumPy</span>
-                        <span class="skill-tag">Keras</span>
-                    </div>
-                </div>
-                
-                <!-- DevOps -->
-                <div class="skill-card" data-animate="fade-up" data-delay="250">
-                    <div class="skill-card__icon">☁️</div>
-                    <h3 class="skill-card__title">Cloud & DevOps</h3>
-                    <div class="skill-card__tags">
-                        <span class="skill-tag">AWS EC2</span>
-                        <span class="skill-tag">AWS S3</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Nginx</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">Gunicorn</span>
-                    </div>
-                </div>
-                
-                <!-- Databases -->
-                <div class="skill-card" data-animate="fade-up" data-delay="300">
-                    <div class="skill-card__icon">🗄️</div>
-                    <h3 class="skill-card__title">Databases</h3>
-                    <div class="skill-card__tags">
-                        <span class="skill-tag">PostgreSQL</span>
-                        <span class="skill-tag">MongoDB</span>
-                        <span class="skill-tag">MySQL</span>
-                        <span class="skill-tag">Redis</span>
-                    </div>
-                </div>
-                
-                <!-- Other -->
-                <div class="skill-card" data-animate="fade-up" data-delay="350">
-                    <div class="skill-card__icon">🌐</div>
-                    <h3 class="skill-card__title">Other</h3>
-                    <div class="skill-card__tags">
-                        <span class="skill-tag">JWT Auth</span>
-                        <span class="skill-tag">Celery</span>
-                        <span class="skill-tag">Chart.js</span>
-                        <span class="skill-tag">Leaflet.js</span>
-                        <span class="skill-tag">Gunicorn</span>
-                    </div>
-                </div>
-            </div>
+        <div class="hero-scroll" data-reveal data-delay="4">
+            <span class="scroll-text">Scroll</span>
+            <div class="scroll-line"></div>
         </div>
-    </section>
+    </header>
 
-    <!-- Projects Section -->
-    <section class="section projects" id="projects">
-        <div class="section__container">
-            <div class="section__header" data-animate="fade-up">
-                <span class="section__tag">// featured work</span>
-                <h2 class="section__title">Projects I've <span class="text-gradient">Built</span></h2>
-                <p class="section__subtitle">A selection of projects that showcase my expertise across full-stack development and machine learning.</p>
+    <!-- Selected Work -->
+    <section class="section" id="work">
+        <div class="section-inner">
+            <div class="section-header" data-reveal>
+                <span class="section-number">01</span>
+                <h2 class="section-title">Selected Work</h2>
+                <p class="section-desc">A curated selection of engineering projects spanning civic tech, AI systems, and intelligent applications.</p>
             </div>
 
-            <!-- Project 1: JanMitra -->
-            <div class="project-card project-card--featured" data-animate="fade-up" data-delay="100">
-                <div class="project-card__content">
-                    <div class="project-card__meta">
-                        <span class="project-card__badge project-card__badge--featured">⭐ FLAGSHIP</span>
-                        <span class="project-card__badge">Full Stack</span>
-                        <span class="project-card__badge">Mobile</span>
-                        <span class="project-card__badge">DevOps</span>
+            <!-- Project 1 -->
+            <article class="project" data-reveal>
+                <div class="project-index">01</div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <div class="project-tags">
+                            <span>Full Stack</span>
+                            <span>Mobile</span>
+                            <span>DevOps</span>
+                            <span>Govt. Licensed</span>
+                        </div>
+                        <h3 class="project-name">JanMitra</h3>
+                        <p class="project-subtitle">Government Civic Incident Reporting Platform</p>
                     </div>
-                    <h3 class="project-card__title">
-                        <span class="project-card__emoji">🏛️</span>
-                        JanMitra
-                    </h3>
-                    <p class="project-card__description">
-                        A government-scale civic incident reporting platform with mobile companion app. 
-                        Features JWT authentication, encrypted media handling, audit logging, push notifications, 
-                        case escalation workflows, and production-ready Docker deployment with Nginx reverse proxy. 
-                        Government of India licensed.
+                    <p class="project-description">
+                        A production-grade civic reporting platform built for government-scale operations. 
+                        Features JWT authentication, encrypted media handling, audit logging, automated 
+                        push notifications, multi-tier case escalation workflows, and a companion mobile application. 
+                        Deployed with Docker orchestration behind an Nginx reverse proxy.
                     </p>
-                    <div class="project-card__tech">
-                        <span>Django REST</span>
+                    <div class="project-tech">
+                        <span>Django REST Framework</span>
                         <span>PostgreSQL</span>
                         <span>Redis</span>
                         <span>Celery</span>
@@ -342,55 +126,66 @@
                         <span>Flutter</span>
                         <span>Gunicorn</span>
                     </div>
-                    <div class="project-card__stats">
-                        <div class="project-card__stat">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg>
-                            47 commits
+                    <div class="project-footer">
+                        <div class="project-stats">
+                            <span>47 commits</span>
+                            <span>Python 96.2%</span>
                         </div>
-                        <div class="project-card__stat">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-                            Python 96.2%
-                        </div>
-                    </div>
-                    <div class="project-card__actions">
-                        <a href="https://github.com/dhruvindave007/janmitra" target="_blank" rel="noopener" class="btn btn--small btn--outline">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                            Source Code
+                        <a href="https://github.com/dhruvindave007/janmitra" target="_blank" rel="noopener" class="project-link">
+                            View Source
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </a>
                     </div>
                 </div>
-                <div class="project-card__visual">
-                    <div class="project-card__architecture">
-                        <div class="arch-node arch-node--nginx">NGINX</div>
-                        <div class="arch-arrow">→</div>
-                        <div class="arch-node arch-node--django">DJANGO</div>
-                        <div class="arch-arrow">→</div>
-                        <div class="arch-node arch-node--db">PostgreSQL</div>
-                        <div class="arch-node arch-node--redis">Redis</div>
-                        <div class="arch-node arch-node--flutter">Flutter App</div>
+                <div class="project-arch">
+                    <div class="arch-diagram">
+                        <div class="arch-layer">
+                            <span class="arch-label">Client</span>
+                            <div class="arch-box arch-box--accent">Flutter App</div>
+                        </div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-layer">
+                            <span class="arch-label">Proxy</span>
+                            <div class="arch-box">Nginx</div>
+                        </div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-layer">
+                            <span class="arch-label">Application</span>
+                            <div class="arch-box arch-box--primary">Django REST</div>
+                        </div>
+                        <div class="arch-connector"></div>
+                        <div class="arch-layer">
+                            <span class="arch-label">Data</span>
+                            <div class="arch-box-group">
+                                <div class="arch-box arch-box--small">PostgreSQL</div>
+                                <div class="arch-box arch-box--small">Redis</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Project 2: AIrfieldShield -->
-            <div class="project-card" data-animate="fade-up" data-delay="200">
-                <div class="project-card__content">
-                    <div class="project-card__meta">
-                        <span class="project-card__badge project-card__badge--ai">🧠 AI/ML</span>
-                        <span class="project-card__badge">Full Stack</span>
-                        <span class="project-card__badge">Data Viz</span>
+            <!-- Project 2 -->
+            <article class="project" data-reveal>
+                <div class="project-index">02</div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <div class="project-tags">
+                            <span>AI / ML</span>
+                            <span>Ensemble Models</span>
+                            <span>Data Visualization</span>
+                        </div>
+                        <h3 class="project-name">AIrfieldShield</h3>
+                        <p class="project-subtitle">AI Weather Prediction for Airfields</p>
                     </div>
-                    <h3 class="project-card__title">
-                        <span class="project-card__emoji">✈️</span>
-                        AIrfieldShield
-                    </h3>
-                    <p class="project-card__description">
-                        AI-driven airfield weather nowcasting system using an ensemble of Random Forest, Gradient Boosting, 
-                        LSTM, and CNN models trained on 50K+ weather records. Features GridSearchCV hyperparameter tuning, 
-                        temporal feature engineering (7-day rolling means), and an interactive Leaflet dashboard with 
-                        real-time risk trend visualizations and severity-based alert management.
+                    <p class="project-description">
+                        An AI-driven airfield weather nowcasting system utilizing an ensemble pipeline 
+                        of Random Forest, Gradient Boosting, LSTM, and CNN models trained on 50K+ 
+                        weather records. Features GridSearchCV hyperparameter tuning, temporal feature 
+                        engineering with 7-day rolling means, and an interactive Leaflet dashboard with 
+                        real-time risk visualizations and severity-based alert management.
                     </p>
-                    <div class="project-card__tech">
+                    <div class="project-tech">
                         <span>Django 5.x</span>
                         <span>TensorFlow</span>
                         <span>scikit-learn</span>
@@ -398,45 +193,41 @@
                         <span>CNN</span>
                         <span>Leaflet.js</span>
                         <span>Chart.js</span>
-                        <span>Tailwind</span>
                     </div>
-                    <div class="project-card__stats">
-                        <div class="project-card__stat">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg>
-                            9 commits
+                    <div class="project-footer">
+                        <div class="project-stats">
+                            <span>50K+ records</span>
+                            <span>Ensemble pipeline</span>
                         </div>
-                        <div class="project-card__stat">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-                            Python 79.1%
-                        </div>
-                    </div>
-                    <div class="project-card__actions">
-                        <a href="https://github.com/dhruvindave007/AIrfieldShield" target="_blank" rel="noopener" class="btn btn--small btn--outline">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                            Source Code
+                        <a href="https://github.com/dhruvindave007/AIrfieldShield" target="_blank" rel="noopener" class="project-link">
+                            View Source
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Project 3: MusicAI -->
-            <div class="project-card" data-animate="fade-up" data-delay="300">
-                <div class="project-card__content">
-                    <div class="project-card__meta">
-                        <span class="project-card__badge project-card__badge--ai">🧠 AI/ML</span>
-                        <span class="project-card__badge">Full Stack</span>
-                        <span class="project-card__badge">⭐ 1 Star</span>
+            <!-- Project 3 -->
+            <article class="project" data-reveal>
+                <div class="project-index">03</div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <div class="project-tags">
+                            <span>AI / ML</span>
+                            <span>Recommendation Engine</span>
+                            <span>278K+ Dataset</span>
+                        </div>
+                        <h3 class="project-name">MusicAI</h3>
+                        <p class="project-subtitle">ML-Powered Music Recommendation Engine</p>
                     </div>
-                    <h3 class="project-card__title">
-                        <span class="project-card__emoji">🎵</span>
-                        MusicAI
-                    </h3>
-                    <p class="project-card__description">
-                        Content-based music recommender trained on 278K+ Spotify tracks using features like tempo, energy, and valence. 
-                        Uses cosine similarity for matching, achieving 94% overlap with actual listening preferences. 
-                        Features KNN (15 neighbors) and K-Means clustering (6 mood clusters) for mood-based song discovery.
+                    <p class="project-description">
+                        A content-based music recommender trained on 278K+ Spotify tracks utilizing 
+                        audio features including tempo, energy, valence, and danceability. Achieves 94% 
+                        overlap with actual listening preferences using cosine similarity matching. 
+                        Implements KNN with 15 neighbors and K-Means clustering across 6 mood-based 
+                        clusters for contextual song discovery.
                     </p>
-                    <div class="project-card__tech">
+                    <div class="project-tech">
                         <span>Django</span>
                         <span>scikit-learn</span>
                         <span>KNN</span>
@@ -444,136 +235,218 @@
                         <span>Pandas</span>
                         <span>NumPy</span>
                     </div>
-                    <div class="project-card__stats">
-                        <div class="project-card__stat">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                            1 star
+                    <div class="project-footer">
+                        <div class="project-stats">
+                            <span>278K+ tracks</span>
+                            <span>94% accuracy</span>
                         </div>
-                        <div class="project-card__stat">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/></svg>
-                            278k+ tracks · 94% accuracy
-                        </div>
-                    </div>
-                    <div class="project-card__actions">
-                        <a href="https://github.com/dhruvindave007/MusicAI" target="_blank" rel="noopener" class="btn btn--small btn--outline">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                            Source Code
+                        <a href="https://github.com/dhruvindave007/MusicAI" target="_blank" rel="noopener" class="project-link">
+                            View Source
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- Project 4: MediReach AI -->
-            <div class="project-card" data-animate="fade-up" data-delay="400">
-                <div class="project-card__content">
-                    <div class="project-card__meta">
-                        <span class="project-card__badge project-card__badge--ai">🧠 AI/ML</span>
-                        <span class="project-card__badge">Full Stack</span>
-                        <span class="project-card__badge">Healthcare</span>
+            <!-- Project 4 -->
+            <article class="project" data-reveal>
+                <div class="project-index">04</div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <div class="project-tags">
+                            <span>AI / ML</span>
+                            <span>Geospatial</span>
+                            <span>Healthcare</span>
+                        </div>
+                        <h3 class="project-name">MediReach AI</h3>
+                        <p class="project-subtitle">Emergency Medical Facility Finder</p>
                     </div>
-                    <h3 class="project-card__title">
-                        <span class="project-card__emoji">🏥</span>
-                        MediReach AI
-                    </h3>
-                    <p class="project-card__description">
-                        Emergency medical facility finder using a weighted ranking model that combines distance normalization 
-                        with availability scoring. Evaluated ranking effectiveness across 100+ simulated emergency scenarios 
-                        using OpenStreetMap API for real-time geospatial data integration.
+                    <p class="project-description">
+                        An emergency medical facility locator using a weighted ranking model that 
+                        combines distance normalization with availability scoring. Validated ranking 
+                        effectiveness across 100+ simulated emergency scenarios with OpenStreetMap 
+                        API integration for real-time geospatial data.
                     </p>
-                    <div class="project-card__tech">
+                    <div class="project-tech">
                         <span>Python</span>
                         <span>OpenStreetMap API</span>
                         <span>Geospatial Analysis</span>
                         <span>Weighted Ranking</span>
                     </div>
-                    <div class="project-card__stats">
-                        <div class="project-card__stat">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v6M12 17v6M4.22 4.22l4.24 4.24M15.54 15.54l4.24 4.24M1 12h6M17 12h6M4.22 19.78l4.24-4.24M15.54 8.46l4.24-4.24"/></svg>
-                            100+ scenarios tested
+                    <div class="project-footer">
+                        <div class="project-stats">
+                            <span>100+ scenarios</span>
                         </div>
-                    </div>
-                    <div class="project-card__actions">
-                        <a href="https://github.com/dhruvindave007" target="_blank" rel="noopener" class="btn btn--small btn--outline">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                            Source Code
+                        <a href="https://github.com/dhruvindave007" target="_blank" rel="noopener" class="project-link">
+                            View Source
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                         </a>
                     </div>
                 </div>
-            </div>
+            </article>
 
-            <!-- View More -->
-            <div class="projects__more" data-animate="fade-up" data-delay="500">
-                <a href="https://github.com/dhruvindave007?tab=repositories" target="_blank" rel="noopener" class="btn btn--outline btn--large">
-                    View All 14 Repositories on GitHub
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+            <div class="section-cta" data-reveal>
+                <a href="https://github.com/dhruvindave007?tab=repositories" target="_blank" rel="noopener" class="link-arrow">
+                    View all repositories
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section class="section contact" id="contact">
-        <div class="section__container">
-            <div class="section__header" data-animate="fade-up">
-                <span class="section__tag">// get in touch</span>
-                <h2 class="section__title">Let's <span class="text-gradient">Connect</span></h2>
-                <p class="section__subtitle">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+    <!-- About -->
+    <section class="section section--light" id="about">
+        <div class="section-inner">
+            <div class="section-header" data-reveal>
+                <span class="section-number">02</span>
+                <h2 class="section-title">About</h2>
             </div>
-            <div class="contact__grid" data-animate="fade-up" data-delay="100">
-                <a href="mailto:davedhruvin307@gmail.com" class="contact-card" id="contact-email">
-                    <div class="contact-card__icon">📧</div>
-                    <h3 class="contact-card__title">Email</h3>
-                    <p class="contact-card__value">davedhruvin307@gmail.com</p>
-                    <span class="contact-card__arrow">→</span>
-                </a>
-                <a href="https://www.linkedin.com/in/mrdhruvindave" target="_blank" rel="noopener" class="contact-card" id="contact-linkedin">
-                    <div class="contact-card__icon">💼</div>
-                    <h3 class="contact-card__title">LinkedIn</h3>
-                    <p class="contact-card__value">mrdhruvindave</p>
-                    <span class="contact-card__arrow">→</span>
-                </a>
-                <a href="https://github.com/dhruvindave007" target="_blank" rel="noopener" class="contact-card" id="contact-github">
-                    <div class="contact-card__icon">🐙</div>
-                    <h3 class="contact-card__title">GitHub</h3>
-                    <p class="contact-card__value">dhruvindave007</p>
-                    <span class="contact-card__arrow">→</span>
-                </a>
-                <a href="https://www.instagram.com/davedhruvin07" target="_blank" rel="noopener" class="contact-card" id="contact-instagram">
-                    <div class="contact-card__icon">📸</div>
-                    <h3 class="contact-card__title">Instagram</h3>
-                    <p class="contact-card__value">davedhruvin07</p>
-                    <span class="contact-card__arrow">→</span>
-                </a>
+            <div class="about-grid">
+                <div class="about-text" data-reveal>
+                    <p class="about-lead">
+                        I build production-ready systems that combine robust engineering 
+                        with intelligent algorithms.
+                    </p>
+                    <p>
+                        Most recently as a Full Stack Developer at 2Pointers, where I 
+                        designed REST APIs with Django and Node.js, built data pipelines, 
+                        and optimized database performance across PostgreSQL and MongoDB.
+                    </p>
+                    <p>
+                        My work spans government-scale civic platforms processing real incident 
+                        reports, AI-driven prediction systems for aviation safety, and ML 
+                        recommendation engines trained on datasets of 278K+ records. I ranked 
+                        Top-10 at a 50+ team university hackathon and presented ML research to 
+                        audiences of 800+.
+                    </p>
+                </div>
+                <div class="about-details" data-reveal data-delay="1">
+                    <div class="detail-group">
+                        <h4 class="detail-label">Experience</h4>
+                        <div class="detail-item">
+                            <span class="detail-role">Full Stack Developer</span>
+                            <span class="detail-place">2Pointers</span>
+                            <span class="detail-date">Jun 2025 — Feb 2026</span>
+                        </div>
+                    </div>
+                    <div class="detail-group">
+                        <h4 class="detail-label">Education</h4>
+                        <div class="detail-item">
+                            <span class="detail-role">B.E. Computer Engineering</span>
+                            <span class="detail-place">LJ University, Ahmedabad</span>
+                            <span class="detail-date">2022 — 2026</span>
+                        </div>
+                    </div>
+                    <div class="detail-group">
+                        <h4 class="detail-label">Recognition</h4>
+                        <div class="detail-item">
+                            <span class="detail-role">Top-10 — University Hackathon</span>
+                            <span class="detail-place">36-hour sprint, 50+ teams</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-role">ML Project Presentation</span>
+                            <span class="detail-place">Presented to 800+ at tech fest</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section" id="skills">
+        <div class="section-inner">
+            <div class="section-header" data-reveal>
+                <span class="section-number">03</span>
+                <h2 class="section-title">Capabilities</h2>
+            </div>
+            <div class="skills-grid" data-reveal>
+                <div class="skill-group">
+                    <h4 class="skill-label">Languages</h4>
+                    <ul class="skill-list">
+                        <li>Python</li>
+                        <li>JavaScript</li>
+                        <li>HTML / CSS</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4 class="skill-label">Frameworks</h4>
+                    <ul class="skill-list">
+                        <li>Django / DRF</li>
+                        <li>Node.js</li>
+                        <li>Flutter</li>
+                        <li>REST APIs</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4 class="skill-label">AI / ML</h4>
+                    <ul class="skill-list">
+                        <li>TensorFlow / Keras</li>
+                        <li>scikit-learn</li>
+                        <li>Pandas / NumPy</li>
+                        <li>LSTM / CNN</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4 class="skill-label">Infrastructure</h4>
+                    <ul class="skill-list">
+                        <li>AWS EC2 / S3</li>
+                        <li>Docker</li>
+                        <li>Nginx / Gunicorn</li>
+                        <li>Git</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4 class="skill-label">Databases</h4>
+                    <ul class="skill-list">
+                        <li>PostgreSQL</li>
+                        <li>MongoDB</li>
+                        <li>MySQL</li>
+                        <li>Redis</li>
+                    </ul>
+                </div>
+                <div class="skill-group">
+                    <h4 class="skill-label">Tooling</h4>
+                    <ul class="skill-list">
+                        <li>Celery</li>
+                        <li>JWT Auth</li>
+                        <li>Leaflet.js</li>
+                        <li>Chart.js</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section section--dark" id="contact">
+        <div class="section-inner">
+            <div class="contact-block" data-reveal>
+                <span class="section-number">04</span>
+                <h2 class="contact-heading">Let's work together.</h2>
+                <p class="contact-text">
+                    Open to full-time roles, freelance projects, and interesting collaborations. 
+                    If you're building something meaningful, I'd like to hear about it.
+                </p>
+                <a href="mailto:davedhruvin307@gmail.com" class="contact-email">davedhruvin307@gmail.com</a>
+                <div class="contact-links">
+                    <a href="https://github.com/dhruvindave007" target="_blank" rel="noopener">GitHub</a>
+                    <a href="https://www.linkedin.com/in/mrdhruvindave" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://www.instagram.com/davedhruvin07" target="_blank" rel="noopener">Instagram</a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="footer__container">
-            <div class="footer__content">
-                <p class="footer__text">
-                    Designed & Built by <strong>Dhruvin Dave</strong>
-                </p>
-                <p class="footer__copyright">
-                    © 2026 — dhruvindave.live
-                </p>
-            </div>
-            <div class="footer__links">
-                <a href="https://github.com/dhruvindave007" target="_blank" rel="noopener" aria-label="GitHub">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-                </a>
-                <a href="https://www.linkedin.com/in/mrdhruvindave" target="_blank" rel="noopener" aria-label="LinkedIn">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                </a>
-                <a href="mailto:davedhruvin307@gmail.com" aria-label="Email">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
-                </a>
-            </div>
+        <div class="footer-inner">
+            <span class="footer-copy">Dhruvin Dave &mdash; 2026</span>
+            <span class="footer-domain">dhruvindave.live</span>
         </div>
     </footer>
 
-    <!-- Scripts -->
     <script src="script.js"></script>
 </body>
 </html>
