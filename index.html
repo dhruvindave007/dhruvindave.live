@@ -1,452 +1,151 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dhruvin Dave — Full Stack & ML Engineer</title>
-    <meta name="description" content="Dhruvin Dave — Full Stack Developer & Machine Learning Engineer. Building production-grade systems with Django, TensorFlow, and AWS from Ahmedabad, India.">
-    <meta name="keywords" content="Dhruvin Dave, Full Stack Developer, Machine Learning, Django, Python, TensorFlow, Portfolio">
-    <meta name="author" content="Dhruvin Krutarthkumar Dave">
-    <meta property="og:title" content="Dhruvin Dave — Full Stack & ML Engineer">
-    <meta property="og:description" content="Building production-grade intelligent systems at the intersection of engineering and machine learning.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://dhruvindave.live">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23111'/><text x='50' y='68' font-size='50' fill='%23fff' text-anchor='middle' font-family='system-ui' font-weight='700'>D</text></svg>">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dhruvin Dave · ML engineer</title>
+<meta name="description" content="ML engineer. Every claim on this site links to its evidence.">
+<link rel="canonical" href="https://dhruvindave.live/">
+<meta name="theme-color" content="#F4F3EF" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Dhruvin Dave · ML engineer">
+<meta property="og:description" content="ML engineer. Every claim on this site links to its evidence.">
+<meta property="og:url" content="https://dhruvindave.live/">
+<meta property="og:image" content="https://dhruvindave.live/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dhruvin Dave · ML engineer">
+<meta name="twitter:description" content="ML engineer. Every claim on this site links to its evidence.">
+<meta name="twitter:image" content="https://dhruvindave.live/assets/og.png">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<script>(function(d){var r=d.documentElement;r.className+=' js';try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')r.setAttribute('data-theme',t)}catch(e){}setTimeout(function(){if(!window.__ran)r.classList.remove('js')},2000)})(document)</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap">
+<link rel="stylesheet" href="/styles.css">
+<script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js" defer></script>
+<script src="/main.js" defer></script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "Dhruvin Dave", "email": "davedhruvin307@gmail.com", "jobTitle": "ML engineer", "url": "https://dhruvindave.live/", "sameAs": ["https://github.com/dhruvindave007", "https://www.linkedin.com/in/mrdhruvindave"]}</script>
 </head>
 <body>
-    <div class="noise"></div>
-    <div class="grain"></div>
-
-    <!-- Cursor follow -->
-    <div class="cursor-dot" id="cursorDot"></div>
-
-    <!-- Navigation -->
-    <nav class="nav" id="mainNav">
-        <div class="nav-inner">
-            <a href="#" class="nav-logo" aria-label="Home">
-                <span class="nav-logo-mark">D</span>
-                <span class="nav-logo-sep">/</span>
-                <span class="nav-logo-name">Dave</span>
-            </a>
-            <div class="nav-links" id="navLinks">
-                <a href="#work" class="nav-link">Work</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-actions">
-                <a href="Dhruvin_Dave_ML_CV.pdf" download class="nav-resume">Resume</a>
-                <button class="nav-toggle" id="navToggle" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero -->
-    <header class="hero" id="hero">
-        <div class="hero-inner">
-            <div class="hero-label" data-reveal>
-                <span class="label-line"></span>
-                <span>Full Stack Developer & ML Engineer</span>
-            </div>
-            <h1 class="hero-title" data-reveal data-delay="1">
-                <span class="hero-line">Building intelligent</span>
-                <span class="hero-line">systems that <em>scale.</em></span>
-            </h1>
-            <div class="hero-bottom">
-                <p class="hero-description" data-reveal data-delay="2">
-                    I design and engineer production-grade applications at the 
-                    intersection of full-stack development and machine learning — 
-                    from government platforms to AI prediction systems.
-                </p>
-                <div class="hero-meta" data-reveal data-delay="3">
-                    <div class="hero-meta-item">
-                        <span class="meta-value">Ahmedabad, IN</span>
-                        <span class="meta-label">Based in</span>
-                    </div>
-                    <div class="hero-meta-item">
-                        <span class="meta-value">2Pointers</span>
-                        <span class="meta-label">Previously at</span>
-                    </div>
-                    <div class="hero-meta-item">
-                        <span class="meta-value">LJ University</span>
-                        <span class="meta-label">B.E. Computer Eng.</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="hero-scroll" data-reveal data-delay="4">
-            <span class="scroll-text">Scroll</span>
-            <div class="scroll-line"></div>
-        </div>
-    </header>
-
-    <!-- Selected Work -->
-    <section class="section" id="work">
-        <div class="section-inner">
-            <div class="section-header" data-reveal>
-                <span class="section-number">01</span>
-                <h2 class="section-title">Selected Work</h2>
-                <p class="section-desc">A curated selection of engineering projects spanning civic tech, AI systems, and intelligent applications.</p>
-            </div>
-
-            <!-- Project 1 -->
-            <article class="project" data-reveal>
-                <div class="project-index">01</div>
-                <div class="project-content">
-                    <div class="project-header">
-                        <div class="project-tags">
-                            <span>Full Stack</span>
-                            <span>Mobile</span>
-                            <span>DevOps</span>
-                            <span>Govt. Licensed</span>
-                        </div>
-                        <h3 class="project-name">JanMitra</h3>
-                        <p class="project-subtitle">Government Civic Incident Reporting Platform</p>
-                    </div>
-                    <p class="project-description">
-                        A production-grade civic reporting platform built for government-scale operations. 
-                        Features JWT authentication, encrypted media handling, audit logging, automated 
-                        push notifications, multi-tier case escalation workflows, and a companion mobile application. 
-                        Deployed with Docker orchestration behind an Nginx reverse proxy.
-                    </p>
-                    <div class="project-tech">
-                        <span>Django REST Framework</span>
-                        <span>PostgreSQL</span>
-                        <span>Redis</span>
-                        <span>Celery</span>
-                        <span>Docker</span>
-                        <span>Nginx</span>
-                        <span>Flutter</span>
-                        <span>Gunicorn</span>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span>47 commits</span>
-                            <span>Python 96.2%</span>
-                        </div>
-                        <a href="https://github.com/dhruvindave007/janmitra" target="_blank" rel="noopener" class="project-link">
-                            View Source
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </a>
-                    </div>
-                </div>
-                <div class="project-arch">
-                    <div class="arch-diagram">
-                        <div class="arch-layer">
-                            <span class="arch-label">Client</span>
-                            <div class="arch-box arch-box--accent">Flutter App</div>
-                        </div>
-                        <div class="arch-connector"></div>
-                        <div class="arch-layer">
-                            <span class="arch-label">Proxy</span>
-                            <div class="arch-box">Nginx</div>
-                        </div>
-                        <div class="arch-connector"></div>
-                        <div class="arch-layer">
-                            <span class="arch-label">Application</span>
-                            <div class="arch-box arch-box--primary">Django REST</div>
-                        </div>
-                        <div class="arch-connector"></div>
-                        <div class="arch-layer">
-                            <span class="arch-label">Data</span>
-                            <div class="arch-box-group">
-                                <div class="arch-box arch-box--small">PostgreSQL</div>
-                                <div class="arch-box arch-box--small">Redis</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project 2 -->
-            <article class="project" data-reveal>
-                <div class="project-index">02</div>
-                <div class="project-content">
-                    <div class="project-header">
-                        <div class="project-tags">
-                            <span>AI / ML</span>
-                            <span>Ensemble Models</span>
-                            <span>Data Visualization</span>
-                        </div>
-                        <h3 class="project-name">AIrfieldShield</h3>
-                        <p class="project-subtitle">AI Weather Prediction for Airfields</p>
-                    </div>
-                    <p class="project-description">
-                        An AI-driven airfield weather nowcasting system utilizing an ensemble pipeline 
-                        of Random Forest, Gradient Boosting, LSTM, and CNN models trained on 50K+ 
-                        weather records. Features GridSearchCV hyperparameter tuning, temporal feature 
-                        engineering with 7-day rolling means, and an interactive Leaflet dashboard with 
-                        real-time risk visualizations and severity-based alert management.
-                    </p>
-                    <div class="project-tech">
-                        <span>Django 5.x</span>
-                        <span>TensorFlow</span>
-                        <span>scikit-learn</span>
-                        <span>LSTM</span>
-                        <span>CNN</span>
-                        <span>Leaflet.js</span>
-                        <span>Chart.js</span>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span>50K+ records</span>
-                            <span>Ensemble pipeline</span>
-                        </div>
-                        <a href="https://github.com/dhruvindave007/AIrfieldShield" target="_blank" rel="noopener" class="project-link">
-                            View Source
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project 3 -->
-            <article class="project" data-reveal>
-                <div class="project-index">03</div>
-                <div class="project-content">
-                    <div class="project-header">
-                        <div class="project-tags">
-                            <span>AI / ML</span>
-                            <span>Recommendation Engine</span>
-                            <span>278K+ Dataset</span>
-                        </div>
-                        <h3 class="project-name">MusicAI</h3>
-                        <p class="project-subtitle">ML-Powered Music Recommendation Engine</p>
-                    </div>
-                    <p class="project-description">
-                        A content-based music recommender trained on 278K+ Spotify tracks utilizing 
-                        audio features including tempo, energy, valence, and danceability. Achieves 94% 
-                        overlap with actual listening preferences using cosine similarity matching. 
-                        Implements KNN with 15 neighbors and K-Means clustering across 6 mood-based 
-                        clusters for contextual song discovery.
-                    </p>
-                    <div class="project-tech">
-                        <span>Django</span>
-                        <span>scikit-learn</span>
-                        <span>KNN</span>
-                        <span>K-Means</span>
-                        <span>Pandas</span>
-                        <span>NumPy</span>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span>278K+ tracks</span>
-                            <span>94% accuracy</span>
-                        </div>
-                        <a href="https://github.com/dhruvindave007/MusicAI" target="_blank" rel="noopener" class="project-link">
-                            View Source
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project 4 -->
-            <article class="project" data-reveal>
-                <div class="project-index">04</div>
-                <div class="project-content">
-                    <div class="project-header">
-                        <div class="project-tags">
-                            <span>AI / ML</span>
-                            <span>Geospatial</span>
-                            <span>Healthcare</span>
-                        </div>
-                        <h3 class="project-name">MediReach AI</h3>
-                        <p class="project-subtitle">Emergency Medical Facility Finder</p>
-                    </div>
-                    <p class="project-description">
-                        An emergency medical facility locator using a weighted ranking model that 
-                        combines distance normalization with availability scoring. Validated ranking 
-                        effectiveness across 100+ simulated emergency scenarios with OpenStreetMap 
-                        API integration for real-time geospatial data.
-                    </p>
-                    <div class="project-tech">
-                        <span>Python</span>
-                        <span>OpenStreetMap API</span>
-                        <span>Geospatial Analysis</span>
-                        <span>Weighted Ranking</span>
-                    </div>
-                    <div class="project-footer">
-                        <div class="project-stats">
-                            <span>100+ scenarios</span>
-                        </div>
-                        <a href="https://github.com/dhruvindave007" target="_blank" rel="noopener" class="project-link">
-                            View Source
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                        </a>
-                    </div>
-                </div>
-            </article>
-
-            <div class="section-cta" data-reveal>
-                <a href="https://github.com/dhruvindave007?tab=repositories" target="_blank" rel="noopener" class="link-arrow">
-                    View all repositories
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About -->
-    <section class="section section--light" id="about">
-        <div class="section-inner">
-            <div class="section-header" data-reveal>
-                <span class="section-number">02</span>
-                <h2 class="section-title">About</h2>
-            </div>
-            <div class="about-grid">
-                <div class="about-text" data-reveal>
-                    <p class="about-lead">
-                        I build production-ready systems that combine robust engineering 
-                        with intelligent algorithms.
-                    </p>
-                    <p>
-                        Most recently as a Full Stack Developer at 2Pointers, where I 
-                        designed REST APIs with Django and Node.js, built data pipelines, 
-                        and optimized database performance across PostgreSQL and MongoDB.
-                    </p>
-                    <p>
-                        My work spans government-scale civic platforms processing real incident 
-                        reports, AI-driven prediction systems for aviation safety, and ML 
-                        recommendation engines trained on datasets of 278K+ records. I ranked 
-                        Top-10 at a 50+ team university hackathon and presented ML research to 
-                        audiences of 800+.
-                    </p>
-                </div>
-                <div class="about-details" data-reveal data-delay="1">
-                    <div class="detail-group">
-                        <h4 class="detail-label">Experience</h4>
-                        <div class="detail-item">
-                            <span class="detail-role">Full Stack Developer</span>
-                            <span class="detail-place">2Pointers</span>
-                            <span class="detail-date">Jun 2025 — Feb 2026</span>
-                        </div>
-                    </div>
-                    <div class="detail-group">
-                        <h4 class="detail-label">Education</h4>
-                        <div class="detail-item">
-                            <span class="detail-role">B.E. Computer Engineering</span>
-                            <span class="detail-place">LJ University, Ahmedabad</span>
-                            <span class="detail-date">2022 — 2026</span>
-                        </div>
-                    </div>
-                    <div class="detail-group">
-                        <h4 class="detail-label">Recognition</h4>
-                        <div class="detail-item">
-                            <span class="detail-role">Top-10 — University Hackathon</span>
-                            <span class="detail-place">36-hour sprint, 50+ teams</span>
-                        </div>
-                        <div class="detail-item">
-                            <span class="detail-role">ML Project Presentation</span>
-                            <span class="detail-place">Presented to 800+ at tech fest</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills -->
-    <section class="section" id="skills">
-        <div class="section-inner">
-            <div class="section-header" data-reveal>
-                <span class="section-number">03</span>
-                <h2 class="section-title">Capabilities</h2>
-            </div>
-            <div class="skills-grid" data-reveal>
-                <div class="skill-group">
-                    <h4 class="skill-label">Languages</h4>
-                    <ul class="skill-list">
-                        <li>Python</li>
-                        <li>JavaScript</li>
-                        <li>HTML / CSS</li>
-                        <li>SQL</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <h4 class="skill-label">Frameworks</h4>
-                    <ul class="skill-list">
-                        <li>Django / DRF</li>
-                        <li>Node.js</li>
-                        <li>Flutter</li>
-                        <li>REST APIs</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <h4 class="skill-label">AI / ML</h4>
-                    <ul class="skill-list">
-                        <li>TensorFlow / Keras</li>
-                        <li>scikit-learn</li>
-                        <li>Pandas / NumPy</li>
-                        <li>LSTM / CNN</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <h4 class="skill-label">Infrastructure</h4>
-                    <ul class="skill-list">
-                        <li>AWS EC2 / S3</li>
-                        <li>Docker</li>
-                        <li>Nginx / Gunicorn</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <h4 class="skill-label">Databases</h4>
-                    <ul class="skill-list">
-                        <li>PostgreSQL</li>
-                        <li>MongoDB</li>
-                        <li>MySQL</li>
-                        <li>Redis</li>
-                    </ul>
-                </div>
-                <div class="skill-group">
-                    <h4 class="skill-label">Tooling</h4>
-                    <ul class="skill-list">
-                        <li>Celery</li>
-                        <li>JWT Auth</li>
-                        <li>Leaflet.js</li>
-                        <li>Chart.js</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="section section--dark" id="contact">
-        <div class="section-inner">
-            <div class="contact-block" data-reveal>
-                <span class="section-number">04</span>
-                <h2 class="contact-heading">Let's work together.</h2>
-                <p class="contact-text">
-                    Open to full-time roles, freelance projects, and interesting collaborations. 
-                    If you're building something meaningful, I'd like to hear about it.
-                </p>
-                <a href="mailto:davedhruvin307@gmail.com" class="contact-email">davedhruvin307@gmail.com</a>
-                <div class="contact-links">
-                    <a href="https://github.com/dhruvindave007" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://www.linkedin.com/in/mrdhruvindave" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://www.instagram.com/davedhruvin07" target="_blank" rel="noopener">Instagram</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-inner">
-            <span class="footer-copy">Dhruvin Dave &mdash; 2026</span>
-            <span class="footer-domain">dhruvindave.live</span>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+<a class="skip" href="#work">Skip to work</a>
+<header class="hero">
+<nav class="nav wrap" aria-label="Main">
+<a class="wordmark" href="/">Dhruvin Dave</a>
+<ul class="nav__links">
+<li class="nav__opt"><a href="/#work">Work</a></li>
+<li class="nav__opt"><a href="/#about">About</a></li>
+<li class="nav__opt"><a href="/Dhruvin_Dave_ML_CV.pdf">CV</a></li>
+<li><a class="btn" href="mailto:davedhruvin307@gmail.com">Email</a></li>
+</ul>
+</nav>
+<div class="wrap hero__h"><h1 class="display"><span class="l"><span>I build models,</span></span> <span class="l"><span>then prove they work.</span></span></h1></div>
+<div class="wrap hero__foot">
+<p class="lead sub">ML engineer in Ahmedabad, applying for an MS in Computer Science for 2027. Tap any underlined claim to see its evidence.</p>
+<p class="hero__act"><a class="act lead" href="#work">See the work</a></p>
+</div>
+</header>
+<main id="main">
+<section id="work" class="sec work" aria-labelledby="h-work">
+<div class="wrap work__grid">
+<div class="work__read">
+<h2 id="h-work" data-rv>Work</h2>
+<article class="proj" id="proj-ovt" data-project="ovt" data-default="ovt-ui" data-rvg>
+<h3 class="proj__t" data-rv><a href="/work/office-vision-twin.html">Office Vision Twin</a></h3>
+<p class="lead" data-rv>A live digital twin that turns cameras and badge readers into <span class="cite" role="button" tabindex="0" data-panel="ovt-ui" aria-controls="evidence" aria-expanded="false"><span class="cite__t">explained, evidence-backed security incidents</span></span>, where <span class="cite" role="button" tabindex="0" data-panel="ovt-arch" aria-controls="evidence" aria-expanded="false"><span class="cite__t">the AI review has to cite its evidence</span></span>, held together by <span class="cite" role="button" tabindex="0" data-panel="ovt-tests" aria-controls="evidence" aria-expanded="false"><span class="cite__t">313 backend and 33 dashboard tests</span></span>.</p>
+<p class="small stack" data-rv>FastAPI &middot; React &middot; Ultralytics YOLO &middot; OpenVINO &middot; Amazon Bedrock</p>
+<p class="small" data-rv><a href="/work/office-vision-twin.html">Read the case</a></p>
+<div class="proj__slot"></div>
+<div class="proj__store"><article class="panel" id="p-ovt-ui" data-panel="ovt-ui" data-project="ovt" tabindex="-1"><h3 class="panel__title">The operator dashboard</h3><p class="panel__cap small">Camera wall, live floor plan and the incident queue.</p><div class="panel__art"><div class="shot"><img src="/assets/ovt-dashboard-1600.webp" srcset="/assets/ovt-dashboard-800.webp 800w, /assets/ovt-dashboard-1600.webp 1600w" sizes="(min-width:1280px) 480px, 100vw" width="1600" height="900" alt="Office Vision Twin operator dashboard: six camera feeds with detection boxes, a floor plan with room headcounts, and a queue of incidents such as unauthorized entry and tailgating." loading="lazy" decoding="async"></div></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/office-security-digital-twin-poc/blob/main/docs/assets/screenshot-dashboard.png">Source</a></p></article><article class="panel" id="p-ovt-arch" data-panel="ovt-arch" data-project="ovt" tabindex="-1"><h3 class="panel__title">Every AI statement is checked</h3><p class="panel__cap small">Each statement must cite an event ID, and the cited IDs are checked against the incident&rsquo;s records.</p><div class="panel__art"><svg class="diagram" viewBox="0 0 320 404" role="img" aria-labelledby="ovt-arch-t ovt-arch-d" data-anim="arch"><title id="ovt-arch-t">How an incident is explained and checked</title><desc id="ovt-arch-d">Flow from top to bottom: cameras and badge readers feed the twin of rooms, doors and people; the twin feeds the rules; the rules raise an incident; an AI review explains it; an event-ID check verifies the review.</desc><path class="edge" data-s="0" pathLength="1" d="M85 40V72M80 66L85 72L90 66"/><path class="edge" data-s="0" pathLength="1" d="M235 40V72M230 66L235 72L240 66"/><path class="edge" data-s="1" pathLength="1" d="M160 112V144M155 138L160 144L165 138"/><path class="edge" data-s="2" pathLength="1" d="M160 184V216M155 210L160 216L165 210"/><path class="edge" data-s="3" pathLength="1" d="M160 256V288M155 282L160 288L165 282"/><path class="edge" data-s="4" pathLength="1" d="M160 328V360M155 354L160 360L165 354"/><g class="node " data-s="0"><rect x="20" y="0" width="130" height="40"/><text x="85.0" y="25.0" text-anchor="middle">Cameras</text></g><g class="node " data-s="0"><rect x="170" y="0" width="130" height="40"/><text x="235.0" y="25.0" text-anchor="middle">Badge readers</text></g><g class="node " data-s="1"><rect x="20" y="72" width="280" height="40"/><text x="160.0" y="97.0" text-anchor="middle">Twin: rooms, doors, people</text></g><g class="node " data-s="2"><rect x="60" y="144" width="200" height="40"/><text x="160.0" y="169.0" text-anchor="middle">Rules</text></g><g class="node " data-s="3"><rect x="60" y="216" width="200" height="40"/><text x="160.0" y="241.0" text-anchor="middle">Incident</text></g><g class="node " data-s="4"><rect x="60" y="288" width="200" height="40"/><text x="160.0" y="313.0" text-anchor="middle">AI review</text></g><g class="node " data-s="5"><rect x="60" y="360" width="200" height="40"/><text x="160.0" y="385.0" text-anchor="middle">Event-ID check</text></g></svg></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/office-security-digital-twin-poc/blob/main/README.md#how-it-works">Source</a></p></article><article class="panel" id="p-ovt-tests" data-panel="ovt-tests" data-project="ovt" tabindex="-1"><h3 class="panel__title">313 + 33 tests</h3><p class="panel__cap small">Backend tests run with pytest, dashboard tests with vitest.</p><div class="panel__art"><svg class="chart " viewBox="0 0 320 108" role="img" aria-labelledby="ovt-tests-t ovt-tests-d"><title id="ovt-tests-t">Test counts</title><desc id="ovt-tests-d">Bar chart: backend 313 tests, dashboard 33 tests.</desc><g class="row"><text class="nm" x="0" y="16">Backend</text><rect class="bar bar--accent" data-v="313" x="0" y="26" width="250.00" height="16"/><text class="val" data-to="313" x="258.00" y="39">313</text></g><g class="row"><text class="nm" x="0" y="68">Dashboard</text><rect class="bar bar--accent" data-v="33" x="0" y="78" width="26.36" height="16"/><text class="val" data-to="33" x="34.36" y="91">33</text></g></svg><table class="vh"><caption>Test counts</caption><thead><tr><th scope="col">Suite</th><th scope="col">Tests</th></tr></thead><tbody><tr><th scope="row">Backend</th><td>313</td></tr><tr><th scope="row">Dashboard</th><td>33</td></tr></tbody></table><pre><code>cd backend &amp;&amp; python -m pytest tests/unit -q
+cd frontend &amp;&amp; npm test</code></pre></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/office-security-digital-twin-poc/blob/main/docs/DASHBOARD.md">Source</a></p></article></div>
+</article>
+<article class="proj" id="proj-mus" data-project="mus" data-default="mus-demo" data-rvg>
+<h3 class="proj__t" data-rv><a href="/work/musicai.html">MusicAI</a></h3>
+<p class="lead" data-rv>A recommender over 43,998 tracks whose top ten share the query&rsquo;s artist <span class="cite" role="button" tabindex="0" data-panel="mus-eval" aria-controls="evidence" aria-expanded="false"><span class="cite__t">56.5% of the time, against 16.5% for random picks</span></span>. <span class="cite" role="button" tabindex="0" data-panel="mus-demo" aria-controls="evidence" aria-expanded="false"><span class="cite__t">Try it here</span></span>.</p>
+<p class="small stack" data-rv>Python &middot; scikit-learn &middot; Django</p>
+<p class="small" data-rv><a href="/work/musicai.html">Read the case</a></p>
+<div class="proj__slot"></div>
+<div class="proj__store"><article class="panel" id="p-mus-demo" data-panel="mus-demo" data-project="mus" tabindex="-1"><h3 class="panel__title">Try the recommender</h3><p class="panel__cap small">3,000-track sample of 43,998. Exact cosine k-NN on the same ten audio features, running in your browser.</p><div class="panel__art"><div class="demo" data-demo><p class="demo__load small" role="status">Loading 3,000 tracks…</p></div><noscript><p class="small">The demo needs JavaScript. See the code on <a href="https://github.com/dhruvindave007/MusicAI">GitHub</a>.</p></noscript></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/MusicAI/blob/main/music/recommender.py">Source</a></p></article><article class="panel" id="p-mus-eval" data-panel="mus-eval" data-project="mus" tabindex="-1"><h3 class="panel__title"><span data-title>Artist hit-rate@10</span></h3><p class="panel__cap small">Offline proxies, not user satisfaction. Accurate, but low diversity.</p><div class="panel__art"><div class="segs js-only" role="group" aria-label="Metric"><button type="button" class="seg" aria-pressed="true" data-metric="artist">Artist hit-rate</button><button type="button" class="seg" aria-pressed="false" data-metric="lang">Language precision</button><button type="button" class="seg" aria-pressed="false" data-metric="div">Diversity</button></div><div class="metric is-on" data-metric="artist" data-title="Artist hit-rate@10"><p class="metric__sub small">Share of the top ten that have the query&#x27;s artist. Higher is better.</p><svg class="chart " viewBox="0 0 320 160" role="img" aria-labelledby="mus-artist-t mus-artist-d"><title id="mus-artist-t">Artist hit-rate@10</title><desc id="mus-artist-d">Bar chart: k-NN 0.565; Random 0.165; Popularity 0.011.</desc><g class="row"><text class="nm" x="0" y="16">k-NN</text><rect class="bar bar--accent" data-v="0.5645" x="0" y="26" width="141.12" height="16"/><text class="val" data-to="0.565" x="149.12" y="39">0.565</text></g><g class="row"><text class="nm" x="0" y="68">Random</text><rect class="bar bar--base" data-v="0.1645" x="0" y="78" width="41.12" height="16"/><text class="val" data-to="0.165" x="49.12" y="91">0.165</text></g><g class="row"><text class="nm" x="0" y="120">Popularity</text><rect class="bar bar--base" data-v="0.0115" x="0" y="130" width="2.88" height="16"/><text class="val" data-to="0.011" x="10.88" y="143">0.011</text></g></svg><table class="vh"><caption>Artist hit-rate@10</caption><thead><tr><th scope="col">Method</th><th scope="col">Value</th></tr></thead><tbody><tr><th scope="row">k-NN</th><td>0.565</td></tr><tr><th scope="row">Random</th><td>0.165</td></tr><tr><th scope="row">Popularity</th><td>0.011</td></tr></tbody></table></div><div class="metric" data-metric="lang" data-title="Language precision@10"><p class="metric__sub small">Share of the top ten in the query&#x27;s language. Higher is better.</p><svg class="chart " viewBox="0 0 320 160" role="img" aria-labelledby="mus-lang-t mus-lang-d"><title id="mus-lang-t">Language precision@10</title><desc id="mus-lang-d">Bar chart: k-NN 0.441; Random 0.233; Popularity 0.328.</desc><g class="row"><text class="nm" x="0" y="16">k-NN</text><rect class="bar bar--accent" data-v="0.441" x="0" y="26" width="110.25" height="16"/><text class="val" data-to="0.441" x="118.25" y="39">0.441</text></g><g class="row"><text class="nm" x="0" y="68">Random</text><rect class="bar bar--base" data-v="0.23265" x="0" y="78" width="58.16" height="16"/><text class="val" data-to="0.233" x="66.16" y="91">0.233</text></g><g class="row"><text class="nm" x="0" y="120">Popularity</text><rect class="bar bar--base" data-v="0.3275" x="0" y="130" width="81.88" height="16"/><text class="val" data-to="0.328" x="89.88" y="143">0.328</text></g></svg><table class="vh"><caption>Language precision@10</caption><thead><tr><th scope="col">Method</th><th scope="col">Value</th></tr></thead><tbody><tr><th scope="row">k-NN</th><td>0.441</td></tr><tr><th scope="row">Random</th><td>0.233</td></tr><tr><th scope="row">Popularity</th><td>0.328</td></tr></tbody></table></div><div class="metric" data-metric="div" data-title="Intra-list diversity"><p class="metric__sub small">How different the ten results are from each other. Higher means more varied lists; k-NN is far lower.</p><svg class="chart " viewBox="0 0 320 160" role="img" aria-labelledby="mus-div-t mus-div-d"><title id="mus-div-t">Intra-list diversity</title><desc id="mus-div-d">Bar chart: k-NN 0.062; Random 0.987; Popularity 0.784.</desc><g class="row"><text class="nm" x="0" y="16">k-NN</text><rect class="bar bar--accent" data-v="0.0617541698541597" x="0" y="26" width="15.44" height="16"/><text class="val" data-to="0.062" x="23.44" y="39">0.062</text></g><g class="row"><text class="nm" x="0" y="68">Random</text><rect class="bar bar--base" data-v="0.9867752901397115" x="0" y="78" width="246.69" height="16"/><text class="val" data-to="0.987" x="254.69" y="91">0.987</text></g><g class="row"><text class="nm" x="0" y="120">Popularity</text><rect class="bar bar--base" data-v="0.7838037373780508" x="0" y="130" width="195.95" height="16"/><text class="val" data-to="0.784" x="203.95" y="143">0.784</text></g></svg><table class="vh"><caption>Intra-list diversity</caption><thead><tr><th scope="col">Method</th><th scope="col">Value</th></tr></thead><tbody><tr><th scope="row">k-NN</th><td>0.062</td></tr><tr><th scope="row">Random</th><td>0.987</td></tr><tr><th scope="row">Popularity</th><td>0.784</td></tr></tbody></table></div><p class="small panel__note">k = 10, 2,000 queries, 43,998 tracks.</p></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/MusicAI/blob/main/docs/eval_results.json">Source</a></p></article></div>
+</article>
+<article class="proj" id="proj-jan" data-project="jan" data-default="jan-flow" data-rvg>
+<h3 class="proj__t" data-rv><a href="/work/janmitra.html">JanMitra</a></h3>
+<p class="lead" data-rv>A case-management backend for police intelligence reports, where <span class="cite" role="button" tabindex="0" data-panel="jan-flow" aria-controls="evidence" aria-expanded="false"><span class="cite__t">cases nobody acts on climb the chain of command every 48 hours</span></span>, covered by <span class="cite" role="button" tabindex="0" data-panel="jan-tests" aria-controls="evidence" aria-expanded="false"><span class="cite__t">113 tests</span></span>.</p>
+<p class="small stack" data-rv>Django REST Framework &middot; PostgreSQL &middot; Redis &middot; Celery</p>
+<p class="small" data-rv><a href="/work/janmitra.html">Read the case</a></p>
+<div class="proj__slot"></div>
+<div class="proj__store"><article class="panel" id="p-jan-flow" data-panel="jan-flow" data-project="jan" tabindex="-1"><h3 class="panel__title">Escalation chain</h3><p class="panel__cap small">Station-level cases escalate to L3 after 48 h, and L3 to L4 after a further 48 h. L4 has no deadline.</p><div class="panel__art"><svg class="diagram" viewBox="0 0 320 288" role="img" aria-labelledby="jan-flow-t jan-flow-d" data-anim="ladder"><title id="jan-flow-t">Escalation chain from L0 to L4</title><desc id="jan-flow-d">A ladder of five levels, L0 field officer at the bottom, then L1 station officer, L2 inspector, L3 higher authority after 48 hours, and L4 top authority after a further 48 hours. A dot climbs the ladder.</desc><line class="rail" x1="24" y1="20" x2="24" y2="268"/><g class="node lvl"><rect x="48" y="0" width="272" height="40"/><text x="62" y="25">L4 top authority</text><text class="note" x="308" y="25" text-anchor="end">after a further 48 h</text></g><rect class="tick" x="19" y="15" width="10" height="10"/><g class="node lvl"><rect x="48" y="62" width="272" height="40"/><text x="62" y="87">L3 higher authority</text><text class="note" x="308" y="87" text-anchor="end">after 48 h</text></g><rect class="tick" x="19" y="77" width="10" height="10"/><g class="node lvl"><rect x="48" y="124" width="272" height="40"/><text x="62" y="149">L2 inspector</text></g><rect class="tick" x="19" y="139" width="10" height="10"/><g class="node lvl"><rect x="48" y="186" width="272" height="40"/><text x="62" y="211">L1 station officer</text></g><rect class="tick" x="19" y="201" width="10" height="10"/><g class="node lvl"><rect x="48" y="248" width="272" height="40"/><text x="62" y="273">L0 field officer</text></g><rect class="tick" x="19" y="263" width="10" height="10"/><circle class="dot" cx="24" cy="268" r="5"/></svg></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/janmitra/blob/main/README.md#architecture">Source</a></p></article><article class="panel" id="p-jan-tests" data-panel="jan-tests" data-project="jan" tabindex="-1"><h3 class="panel__title">113 tests</h3><p class="panel__cap small">Authentication and device binding, case visibility and media access, escalation, audit logging and notifications.</p><div class="panel__art"><p class="fig">113</p><ul class="plain small"><li>authentication</li><li>reports</li><li>media_storage</li><li>audit</li><li>notifications</li><li>core</li></ul><p class="small">Per-object access control: every endpoint that takes a case, incident or media id applies the same visibility rules as the list queryset.</p></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/janmitra/blob/main/README.md#tests">Source</a></p></article></div>
+</article>
+<article class="proj" id="proj-afs" data-project="afs" data-default="afs-eval" data-rvg>
+<h3 class="proj__t" data-rv><a href="/work/airfieldshield.html">AirfieldShield</a></h3>
+<p class="lead" data-rv>Storm and strong-wind nowcasts for six Indian airfields, from <span class="cite" role="button" tabindex="0" data-panel="afs-arch" aria-controls="evidence" aria-expanded="false"><span class="cite__t">METAR report to alert level</span></span>, where <span class="cite" role="button" tabindex="0" data-panel="afs-eval" aria-controls="evidence" aria-expanded="false"><span class="cite__t">the model beats persistence 0.576 to 0.409 on next-hour thunderstorms</span></span> across <span class="cite" role="button" tabindex="0" data-panel="afs-data" aria-controls="evidence" aria-expanded="false"><span class="cite__t">two held-out years of real data</span></span>, covered by <span class="cite" role="button" tabindex="0" data-panel="afs-tests" aria-controls="evidence" aria-expanded="false"><span class="cite__t">63 tests</span></span>.</p>
+<p class="small stack" data-rv>Python &middot; Django &middot; scikit-learn &middot; Celery</p>
+<p class="small" data-rv><a href="/work/airfieldshield.html">Read the case</a></p>
+<div class="proj__slot"></div>
+<div class="proj__store"><article class="panel" id="p-afs-eval" data-panel="afs-eval" data-project="afs" tabindex="-1"><h3 class="panel__title"><span data-title>Thunderstorm in the next hour</span></h3><p class="panel__cap small">Real METAR from six Indian airfields. Persistence means &ldquo;whatever is happening now keeps happening&rdquo;.</p><div class="panel__art"><div class="segs js-only" role="group" aria-label="Target"><button type="button" class="seg" aria-pressed="true" data-metric="th1">Storm 1 h</button><button type="button" class="seg" aria-pressed="false" data-metric="th3">Storm 3 h</button><button type="button" class="seg" aria-pressed="false" data-metric="w1">Wind 1 h</button><button type="button" class="seg" aria-pressed="false" data-metric="w3">Wind 3 h</button></div><div class="metric is-on" data-metric="th1" data-title="Thunderstorm in the next hour"><p class="metric__sub small">PR-AUC on the held-out 2023–2024 test period. Higher is better.</p><svg class="chart " viewBox="0 0 320 160" role="img" aria-labelledby="afs-th1-t afs-th1-d"><title id="afs-th1-t">Thunderstorm in the next hour</title><desc id="afs-th1-d">Bar chart of PR-AUC: Model 0.576; Persistence 0.409; Climatology 0.070.</desc><g class="row"><text class="nm" x="0" y="16">Model</text><rect class="bar bar--accent" data-v="0.576" x="0" y="26" width="205.71" height="16"/><text class="val" data-to="0.576" x="213.71" y="39">0.576</text></g><g class="row"><text class="nm" x="0" y="68">Persistence</text><rect class="bar bar--base" data-v="0.409" x="0" y="78" width="146.07" height="16"/><text class="val" data-to="0.409" x="154.07" y="91">0.409</text></g><g class="row"><text class="nm" x="0" y="120">Climatology</text><rect class="bar bar--base" data-v="0.07" x="0" y="130" width="25.00" height="16"/><text class="val" data-to="0.070" x="33.00" y="143">0.070</text></g></svg><table class="vh"><caption>Thunderstorm in the next hour</caption><thead><tr><th scope="col">Method</th><th scope="col">PR-AUC</th></tr></thead><tbody><tr><th scope="row">Model</th><td>0.576</td></tr><tr><th scope="row">Persistence</th><td>0.409</td></tr><tr><th scope="row">Climatology</th><td>0.070</td></tr></tbody></table></div><div class="metric" data-metric="th3" data-title="Thunderstorm in the next 3 hours"><p class="metric__sub small">PR-AUC on the held-out 2023–2024 test period. Higher is better.</p><svg class="chart " viewBox="0 0 320 160" role="img" aria-labelledby="afs-th3-t afs-th3-d"><title id="afs-th3-t">Thunderstorm in the next 3 hours</title><desc id="afs-th3-d">Bar chart of PR-AUC: Model 0.480; Persistence 0.291; Climatology 0.119.</desc><g class="row"><text class="nm" x="0" y="16">Model</text><rect class="bar bar--accent" data-v="0.48" x="0" y="26" width="171.43" height="16"/><text class="val" data-to="0.480" x="179.43" y="39">0.480</text></g><g class="row"><text class="nm" x="0" y="68">Persistence</text><rect class="bar bar--base" data-v="0.291" x="0" y="78" width="103.93" height="16"/><text class="val" data-to="0.291" x="111.93" y="91">0.291</text></g><g class="row"><text class="nm" x="0" y="120">Climatology</text><rect class="bar bar--base" data-v="0.119" x="0" y="130" width="42.50" height="16"/><text class="val" data-to="0.119" x="50.50" y="143">0.119</text></g></svg><table class="vh"><caption>Thunderstorm in the next 3 hours</caption><thead><tr><th scope="col">Method</th><th scope="col">PR-AUC</th></tr></thead><tbody><tr><th scope="row">Model</th><td>0.480</td></tr><tr><th scope="row">Persistence</th><td>0.291</td></tr><tr><th scope="row">Climatology</th><td>0.119</td></tr></tbody></table></div><div class="metric" data-metric="w1" data-title="Wind of 25 kt or more in the next hour"><p class="metric__sub small">PR-AUC on the held-out 2023–2024 test period. Higher is better. The 95% interval for the model&#x27;s 0.337 is wide: 0.118 to 0.478.</p><svg class="chart " viewBox="0 0 320 160" role="img" aria-labelledby="afs-w1-t afs-w1-d"><title id="afs-w1-t">Wind of 25 kt or more in the next hour</title><desc id="afs-w1-d">Bar chart of PR-AUC: Model 0.337; Persistence 0.203; Climatology 0.008.</desc><g class="row"><text class="nm" x="0" y="16">Model</text><rect class="bar bar--accent" data-v="0.337" x="0" y="26" width="120.36" height="16"/><text class="val" data-to="0.337" x="128.36" y="39">0.337</text></g><g class="row"><text class="nm" x="0" y="68">Persistence</text><rect class="bar bar--base" data-v="0.203" x="0" y="78" width="72.50" height="16"/><text class="val" data-to="0.203" x="80.50" y="91">0.203</text></g><g class="row"><text class="nm" x="0" y="120">Climatology</text><rect class="bar bar--base" data-v="0.008" x="0" y="130" width="2.86" height="16"/><text class="val" data-to="0.008" x="10.86" y="143">0.008</text></g></svg><table class="vh"><caption>Wind of 25 kt or more in the next hour</caption><thead><tr><th scope="col">Method</th><th scope="col">PR-AUC</th></tr></thead><tbody><tr><th scope="row">Model</th><td>0.337</td></tr><tr><th scope="row">Persistence</th><td>0.203</td></tr><tr><th scope="row">Climatology</th><td>0.008</td></tr></tbody></table></div><div class="metric" data-metric="w3" data-title="Wind of 25 kt or more in the next 3 hours"><p class="metric__sub small">PR-AUC on the held-out 2023–2024 test period. Higher is better. The 95% interval for the model&#x27;s 0.218 is 0.104 to 0.300.</p><svg class="chart " viewBox="0 0 320 160" role="img" aria-labelledby="afs-w3-t afs-w3-d"><title id="afs-w3-t">Wind of 25 kt or more in the next 3 hours</title><desc id="afs-w3-d">Bar chart of PR-AUC: Model 0.218; Persistence 0.142; Climatology 0.018.</desc><g class="row"><text class="nm" x="0" y="16">Model</text><rect class="bar bar--accent" data-v="0.218" x="0" y="26" width="77.86" height="16"/><text class="val" data-to="0.218" x="85.86" y="39">0.218</text></g><g class="row"><text class="nm" x="0" y="68">Persistence</text><rect class="bar bar--base" data-v="0.142" x="0" y="78" width="50.71" height="16"/><text class="val" data-to="0.142" x="58.71" y="91">0.142</text></g><g class="row"><text class="nm" x="0" y="120">Climatology</text><rect class="bar bar--base" data-v="0.018" x="0" y="130" width="6.43" height="16"/><text class="val" data-to="0.018" x="14.43" y="143">0.018</text></g></svg><table class="vh"><caption>Wind of 25 kt or more in the next 3 hours</caption><thead><tr><th scope="col">Method</th><th scope="col">PR-AUC</th></tr></thead><tbody><tr><th scope="row">Model</th><td>0.218</td></tr><tr><th scope="row">Persistence</th><td>0.142</td></tr><tr><th scope="row">Climatology</th><td>0.018</td></tr></tbody></table></div></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/AIrfieldShield/blob/main/docs/evaluation_report.md">Source</a></p></article><article class="panel" id="p-afs-data" data-panel="afs-data" data-project="afs" tabindex="-1"><h3 class="panel__title">Real METAR, split by time</h3><p class="panel__cap small">470,057 station-hours from six Indian airfields, 2016&ndash;2024. No synthetic data is used in training or evaluation.</p><div class="panel__art"><svg class="diagram diagram--flat" viewBox="0 0 320 100" role="img" aria-labelledby="afs-data-t afs-data-d"><title id="afs-data-t">Chronological split</title><desc id="afs-data-d">A timeline from 2016 to 2024: training data before 2022, validation in 2022, and the held-out test period in 2023 and 2024.</desc><rect class="seg seg--train" x="16" y="36" width="192" height="28"/><rect class="seg seg--val" x="208" y="36" width="32" height="28"/><rect class="seg seg--test" x="240" y="36" width="64" height="28"/><text class="ongr" x="26" y="55">Train 2016–2021</text><text x="224" y="22" text-anchor="middle">Validation 2022</text><text x="272" y="88" text-anchor="middle">Test 2023–2024</text></svg><p class="small">Rows whose label window crosses a boundary are purged. The test years are used once, for the report.</p></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/AIrfieldShield/blob/main/docs/evaluation_report.md#1-data">Source</a></p></article><article class="panel" id="p-afs-arch" data-panel="afs-arch" data-project="afs" tabindex="-1"><h3 class="panel__title">From METAR to alert</h3><p class="panel__cap small">The same feature code runs in training and serving. Alert thresholds are chosen on validation data.</p><div class="panel__art"><svg class="diagram" viewBox="0 0 320 404" role="img" aria-labelledby="afs-arch-t afs-arch-d" data-anim="arch"><title id="afs-arch-t">From METAR report to alert level</title><desc id="afs-arch-d">Flow from top to bottom: METAR reports from six airfields become hourly features, which a gradient-boosted tree model scores; the scores are calibrated with isotonic regression, compared with alert thresholds, and mapped to a Green, Yellow, Orange or Red alert.</desc><path class="edge" data-s="0" pathLength="1" d="M160 40V72M155 66L160 72L165 66"/><path class="edge" data-s="1" pathLength="1" d="M160 112V144M155 138L160 144L165 138"/><path class="edge" data-s="2" pathLength="1" d="M160 184V216M155 210L160 216L165 210"/><path class="edge" data-s="3" pathLength="1" d="M160 256V288M155 282L160 288L165 282"/><path class="edge" data-s="4" pathLength="1" d="M52 328V360M47 354L52 360L57 354"/><path class="edge" data-s="4" pathLength="1" d="M124 328V360M119 354L124 360L129 354"/><path class="edge" data-s="4" pathLength="1" d="M196 328V360M191 354L196 360L201 354"/><path class="edge" data-s="4" pathLength="1" d="M268 328V360M263 354L268 360L273 354"/><g class="node " data-s="0"><rect x="60" y="0" width="200" height="40"/><text x="160.0" y="25.0" text-anchor="middle">METAR reports, six airfields</text></g><g class="node " data-s="1"><rect x="60" y="72" width="200" height="40"/><text x="160.0" y="97.0" text-anchor="middle">Hourly features</text></g><g class="node " data-s="2"><rect x="60" y="144" width="200" height="40"/><text x="160.0" y="169.0" text-anchor="middle">Gradient-boosted trees</text></g><g class="node " data-s="3"><rect x="60" y="216" width="200" height="40"/><text x="160.0" y="241.0" text-anchor="middle">Isotonic calibration</text></g><g class="node " data-s="4"><rect x="20" y="288" width="280" height="40"/><text x="160.0" y="313.0" text-anchor="middle">Alert thresholds</text></g><g class="node" data-s="5"><rect x="20" y="360" width="64" height="40"/><rect class="lvl-bar lvl-ok" x="20" y="396" width="64" height="4"/><text x="52" y="385" text-anchor="middle">Green</text></g><g class="node" data-s="5"><rect x="92" y="360" width="64" height="40"/><rect class="lvl-bar lvl-caution" x="92" y="396" width="64" height="4"/><text x="124" y="385" text-anchor="middle">Yellow</text></g><g class="node" data-s="5"><rect x="164" y="360" width="64" height="40"/><rect class="lvl-bar lvl-warn" x="164" y="396" width="64" height="4"/><text x="196" y="385" text-anchor="middle">Orange</text></g><g class="node" data-s="5"><rect x="236" y="360" width="64" height="40"/><rect class="lvl-bar lvl-bad" x="236" y="396" width="64" height="4"/><text x="268" y="385" text-anchor="middle">Red</text></g></svg></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/AIrfieldShield/blob/main/README.md#system">Source</a></p></article><article class="panel" id="p-afs-tests" data-panel="afs-tests" data-project="afs" tabindex="-1"><h3 class="panel__title">63 tests</h3><p class="panel__cap small">Features, metrics and training, the prediction service, alerts and the API. They run on SQLite, with no Redis.</p><div class="panel__art"><p class="fig">63</p><ul class="plain small"><li>alerts 21</li><li>features 15</li><li>metrics and training 10</li><li>API 9</li><li>prediction service 8</li></ul><pre><code>pytest</code></pre></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/AIrfieldShield/tree/main/tests">Source</a></p></article></div>
+</article>
+</div>
+<aside id="evidence" aria-label="Evidence" aria-live="polite"><div class="stage"></div></aside>
+</div>
+</section>
+<section class="sec before" aria-labelledby="h-before">
+<div class="wrap grid" data-rvg>
+<div class="before__txt">
+<h2 id="h-before" data-rv>Before this</h2>
+<div class="role" data-rv>
+<h3 class="h3s">2Pointers</h3>
+<p class="small meta">Full Stack Developer, Jun 2025 &ndash; Feb 2026</p>
+<p>I built the REST APIs and data pipelines behind an internal analytics tool the ops team used daily, and cut its <span class="cite" role="button" tabindex="0" data-panel="tp-latency" aria-controls="evidence" aria-expanded="false"><span class="cite__t">average response time from about 400 ms to 300 ms</span></span>.</p>
+</div>
+<div class="role" data-rv>
+<h3 class="h3s">LJ University</h3>
+<p class="small meta">B.E. Computer Engineering, 2022&ndash;2026</p>
+<p>I ran the technical club, with workshops and hackathons for 200+ students, and my team made the top 10 of 50+ teams at a 36-hour hackathon.</p>
+</div>
+</div>
+<div class="before__fig" data-rv>
+<p class="h2fig"><span class="cite" role="button" tabindex="0" data-panel="tp-latency" aria-controls="evidence" aria-expanded="false"><span class="cite__t">400 &rarr; 300 ms</span></span></p>
+<p class="small">average response time, 2Pointers</p>
+<div class="proj__store"><article class="panel" id="p-tp-latency" data-panel="tp-latency" data-project="tp" tabindex="-1"><h3 class="panel__title">Response time</h3><p class="panel__cap small">Rewrote slow queries; the average went from about 400 ms to 300 ms.</p><div class="panel__art"><p class="small">Internal tool, so there is no public source.</p></div><p class="panel__src small">Source: not public</p></article></div>
+</div>
+</div>
+</section>
+<section id="about" class="sec about" aria-labelledby="h-about">
+<div class="wrap grid" data-rvg>
+<div class="about__txt">
+<h2 id="h-about" data-rv>Why a master&rsquo;s</h2>
+<!-- TODO: Dhruvin to confirm -->
+<p class="lead about__p" data-rv>I like problems where the model is the easy part and the system around it is the hard part: evidence, permissions, failure. I want to go deeper into the theory than I can on my own.</p>
+</div>
+<ul class="about__cv plain" data-rv>
+<li><a class="lead" href="/Dhruvin_Dave_ML_CV.pdf">ML CV</a></li>
+<li><a class="lead" href="/Dhruvin_FullStack_CV.pdf">Full-stack CV</a></li>
+</ul>
+</div>
+</section>
+</main>
+<footer class="foot wrap" id="contact">
+<h2 class="vh">Contact</h2>
+<p class="foot__mail display"><a href="mailto:davedhruvin307@gmail.com">davedhruvin307@gmail.com</a></p>
+<div class="foot__row">
+<ul class="foot__links">
+<li class="foot__opt"><a href="/#work">Work</a></li>
+<li class="foot__opt"><a href="/#about">About</a></li>
+<li><a href="https://github.com/dhruvindave007">GitHub</a></li>
+<li><a href="https://www.linkedin.com/in/mrdhruvindave">LinkedIn</a></li>
+<li><a href="/Dhruvin_Dave_ML_CV.pdf">ML CV (PDF)</a></li>
+<li><a href="/Dhruvin_FullStack_CV.pdf">Full-stack CV (PDF)</a></li>
+</ul>
+<div class="theme" role="group" aria-label="Theme">
+<button type="button" class="tbtn" data-theme-set="light" aria-pressed="false">Light</button>
+<button type="button" class="tbtn" data-theme-set="dark" aria-pressed="false">Dark</button>
+<button type="button" class="tbtn" data-theme-set="system" aria-pressed="true">System</button>
+</div>
+</div>
+<p class="small foot__fine">&copy; 2026 Dhruvin Dave. Every claim on this site links to its source.</p>
+</footer>
+<dialog class="sheet" id="sheet" aria-label="Evidence">
+<div class="sheet__bar"><button type="button" class="sheet__close">Close</button></div>
+<div class="sheet__body"></div>
+</dialog>
 </body>
 </html>
