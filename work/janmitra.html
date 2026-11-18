@@ -6,8 +6,7 @@
 <title>JanMitra · Dhruvin Dave</title>
 <meta name="description" content="JanMitra: a Django REST backend for police report and case management.">
 <link rel="canonical" href="https://dhruvindave.live/work/janmitra.html">
-<meta name="theme-color" content="#F4F3EF" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#121212" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#0b0b0c">
 <meta property="og:type" content="website">
 <meta property="og:title" content="JanMitra · Dhruvin Dave">
 <meta property="og:description" content="JanMitra: a Django REST backend for police report and case management.">
@@ -21,7 +20,7 @@
 <meta name="twitter:image" content="https://dhruvindave.live/assets/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>(function(d){var r=d.documentElement;r.className+=' js';try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')r.setAttribute('data-theme',t)}catch(e){}setTimeout(function(){if(!window.__ran)r.classList.remove('js')},2000)})(document)</script>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500&display=swap">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap">
 <link rel="stylesheet" href="/styles.css">
 <script src="https://cdn.jsdelivr.net/npm/motion@10.18.0/dist/motion.min.js" defer></script>
 <script src="/main.js" defer></script>
@@ -35,7 +34,7 @@
 <ul class="nav__links">
 <li class="nav__opt"><a href="/#work">Work</a></li>
 <li class="nav__opt"><a href="/#about">About</a></li>
-<li class="nav__opt"><a href="/Dhruvin_Dave_ML_CV.pdf">CV</a></li>
+<li class="nav__opt"><a href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV</a></li>
 <li><a class="btn" href="mailto:davedhruvin307@gmail.com">Email</a></li>
 </ul>
 </nav>
@@ -52,7 +51,7 @@
 </div>
 <section class="case__evid" aria-labelledby="h-ev">
 <h2 id="h-ev">Evidence</h2>
-<p class="case__intro">Each figure is a panel from the home page, set at full width. Every one links to its source file.</p>
+<p class="case__intro">Every figure links to the file it was drawn from.</p>
 <div class="evgrid"><div class="evcell"><article class="panel" id="p-jan-flow" data-panel="jan-flow" data-project="jan" tabindex="-1"><h3 class="panel__title">Escalation chain</h3><p class="panel__cap small">Station-level cases escalate to L3 after 48 h, and L3 to L4 after a further 48 h. L4 has no deadline.</p><div class="panel__art"><svg class="diagram" viewBox="0 0 320 288" role="img" aria-labelledby="jan-flow-t jan-flow-d" data-anim="ladder"><title id="jan-flow-t">Escalation chain from L0 to L4</title><desc id="jan-flow-d">A ladder of five levels, L0 field officer at the bottom, then L1 station officer, L2 inspector, L3 higher authority after 48 hours, and L4 top authority after a further 48 hours. A dot climbs the ladder.</desc><line class="rail" x1="24" y1="20" x2="24" y2="268"/><g class="node lvl"><rect x="48" y="0" width="272" height="40"/><text x="62" y="25">L4 top authority</text><text class="note" x="308" y="25" text-anchor="end">after a further 48 h</text></g><rect class="tick" x="19" y="15" width="10" height="10"/><g class="node lvl"><rect x="48" y="62" width="272" height="40"/><text x="62" y="87">L3 higher authority</text><text class="note" x="308" y="87" text-anchor="end">after 48 h</text></g><rect class="tick" x="19" y="77" width="10" height="10"/><g class="node lvl"><rect x="48" y="124" width="272" height="40"/><text x="62" y="149">L2 inspector</text></g><rect class="tick" x="19" y="139" width="10" height="10"/><g class="node lvl"><rect x="48" y="186" width="272" height="40"/><text x="62" y="211">L1 station officer</text></g><rect class="tick" x="19" y="201" width="10" height="10"/><g class="node lvl"><rect x="48" y="248" width="272" height="40"/><text x="62" y="273">L0 field officer</text></g><rect class="tick" x="19" y="263" width="10" height="10"/><circle class="dot" cx="24" cy="268" r="5"/></svg></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/janmitra/blob/main/README.md#architecture">Source</a></p></article></div><div class="evcell"><article class="panel" id="p-jan-tests" data-panel="jan-tests" data-project="jan" tabindex="-1"><h3 class="panel__title">113 tests</h3><p class="panel__cap small">Authentication and device binding, case visibility and media access, escalation, audit logging and notifications.</p><div class="panel__art"><p class="fig">113</p><ul class="plain small"><li>authentication</li><li>reports</li><li>media_storage</li><li>audit</li><li>notifications</li><li>core</li></ul><p class="small">Per-object access control: every endpoint that takes a case, incident or media id applies the same visibility rules as the list queryset.</p></div><p class="panel__src small"><a href="https://github.com/dhruvindave007/janmitra/blob/main/README.md#tests">Source</a></p></article></div></div>
 </section>
 <div class="case__txt">
@@ -70,8 +69,8 @@
 <li class="foot__opt"><a href="/#about">About</a></li>
 <li><a href="https://github.com/dhruvindave007">GitHub</a></li>
 <li><a href="https://www.linkedin.com/in/mrdhruvindave">LinkedIn</a></li>
-<li><a href="/Dhruvin_Dave_ML_CV.pdf">ML CV (PDF)</a></li>
-<li><a href="/Dhruvin_FullStack_CV.pdf">Full-stack CV (PDF)</a></li>
+<li><a href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV, AI engineer</a></li>
+<li><a href="/Dhruvin_Dave_Backend_Engineer_CV.pdf">CV, backend</a></li>
 </ul>
 <div class="theme" role="group" aria-label="Theme">
 <button type="button" class="tbtn" data-theme-set="light" aria-pressed="false">Light</button>

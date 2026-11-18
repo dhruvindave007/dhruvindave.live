@@ -625,3 +625,33 @@ table.vh { }
 .log .is-cited { background: var(--surface); }
 .log .is-cited .tg { font-weight: 500; }
 .log .is-dis.is-cited .tx { text-decoration: underline wavy var(--warn); text-underline-offset: 3px; }
+
+
+/* ---- 2026-11 restyle: case pages share the home page's dark theme and Geist ---- */
+:root, :root[data-theme="light"], :root[data-theme="dark"] {
+  --ground: #0b0b0c;
+  --surface: #121214;
+  --ink: #ededee;
+  --ink-2: #a1a1a8;
+  --accent: #6f9dff;
+  --accent-ink: #0b0b0c;
+  --ok: #6cc070;
+  --caution: #e2c24a;
+  --warn: #f0883e;
+  --bad: #ff6b60;
+  --serif: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --sans: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --t-display: clamp(2.5rem, 1.2rem + 4.6vw, 4.5rem);
+  color-scheme: dark;
+}
+body { -webkit-font-smoothing: antialiased; }
+.display, h1, h2 { font-family: var(--sans); font-weight: 600; letter-spacing: -0.03em; }
+.panel__title { font-family: var(--sans); font-weight: 600; letter-spacing: -0.01em; }
+.case__h1 { font-size: var(--t-display); }
+.theme { display: none; }
+code, pre { font-family: "Geist Mono", ui-monospace, Consolas, monospace; }
+.evcell .panel, .proj__store .panel, .proj__slot .panel { border-radius: 14px; box-shadow: inset 0 0 0 1px #232327; }
+.btn { border-radius: 10px; }
+.case__txt h2, .case__evid h2 { font-size: clamp(1.5rem, 1.1rem + 1vw, 2rem); margin-bottom: 16px; }
+.case__txt section, .case__evid { margin-top: 96px; }
+.case__top { padding-bottom: 0; }

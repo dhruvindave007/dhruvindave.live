@@ -1,11 +1,11 @@
-# OS files
-.DS_Store
-Thumbs.db
-desktop.ini
 
 # IDE
-.vscode/
-.idea/
-
 # Misc
+# OS files
 *.log
+.DS_Store
+.idea/
+.taste-skill/
+.vscode/
+Thumbs.db
+desktop.ini
