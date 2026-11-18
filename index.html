@@ -3,98 +3,181 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dhruvin Dave · Applied AI Engineer</title>
-<meta name="description" content="Dhruvin Dave, Applied AI Engineer in Ahmedabad. End-to-end AI systems: a security digital twin, airfield storm nowcasting, and open-source contributions to OpenSRE and LiteLLM.">
+<title>Dhruvin Dave</title>
+<meta name="description" content="Dhruvin Dave is an applied AI engineer in Ahmedabad, India. At Intuitive.ai he designed and built Office Vision Twin, a security digital twin of an office.">
 <link rel="canonical" href="https://dhruvindave.live/">
-<meta name="theme-color" content="#0a0a0b">
-<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#FBFAF7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1B1A19" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Dhruvin Dave · Applied AI Engineer">
-<meta property="og:description" content="Dhruvin Dave, Applied AI Engineer in Ahmedabad. End-to-end AI systems: a security digital twin, airfield storm nowcasting, and open-source contributions to OpenSRE and LiteLLM.">
+<meta property="og:title" content="Dhruvin Dave">
+<meta property="og:description" content="Dhruvin Dave is an applied AI engineer in Ahmedabad, India. At Intuitive.ai he designed and built Office Vision Twin, a security digital twin of an office.">
 <meta property="og:url" content="https://dhruvindave.live/">
 <meta property="og:image" content="https://dhruvindave.live/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Dhruvin Dave · Applied AI Engineer">
-<meta name="twitter:description" content="Dhruvin Dave, Applied AI Engineer in Ahmedabad. End-to-end AI systems: a security digital twin, airfield storm nowcasting, and open-source contributions to OpenSRE and LiteLLM.">
+<meta name="twitter:title" content="Dhruvin Dave">
+<meta name="twitter:description" content="Dhruvin Dave is an applied AI engineer in Ahmedabad, India. At Intuitive.ai he designed and built Office Vision Twin, a security digital twin of an office.">
 <meta name="twitter:image" content="https://dhruvindave.live/assets/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
-<script>document.documentElement.classList.add('js')</script>
+<script>(function(r){r.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')r.setAttribute('data-theme',t)}catch(e){}})(document.documentElement)</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400..600&family=Newsreader:ital,opsz,wght@0,6..72,400;1,6..72,400&display=swap">
 <link rel="stylesheet" href="/site.css">
-<link rel="stylesheet" href="/twin.css">
 <script src="/site.js" defer></script>
-<script src="/twin.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Dhruvin Dave","jobTitle":"Applied AI Engineer","url":"https://dhruvindave.live/","email":"davedhruvin307@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ahmedabad","addressCountry":"IN"},"sameAs":["https://github.com/dhruvindave007","https://www.linkedin.com/in/mrdhruvindave"]}</script>
 </head>
 <body>
-<a class="skip" href="#work">Skip to the work</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- floor-plan linework, reused by the hero and contact backdrops -->
-<svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
-  <symbol id="fp-lines" viewBox="0 0 640 400">
-    <g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke">
-      <path d="M20 20H500V200H620V380H20V315M20 285V20"/>
-      <path d="M200 20V95M200 125V285M200 315V380"/>
-      <path d="M20 210H200"/>
-      <path d="M500 200V275M500 305V380"/>
-      <path d="M220 200H480M350 40V180M350 220V360" stroke-dasharray="2 6"/>
-      <rect x="240" y="60" width="70" height="36"/><rect x="390" y="60" width="70" height="36"/>
-      <rect x="240" y="290" width="70" height="36"/><rect x="390" y="290" width="70" height="36"/>
-      <rect x="70" y="80" width="80" height="50" rx="4"/>
-      <rect x="540" y="230" width="20" height="120"/><rect x="580" y="230" width="20" height="120"/>
-      <rect x="196" y="318" width="6" height="10"/><rect x="503" y="308" width="6" height="10"/>
-      <circle cx="34" cy="226" r="3"/><circle cx="214" cy="318" r="3"/><circle cx="214" cy="34" r="3"/>
-      <circle cx="486" cy="366" r="3"/><circle cx="34" cy="34" r="3"/><circle cx="514" cy="214" r="3"/>
-      <path d="M34 226l40 18M34 226l18 40M214 318l40-10M214 318l30 26M214 34l40 10M214 34l12 40M486 366l-40-6M486 366l-10-40M34 34l40 12M34 34l12 40M514 214l40 10M514 214l10 40" stroke-dasharray="1 4"/>
-    </g>
-  </symbol>
-</svg>
-
-<header class="bar">
-  <div class="bar__in wrap">
-    <a class="bar__name" href="/">Dhruvin Dave</a>
-    <nav class="bar__nav" aria-label="Main">
-      <a href="#work">Work</a>
-      <a class="hide-sm" href="#shipped">Shipped</a>
-      <a class="hide-sm" href="#experience">Experience</a>
-      <a href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV</a>
-      <a class="bar__gh hide-sm" href="https://github.com/dhruvindave007" aria-label="GitHub">
-        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
-      </a>
-    </nav>
-  </div>
+<header class="top wrap">
+  <h1 class="name in" style="--i:0">Dhruvin Dave</h1>
+  <nav class="nav" aria-label="Primary">
+    <a href="#work">Work</a>
+    <a href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV</a>
+    <a href="mailto:davedhruvin307@gmail.com">Email</a>
+  </nav>
 </header>
 
 <main id="main">
-  <section class="hero" aria-labelledby="h-hero">
-    <div class="hero__amb" aria-hidden="true">
-      <div class="hero__plan">
-        <svg class="hero__svg" viewBox="0 0 640 400" width="1024" height="640" focusable="false"><use href="#fp-lines"/></svg>
-        <i class="hero__dot hero__dot--a"></i>
-        <i class="hero__dot hero__dot--b"></i>
-        <i class="hero__dot hero__dot--c"></i>
-      </div>
+  <section class="intro wrap" aria-label="Introduction">
+    <p class="lede in" style="--i:1">I'm an applied AI engineer. At <a href="https://intuitive.ai">Intuitive.ai</a> I designed and built <em>Office Vision Twin</em>, a security digital twin of an office.</p>
+    <p class="intro-p in" style="--i:2">Right now I'm an Applied AI Engineering Intern there. Before that I worked on a production Django app at <b>Catalyst Partners</b> and built a Django course platform at <b>Two Pointers</b>. I've contributed to <b>OpenSRE</b> and <b>LiteLLM</b>. I live in Ahmedabad, India, and have just finished a B.E. in Computer Engineering at LJ University.</p>
+    <p class="links in" style="--i:3">
+      <a href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV</a>
+      <a href="https://github.com/dhruvindave007">GitHub</a>
+      <a href="https://www.linkedin.com/in/mrdhruvindave">LinkedIn</a>
+      <a href="mailto:davedhruvin307@gmail.com">davedhruvin307@gmail.com</a>
+    </p>
+  </section>
+
+  <section id="work" class="sec wrap" aria-labelledby="h-work">
+    <h2 id="h-work" class="h2">Work</h2>
+
+    <article class="feature" aria-labelledby="h-ovt">
+      <h3 id="h-ovt" class="feature-title">Office Vision Twin</h3>
+      <p class="meta">At Intuitive.ai, 2026</p>
+      <figure class="ovt-media breakout">
+        <a class="ovt-shot" href="/assets/ovt-dashboard-1600.webp" aria-label="Open the full-size dashboard screenshot">
+          <picture>
+            <source media="(max-width: 639.98px)" srcset="/assets/ovt-dashboard-phone-360.webp 360w" sizes="100vw" width="360" height="576">
+            <img src="/assets/ovt-dashboard-800.webp" srcset="/assets/ovt-dashboard-800.webp 800w, /assets/ovt-dashboard-1600.webp 1600w" sizes="(min-width:900px) min(960px, 100vw - 48px), 100vw" width="1600" height="900" loading="lazy" decoding="async" alt="Office Vision Twin dashboard showing live camera feeds with detection boxes, the incident queue and the office floor plan.">
+          </picture>
+        </a>
+      </figure>
+      <p class="replay-cap" hidden>This runs the Office Vision Twin rules in your browser on a simulated office. Badge in, walk people through a door or pick a scenario, and watch a rule raise an incident.</p>
+      <p class="desc">A security digital twin of an office. Six CCTV cameras and badge readers feed a live floor plan, and rules flag tailgating, unauthorised entry and after-hours access. Detection runs locally with YOLO on OpenVINO, with no facial recognition. Amazon Bedrock drafts each incident write-up and a second pass checks it.</p>
+      <p class="facts">The best model passed every check on <b>22 of 27</b> eval cases, and the system is covered by <b>313 backend</b> and <b>33 dashboard</b> tests. Built with FastAPI and React.</p>
+      <p class="actions"><a href="/work/office-vision-twin.html">Read the case study <span class="arr" aria-hidden="true">→</span></a></p>
+    </article>
+
+    <ul class="rows projects" role="list">
+      <li><a class="row-link" href="/work/airfieldshield.html" data-peek="/assets/afs-pr-curves-800.webp">
+        <span class="row-title"><span class="t">AirfieldShield</span> <span class="arr" aria-hidden="true">→</span></span>
+        <span class="row-desc">Thunderstorm and strong-wind nowcasts for six Indian airfields, trained on <b>470,057</b> station-hours of METAR data. Next-hour thunderstorm PR-AUC is <b>0.576</b> on held-out 2023–24, against <b>0.409</b> for persistence.</span>
+      </a></li>
+      <li><a class="row-link" href="/work/musicai.html" data-peek="/assets/musicai-demo-poster.webp">
+        <span class="row-title"><span class="t">MusicAI</span> <span class="arr" aria-hidden="true">→</span></span>
+        <span class="row-desc">A music recommender over <b>43,998</b> tracks. Top-10 artist hit-rate is <b>0.565</b>, against <b>0.165</b> for random picks. You can try it in your browser on the case page.</span>
+      </a></li>
+      <li><a class="row-link" href="/work/janmitra.html">
+        <span class="row-title"><span class="t">JanMitra</span> <span class="arr" aria-hidden="true">→</span></span>
+        <span class="row-desc">Case management for police reports in Django REST, with <b>48-hour</b> escalation through Celery beat. I fixed an access hole and a login lockout; <b>113</b> tests.</span>
+      </a></li>
+      <li><a class="row-link" href="/work/groundcheck.html">
+        <span class="row-title"><span class="t">groundcheck</span> <span class="arr" aria-hidden="true">→</span></span>
+        <span class="row-desc">An open benchmark of <b>123</b> scenarios that tests whether LLM agents point to the right log lines.</span>
+      </a></li>
+    </ul>
+  </section>
+
+  <section id="highlights" class="sec wrap" aria-labelledby="h-hl">
+    <h2 id="h-hl" class="h2">Highlights</h2>
+    <ul class="hl" role="list">
+      <li class="hl-row">
+        <p class="hl-num">4th</p>
+        <p class="hl-key">of about 3,000 teams at the IBM Bob 2.0 Hackathon</p>
+        <p class="hl-detail">I led team System DNA at the lablab.ai event in September 2026, which had about 10,000 participants.</p>
+      </li>
+      <li class="hl-row">
+        <p class="hl-num"><span class="nw">60–80&nbsp;<span class="u">s</span>&nbsp;<span class="num-arrow">→</span></span> <span class="nw">~10&nbsp;<span class="u">s</span></span></p>
+        <p class="hl-key">for a SQL Server report in a production Django app at Catalyst Partners</p>
+        <p class="hl-detail">Identical output, validated on 5,921 records.</p>
+      </li>
+      <li class="hl-row">
+        <p class="hl-num"><span class="nw">95–121&nbsp;<span class="u">ms</span></span></p>
+        <p class="hl-key">p95 from camera frame to digital twin in Office Vision Twin</p>
+        <p class="hl-detail">With six cameras at 5 fps each and detection running locally.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="open-source" class="sec wrap" aria-labelledby="h-os">
+    <h2 id="h-os" class="h2">Open source</h2>
+    <p class="sec-p">I've contributed to two open-source projects, OpenSRE and LiteLLM.</p>
+
+    <div class="group">
+      <h3 class="group-label"><a href="https://github.com/Tracer-Cloud/opensre">OpenSRE</a></h3>
+      <p class="group-repo">Tracer-Cloud/opensre</p>
+      <ul class="rows" role="list">
+        <li><a class="pr-row" href="https://github.com/Tracer-Cloud/opensre/pull/6840"><span class="pr-desc">Jira: enhanced JQL search with pagination</span><span class="pr-num">#6840</span></a></li>
+        <li><a class="pr-row" href="https://github.com/Tracer-Cloud/opensre/pull/6969"><span class="pr-desc">Bitbucket: repository-scoped code search</span><span class="pr-num">#6969</span></a></li>
+        <li><a class="pr-row" href="https://github.com/Tracer-Cloud/opensre/pull/6970"><span class="pr-desc">Vercel: runtime logs and error reporting</span><span class="pr-num">#6970</span></a></li>
+      </ul>
     </div>
-    <div class="hero__in">
-      <a class="pill hero__i" href="/work/office-vision-twin.html"><span class="pill__dot" aria-hidden="true"></span>Now · Applied AI Engineering Intern at Intuitive.ai <span aria-hidden="true">→</span></a>
-      <h1 id="h-hero" class="hero__h hero__i">AI systems, built end to end.</h1>
-      <p class="hero__sub hero__i">I'm Dhruvin Dave, an Applied AI Engineer in Ahmedabad. I build the whole system: computer vision, forecasting and language models, plus the backend, dashboard and tests around them.</p>
-      <div class="hero__act hero__i">
-        <a class="btn btn--solid" href="/Dhruvin_Dave_AI_Engineer_CV.pdf">Download CV</a>
-        <a class="btn btn--ghost" href="#work">See the work</a>
-      </div>
-      <ul class="proof hero__i">
-        <li><a href="#experience">4th of ~3,000 teams · IBM Bob 2.0 Hackathon, team lead</a></li>
-        <li><a href="#shipped">Open-source contributor · OpenSRE, LiteLLM</a></li>
-        <li><a href="#shipped">Production report · 60-80 s to ~10 s</a></li>
+
+    <div class="group">
+      <h3 class="group-label"><a href="https://github.com/BerriAI/litellm">LiteLLM</a></h3>
+      <p class="group-repo">BerriAI/litellm</p>
+      <ul class="rows" role="list">
+        <li><a class="pr-row" href="https://github.com/BerriAI/litellm/pull/48732"><span class="pr-desc">Keep the system role for o3, <span class="nw">o3-mini</span>, <span class="nw">o4-mini</span> and Azure</span><span class="pr-num">#48732</span></a></li>
       </ul>
     </div>
   </section>
 
+  <section id="experience" class="sec wrap" aria-labelledby="h-exp">
+    <h2 id="h-exp" class="h2">Experience</h2>
+    <ul class="rows" role="list">
+      <li class="exp-row">
+        <p class="exp-head"><span class="exp-org">Intuitive.ai</span><span class="exp-date">Aug 2026 – now</span></p>
+        <p class="exp-role">Applied AI Engineering Intern</p>
+        <p class="exp-txt">Detection, incident write-ups and the operator dashboard, end to end.</p>
+      </li>
+      <li class="exp-row">
+        <p class="exp-head"><span class="exp-org">Catalyst Partners</span><span class="exp-date">Jun – Jul 2026</span></p>
+        <p class="exp-role">Python Developer Intern</p>
+        <p class="exp-txt">Sped up a SQL Server report in a production Django app with identical output, and built scrapers in Python and Selenium.</p>
+      </li>
+      <li class="exp-row">
+        <p class="exp-head"><span class="exp-org">Two Pointers Pvt. Ltd.</span><span class="exp-date">Jun 2025 – Feb 2026</span></p>
+        <p class="exp-role">Full Stack Web Development Intern</p>
+        <p class="exp-txt">Built a Django online-course site with authentication, roles and dynamic certificates, plus Python automation.</p>
+      </li>
+      <li class="exp-row">
+        <p class="exp-head"><span class="exp-org">LJ University</span><span class="exp-date">2022 – 2026</span></p>
+        <p class="exp-role">B.E. Computer Engineering</p>
+        <p class="exp-txt">Led the university technical club of 200+ students.</p>
+      </li>
+    </ul>
+  </section>
+
+  <section id="contact" class="sec wrap" aria-labelledby="h-contact">
+    <h2 id="h-contact" class="h2">Contact</h2>
+    <p class="sec-p">Email is the fastest way to reach me.</p>
+    <div class="email-line">
+      <a class="email" href="mailto:davedhruvin307@gmail.com">davedhruvin307@gmail.com</a>
+    </div>
+    <p class="sr-only" role="status" aria-live="polite" data-copy-status></p>
+    <p class="links contact-links">
+      <a href="https://github.com/dhruvindave007">GitHub</a>
+      <a href="https://www.linkedin.com/in/mrdhruvindave">LinkedIn</a>
+      <a href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV</a>
+    </p>
+  </section>
+
+  <template id="twin-tpl">
   <section id="twin" class="twin js" aria-labelledby="tw-title">
     <div class="tw-panel">
       <header class="tw-head">
@@ -216,7 +299,7 @@
               <g class="tw-legend needs-js" aria-hidden="true">
                 <text class="tw-k" x="516" y="40">REPLAY CLOCK</text>
                 <text class="tw-clk" x="516" y="64">09:12:00</text>
-                <text class="tw-ah" x="516" y="82">AFTER HOURS</text>
+                <text class="tw-ah" x="516" y="82">After hours</text>
                 <g class="tw-key">
                   <circle cx="520" cy="128" r="3"/><text x="530" y="131">person</text>
                   <rect x="517" y="141" width="6" height="10"/><text x="530" y="149">badge reader</text>
@@ -276,7 +359,7 @@
             <p class="sr-only" role="status" data-tw-announce></p>
           </section>
           <details class="tw-ev">
-            <summary class="tw-ev__s"><span class="tw-h">Events · 5 Hz</span><span class="tw-ev__last" aria-hidden="true"></span></summary>
+            <summary class="tw-ev__s"><span class="tw-h">Events</span><span class="tw-ev__last" aria-hidden="true"></span></summary>
             <ol class="tw-log" role="log" aria-live="polite" aria-label="Event log"></ol>
           </details>
         </div>
@@ -296,211 +379,14 @@
 
     <div class="tw-foot">
       <p class="tw-note">A browser replay of the rules in Office Vision Twin, which I designed and built at Intuitive.ai. People, badges, event IDs, times and the write-ups here are generated in your browser. The real system reads 6 CCTV cameras at 5 fps with YOLO on OpenVINO on premises, reaches the twin in 95-121 ms at p95, and uses no facial recognition. In the real system an Amazon Bedrock model writes each incident up, and a second pass rejects anything the event records don't support. 313 backend and 33 dashboard tests.</p>
-      <p class="tw-links"><a href="/work/office-vision-twin.html">Read the case study →</a><span class="tw-links__sep" aria-hidden="true">·</span><a href="#work-ovt">See the real dashboard ↓</a></p>
+      <p class="tw-links"><a href="/work/office-vision-twin.html">Read the case study →</a><span class="tw-links__sep" aria-hidden="true">·</span><a href="#h-ovt">See the real dashboard ↓</a></p>
     </div>
   </section>
-
-  <section id="work" class="sec wrap" aria-labelledby="h-work">
-    <header class="sec__head" data-reveal>
-      <h2 id="h-work" class="h2">Selected work</h2>
-      <p class="sec__intro">Five projects built on real data. Each has a written case study and the code on GitHub.</p>
-    </header>
-
-    <article id="work-ovt" class="card card--lead" data-reveal>
-      <a class="card__media card__media--shot" href="/work/office-vision-twin.html" tabindex="-1" aria-hidden="true">
-        <img src="/assets/ovt-dashboard-1600.webp" srcset="/assets/ovt-dashboard-800.webp 800w, /assets/ovt-dashboard-1600.webp 1600w" sizes="(min-width: 1024px) 680px, 100vw" width="1600" height="900" loading="lazy" decoding="async" alt="The Office Vision Twin operator dashboard: six camera tiles with detection boxes, an incident queue and a floor plan.">
-      </a>
-      <div class="card__body">
-        <div class="card__top">
-          <h3 class="card__t"><a href="/work/office-vision-twin.html">Office Vision Twin</a></h3>
-          <span class="card__meta">Intuitive.ai · 2026</span>
-        </div>
-        <p class="card__p">A pilot-ready security digital twin. Six CCTV cameras and the badge readers feed a live floor plan of who is in which room, and explicit rules flag tailgating, unauthorised entry and after-hours breaches. Video is processed on premises with YOLO on OpenVINO, with no facial recognition. FastAPI backend, React operator dashboard, and Amazon Bedrock write-ups that a second pass checks against the event records.</p>
-        <dl class="stats">
-          <div><dt>p95 frame to twin, 6 cameras at 5 fps</dt><dd>95-121 ms</dd></div>
-          <div><dt>eval cases where the best model passed every check</dt><dd>22 / 27</dd></div>
-          <div><dt>backend and dashboard tests</dt><dd>313 + 33</dd></div>
-        </dl>
-        <ul class="chips" aria-label="Stack">
-          <li>Python</li><li>YOLO</li><li>OpenVINO</li><li>FastAPI</li><li>React</li><li>Amazon Bedrock</li>
-        </ul>
-        <p class="links"><a href="/work/office-vision-twin.html">Case study <span aria-hidden="true">→</span></a><a href="https://github.com/dhruvindave007/office-security-digital-twin-poc">Code <span aria-hidden="true">↗</span></a></p>
-      </div>
-    </article>
-
-    <div class="grid2">
-      <article class="card" data-reveal>
-        <a class="card__media card__media--paper" href="/work/airfieldshield.html" tabindex="-1" aria-hidden="true">
-          <img src="/assets/afs-pr-curves-800.webp" width="800" height="655" loading="lazy" decoding="async" alt="">
-        </a>
-        <div class="card__body">
-          <div class="card__top">
-            <h3 class="card__t"><a href="/work/airfieldshield.html">AirfieldShield</a></h3>
-            <span class="card__meta">Forecasting · 2026</span>
-          </div>
-          <p class="card__p">Thunderstorm and strong-wind nowcasts for six Indian airfields, 1 h and 3 h ahead, trained on 470,057 station-hours of real METAR reports from 2016-2024. Calibrated gradient boosting, served through Django REST and Celery.</p>
-          <p class="metric">Next-hour thunderstorm PR-AUC <b>0.576</b> on held-out 2023-24 · persistence 0.409 · climatology 0.070</p>
-          <p class="links"><span class="links__note">63 tests</span><a href="/work/airfieldshield.html">Case study <span aria-hidden="true">→</span></a><a href="https://github.com/dhruvindave007/AIrfieldShield">Code <span aria-hidden="true">↗</span></a></p>
-        </div>
-      </article>
-
-      <article class="card" data-reveal>
-        <a class="card__media card__media--video" href="/work/musicai.html" tabindex="-1" aria-hidden="true">
-          <video src="/assets/musicai-loop.mp4" poster="/assets/musicai-demo-poster.webp" muted loop playsinline preload="none" width="1280" height="800" data-inview></video>
-        </a>
-        <div class="card__body">
-          <div class="card__top">
-            <h3 class="card__t"><a href="/work/musicai.html">MusicAI</a></h3>
-            <span class="card__meta">Recommender · 2026</span>
-          </div>
-          <p class="card__p">A content-based music recommender over 43,998 tracks. Pick a song and get ten more, live in your browser on the case page.</p>
-          <p class="metric">Top-10 artist hit-rate <b>0.565</b> · random 0.165</p>
-          <p class="links"><a href="/work/musicai.html">Try the demo <span aria-hidden="true">→</span></a><a href="https://github.com/dhruvindave007/MusicAI">Code <span aria-hidden="true">↗</span></a></p>
-        </div>
-      </article>
-    </div>
-
-    <ul class="index" data-reveal>
-      <li class="index__row">
-        <a class="index__name" href="/work/janmitra.html">JanMitra<span class="index__arrow" aria-hidden="true">→</span></a>
-        <p class="index__d">Django REST case management for police intelligence reports. Untouched cases escalate every 48 h via Celery beat. I fixed a per-object access hole and the login lockout.</p>
-        <span class="index__m">113 tests</span>
-        <a class="index__code" href="https://github.com/dhruvindave007/janmitra">Code <span aria-hidden="true">↗</span></a>
-      </li>
-      <li class="index__row">
-        <a class="index__name" href="/work/groundcheck.html">groundcheck<span class="index__arrow" aria-hidden="true">→</span></a>
-        <p class="index__d">Open benchmark that tests whether LLM agents point to the right log lines. LLM runs are next.</p>
-        <span class="index__m">123 scenarios · keyword baseline F1 1.00 to 0.65 with decoys</span>
-        <a class="index__code" href="https://github.com/dhruvindave007/groundcheck">Code <span aria-hidden="true">↗</span></a>
-      </li>
-    </ul>
-  </section>
-
-  <section id="shipped" class="sec wrap" aria-labelledby="h-shipped">
-    <header class="sec__head" data-reveal>
-      <h2 id="h-shipped" class="h2">Shipped into other people's code</h2>
-    </header>
-    <div class="ship" data-reveal>
-      <div class="ship__lead">
-        <p class="ship__fig">4 PRs</p>
-        <p class="ship__line">Fixes I contributed to OpenSRE, an open-source toolkit for AI SRE agents, and to LiteLLM, the open-source LLM gateway.</p>
-      </div>
-      <ol class="log">
-        <li class="log__row log__row--prod">
-          <div class="log__head">
-            <span class="tag tag--prod">Production</span>
-            <span class="log__label">Catalyst Partners · Django + SQL Server</span>
-            <span class="log__date">Jun-Jul 2026</span>
-          </div>
-          <p class="log__txt">Rewrote the queries behind a business-critical report: 60-80 s to about 10 s, identical output, validated on 5,921 records, merged to main.</p>
-          <div class="bars" data-bars>
-            <div class="bars__row"><span class="bars__l">before 60-80 s</span><span class="bars__track"><i class="bars__b bars__b--before"></i></span></div>
-            <div class="bars__row"><span class="bars__l">after ~10 s</span><span class="bars__track"><i class="bars__b bars__b--after"></i></span></div>
-          </div>
-        </li>
-        <li class="log__row">
-          <span class="log__st"><i class="dot dot--merged" aria-hidden="true"></i>Contributed</span>
-          <a class="log__label" href="https://github.com/Tracer-Cloud/opensre/pull/6970">OpenSRE #6970</a>
-          <p class="log__txt">Vercel runtime logs and error reporting.</p>
-          <time class="log__date" datetime="2026-11-05">Nov 5, 2026</time>
-        </li>
-        <li class="log__row">
-          <span class="log__st"><i class="dot dot--merged" aria-hidden="true"></i>Contributed</span>
-          <a class="log__label" href="https://github.com/Tracer-Cloud/opensre/pull/6969">OpenSRE #6969</a>
-          <p class="log__txt">Bitbucket code search scoped to the repository.</p>
-          <time class="log__date" datetime="2026-11-05">Nov 5, 2026</time>
-        </li>
-        <li class="log__row">
-          <span class="log__st"><i class="dot dot--merged" aria-hidden="true"></i>Contributed</span>
-          <a class="log__label" href="https://github.com/Tracer-Cloud/opensre/pull/6840">OpenSRE #6840</a>
-          <p class="log__txt">Jira search moved to enhanced JQL, with pagination.</p>
-          <time class="log__date" datetime="2026-10-22">Oct 22, 2026</time>
-        </li>
-        <li class="log__row">
-          <span class="log__st"><i class="dot dot--merged" aria-hidden="true"></i>Contributed</span>
-          <a class="log__label" href="https://github.com/BerriAI/litellm/pull/48732">LiteLLM #48732</a>
-          <p class="log__txt">Keep the system role for OpenAI o3, o3-mini, o4-mini and on Azure.</p>
-          <time class="log__date" datetime="2026-10-28">Oct 28, 2026</time>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="experience" class="sec wrap" aria-labelledby="h-exp">
-    <div class="exp">
-      <header class="sec__head" data-reveal>
-        <h2 id="h-exp" class="h2">Experience</h2>
-      </header>
-      <ol class="tl" data-reveal>
-        <li class="tl__row tl__row--now">
-          <span class="tl__date">Aug 2026 - now</span>
-          <span class="tl__node" aria-hidden="true"><i></i></span>
-          <div class="tl__body">
-            <p class="tl__org">Intuitive.ai <span>· Applied AI Engineering Intern</span></p>
-            <p class="tl__txt">Designed and built Office Vision Twin, a pilot-ready security digital twin.</p>
-          </div>
-        </li>
-        <li class="tl__row tl__row--raised">
-          <span class="tl__date">Sep 2026</span>
-          <span class="tl__node" aria-hidden="true"><i></i></span>
-          <div class="tl__body">
-            <p class="tl__org">IBM Bob 2.0 Hackathon, lablab.ai <span>· Team leader, <span class="nw">System DNA</span></span></p>
-            <p class="tl__txt">4th of about 3,000 teams, with roughly 10,000 participants.</p>
-          </div>
-          <p class="tl__fig" aria-hidden="true"><b>4th</b><span>of ~3,000 teams</span></p>
-        </li>
-        <li class="tl__row">
-          <span class="tl__date">Jun - Jul 2026</span>
-          <span class="tl__node" aria-hidden="true"><i></i></span>
-          <div class="tl__body">
-            <p class="tl__org">Catalyst Partners <span>· Python Developer Intern</span></p>
-            <p class="tl__txt">Cut a production report from 60-80 s to about 10 s with identical output on 5,921 validated records. Built Python and Selenium scrapers.</p>
-          </div>
-        </li>
-        <li class="tl__row">
-          <span class="tl__date">Jun 2025 - Feb 2026</span>
-          <span class="tl__node" aria-hidden="true"><i></i></span>
-          <div class="tl__body">
-            <p class="tl__org">Two Pointers Pvt. Ltd. <span>· Full Stack Web Development Intern</span></p>
-            <p class="tl__txt">Built a Django online-course website with authentication, roles, dynamic certificate generation and a responsive frontend, plus Python automation and scraping.</p>
-          </div>
-        </li>
-        <li class="tl__row">
-          <span class="tl__date">2022 - 2026</span>
-          <span class="tl__node" aria-hidden="true"><i></i></span>
-          <div class="tl__body">
-            <p class="tl__org">LJ University <span>· B.E. Computer Engineering</span></p>
-            <p class="tl__txt">All examinations complete. Led the university technical club, 200+ students.</p>
-          </div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="contact" class="contact" aria-labelledby="h-contact">
-    <svg class="contact__plan" viewBox="0 0 640 400" aria-hidden="true" focusable="false"><use href="#fp-lines"/></svg>
-    <div class="wrap contact__in" data-reveal>
-      <h2 id="h-contact" class="contact__label">Contact</h2>
-      <p class="contact__line">Open to Applied AI, Forward Deployed and software engineering roles, and to conversations about graduate research. Email is fastest.</p>
-      <div class="contact__mail">
-        <a class="contact__email" href="mailto:davedhruvin307@gmail.com">davedhruvin307@<wbr>gmail.com</a>
-        <button class="copy" type="button" data-copy="davedhruvin307@gmail.com" aria-label="Copy email address">
-          <span class="copy__a">Copy</span><span class="copy__b" aria-hidden="true">Copied</span>
-        </button>
-        <span class="sr-only" role="status" data-copy-status></span>
-      </div>
-      <ul class="contact__links">
-        <li><a href="https://github.com/dhruvindave007">GitHub <span aria-hidden="true">↗</span></a></li>
-        <li><a href="https://www.linkedin.com/in/mrdhruvindave">LinkedIn <span aria-hidden="true">↗</span></a></li>
-        <li><a href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV, AI engineer</a></li>
-        <li><a href="/Dhruvin_Dave_Backend_Engineer_CV.pdf">CV, backend</a></li>
-      </ul>
-    </div>
-  </section>
+  </template>
 </main>
 
-<footer class="foot">
-  <div class="wrap"><p>© 2026 Dhruvin Dave · Ahmedabad, India</p></div>
+<footer class="foot wrap">
+  <p>Dhruvin Dave, Ahmedabad, India.<span class="clock" hidden> It's <span class="nw"><time class="clock-t">14:32</time> here.</span></span></p>
 </footer>
 </body>
 </html>
