@@ -1,74 +1,94 @@
+/* dhruvindave.live: nav, reveal-once, in-view video, copy email, shipped bars */
 (() => {
   const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const root = document.documentElement;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasIO = 'IntersectionObserver' in window;
 
-  /* entrances: CSS scroll timelines where supported, IntersectionObserver otherwise */
-  const scrollDriven = window.CSS && CSS.supports('animation-timeline: view()');
-  if (!scrollDriven && !reduce && 'IntersectionObserver' in window) {
-    document.documentElement.classList.add('io');
-    const io = new IntersectionObserver((es) => es.forEach((e) => {
-      if (e.isIntersecting) { e.target.classList.add('is-in'); io.unobserve(e.target); }
-    }), { rootMargin: '0px 0px -8% 0px' });
-    $$('main > section:not(.intro) > *, .timeline li').forEach((el) => io.observe(el));
+  /* nav: mark the section in view; pause the hero ambient dots when the hero is off screen */
+  if (hasIO) {
+    const links = new Map($$('.bar__nav a[href^="#"]').map((a) => [a.getAttribute('href').slice(1), a]));
+    const navIO = new IntersectionObserver((es) => es.forEach((e) => {
+      const a = links.get(e.target.id);
+      if (!a) return;
+      if (e.isIntersecting) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current');
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    links.forEach((_, id) => { const s = document.getElementById(id); if (s) navIO.observe(s); });
+
+    const hero = document.querySelector('.hero');
+    if (hero) new IntersectionObserver(([e]) => hero.classList.toggle('is-off', !e.isIntersecting)).observe(hero);
   }
 
-  /* the MusicAI recording plays only while it is on screen */
-  const vids = $$('video[data-autoplay]');
-  if (!reduce && 'IntersectionObserver' in window) {
-    const vo = new IntersectionObserver((es) => es.forEach((e) => {
-      if (e.isIntersecting) { e.target.preload = 'auto'; e.target.play().catch(() => {}); } else e.target.pause();
+  /* reveal once: content stays visible unless this script runs and arms it */
+  const items = $$('[data-reveal]');
+  if (hasIO && !reduce && items.length) {
+    root.classList.add('rv');
+    const vh = () => window.innerHeight || 800;
+    const rio = new IntersectionObserver((es) => es.forEach((e) => {
+      if (!e.isIntersecting) return;
+      if (e.intersectionRatio >= 0.2 || e.intersectionRect.height >= vh() * 0.2) {
+        e.target.classList.add('is-in');
+        rio.unobserve(e.target);
+      }
+    }), { threshold: [0, 0.05, 0.1, 0.15, 0.2] });
+    items.forEach((el) => rio.observe(el));
+  } else {
+    items.forEach((el) => el.classList.add('is-in'));
+  }
+
+  /* shipped: the ~10 s bar shrinks from full width to 14% once, when it comes into view */
+  const bars = document.querySelector('[data-bars]');
+  if (bars && hasIO && !reduce) {
+    const bio = new IntersectionObserver(([e]) => {
+      if (e.isIntersecting) { bars.classList.add('is-run'); bio.disconnect(); }
+    }, { threshold: 0.6 });
+    bio.observe(bars);
+  }
+
+  /* MusicAI recording plays muted only while it is on screen */
+  const vids = $$('video[data-inview]');
+  if (vids.length && hasIO && !reduce) {
+    const vio = new IntersectionObserver((es) => es.forEach((e) => {
+      const v = e.target;
+      if (e.isIntersecting) {
+        if (v.preload !== 'auto') v.preload = 'auto';
+        v.muted = true;
+        const p = v.play();
+        if (p && p.catch) p.catch(() => {});
+      } else if (!v.paused) v.pause();
     }), { threshold: 0.35 });
-    vids.forEach((v) => vo.observe(v));
+    vids.forEach((v) => vio.observe(v));
+    document.addEventListener('visibilitychange', () => { if (document.hidden) vids.forEach((v) => v.pause()); });
   }
 
-  /* be the model: cite lines, score them live against the gold evidence */
-  const log = document.querySelector('[data-log]');
-  if (!log) return;
-  const verdict = document.querySelector('[data-verdict]');
-  const count = document.querySelector('[data-count]');
-  const initial = verdict.textContent;
-  const gold = $$('li[data-k="g"]', log).length;
-  const f2 = (x) => x.toFixed(2);
-
-  const picked = () => $$('li', log).filter((li) => li.querySelector('button').getAttribute('aria-pressed') === 'true');
-  const scores = () => {
-    const p = picked();
-    const hit = p.filter((li) => li.dataset.k === 'g').length;
-    const prec = p.length ? hit / p.length : 0;
-    const rec = hit / gold;
-    const f1 = prec + rec ? (2 * prec * rec) / (prec + rec) : 0;
-    return { p, hit, prec, rec, f1, dec: p.filter((li) => li.dataset.k === 'd').length };
+  /* copy email */
+  const fallbackCopy = (text) => {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;pointer-events:none';
+    document.body.appendChild(ta);
+    ta.select();
+    let ok = false;
+    try { ok = document.execCommand('copy'); } catch (_) { ok = false; }
+    ta.remove();
+    return ok;
   };
-  const show = (on) => {
-    const s = scores();
-    count.textContent = `${s.p.length} cited`;
-    for (const [k, v] of [['p', s.prec], ['r', s.rec], ['f', s.f1]]) {
-      document.querySelector(`[data-m="${k}"]`).textContent = on ? f2(v) : '–';
-      document.querySelector(`[data-bar="${k}"]`).style.setProperty('--v', on ? v : 0);
-    }
-    return s;
-  };
-
-  log.addEventListener('click', (ev) => {
-    const b = ev.target.closest('button');
-    if (!b) return;
-    b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
-    if (log.classList.contains('is-checked')) check(); else show(false);
-  });
-  const check = () => {
-    log.classList.add('is-checked');
-    const s = show(true);
-    verdict.textContent = s.f1 === 1
-      ? 'Perfect. The full disk and the crash it caused, both on web-11, and nothing else. Keyword search scored 0.50.'
-      : !s.p.length
-        ? 'Nothing cited. The answer is web-11: L0513 shows its disk full, L0515 the crash.'
-        : `The answer is web-11: L0513 is the full disk, L0515 the crash.${s.dec ? ` ${s.dec} of your lines ${s.dec === 1 ? 'is a decoy' : 'are decoys'}.` : ''} Keyword search scored 0.50.`;
-  };
-  document.querySelector('[data-check]').addEventListener('click', check);
-  document.querySelector('[data-reset]').addEventListener('click', () => {
-    $$('button[aria-pressed]', log).forEach((b) => b.setAttribute('aria-pressed', 'false'));
-    log.classList.remove('is-checked');
-    verdict.textContent = initial;
-    show(false);
+  $$('[data-copy]').forEach((btn) => {
+    const status = btn.parentElement.querySelector('[data-copy-status]');
+    let t;
+    btn.addEventListener('click', async () => {
+      const text = btn.dataset.copy;
+      let ok = false;
+      try {
+        if (navigator.clipboard && window.isSecureContext) { await navigator.clipboard.writeText(text); ok = true; }
+      } catch (_) { ok = false; }
+      if (!ok) ok = fallbackCopy(text);
+      if (!ok) return;
+      btn.classList.add('is-done');
+      if (status) status.textContent = 'Email address copied';
+      clearTimeout(t);
+      t = setTimeout(() => { btn.classList.remove('is-done'); if (status) status.textContent = ''; }, 1600);
+    });
   });
 })();

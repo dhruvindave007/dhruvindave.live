@@ -4,217 +4,503 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Dhruvin Dave · Applied AI Engineer</title>
-<meta name="description" content="Dhruvin Dave, applied AI engineer in Ahmedabad. AI systems that have to show their evidence: a security digital twin, an open citation benchmark, merged open-source fixes.">
+<meta name="description" content="Dhruvin Dave, Applied AI Engineer in Ahmedabad. End-to-end AI systems: a security digital twin, airfield storm nowcasting, and open-source contributions to OpenSRE and LiteLLM.">
 <link rel="canonical" href="https://dhruvindave.live/">
-<meta name="theme-color" content="#0b0b0c">
+<meta name="theme-color" content="#0a0a0b">
+<meta name="color-scheme" content="dark">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Dhruvin Dave · Applied AI Engineer">
-<meta property="og:description" content="AI systems that have to show their evidence. Digital twin, citation benchmark, merged open-source fixes.">
+<meta property="og:description" content="Dhruvin Dave, Applied AI Engineer in Ahmedabad. End-to-end AI systems: a security digital twin, airfield storm nowcasting, and open-source contributions to OpenSRE and LiteLLM.">
 <meta property="og:url" content="https://dhruvindave.live/">
 <meta property="og:image" content="https://dhruvindave.live/assets/og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dhruvin Dave · Applied AI Engineer">
+<meta name="twitter:description" content="Dhruvin Dave, Applied AI Engineer in Ahmedabad. End-to-end AI systems: a security digital twin, airfield storm nowcasting, and open-source contributions to OpenSRE and LiteLLM.">
+<meta name="twitter:image" content="https://dhruvindave.live/assets/og.png">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add('js')</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/site.css">
+<link rel="stylesheet" href="/twin.css">
 <script src="/site.js" defer></script>
+<script src="/twin.js" defer></script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Dhruvin Dave","jobTitle":"Applied AI Engineer","url":"https://dhruvindave.live/","email":"davedhruvin307@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Ahmedabad","addressCountry":"IN"},"sameAs":["https://github.com/dhruvindave007","https://www.linkedin.com/in/mrdhruvindave"]}</script>
 </head>
 <body>
 <a class="skip" href="#work">Skip to the work</a>
 
+<!-- floor-plan linework, reused by the hero and contact backdrops -->
+<svg width="0" height="0" class="sr-only" aria-hidden="true" focusable="false">
+  <symbol id="fp-lines" viewBox="0 0 640 400">
+    <g fill="none" stroke="currentColor" stroke-width="1" vector-effect="non-scaling-stroke">
+      <path d="M20 20H500V200H620V380H20V315M20 285V20"/>
+      <path d="M200 20V95M200 125V285M200 315V380"/>
+      <path d="M20 210H200"/>
+      <path d="M500 200V275M500 305V380"/>
+      <path d="M220 200H480M350 40V180M350 220V360" stroke-dasharray="2 6"/>
+      <rect x="240" y="60" width="70" height="36"/><rect x="390" y="60" width="70" height="36"/>
+      <rect x="240" y="290" width="70" height="36"/><rect x="390" y="290" width="70" height="36"/>
+      <rect x="70" y="80" width="80" height="50" rx="4"/>
+      <rect x="540" y="230" width="20" height="120"/><rect x="580" y="230" width="20" height="120"/>
+      <rect x="196" y="318" width="6" height="10"/><rect x="503" y="308" width="6" height="10"/>
+      <circle cx="34" cy="226" r="3"/><circle cx="214" cy="318" r="3"/><circle cx="214" cy="34" r="3"/>
+      <circle cx="486" cy="366" r="3"/><circle cx="34" cy="34" r="3"/><circle cx="514" cy="214" r="3"/>
+      <path d="M34 226l40 18M34 226l18 40M214 318l40-10M214 318l30 26M214 34l40 10M214 34l12 40M486 366l-40-6M486 366l-10-40M34 34l40 12M34 34l12 40M514 214l40 10M514 214l10 40" stroke-dasharray="1 4"/>
+    </g>
+  </symbol>
+</svg>
+
 <header class="bar">
-  <div class="bar__in">
+  <div class="bar__in wrap">
     <a class="bar__name" href="/">Dhruvin Dave</a>
     <nav class="bar__nav" aria-label="Main">
       <a href="#work">Work</a>
-      <a href="#open-source">Open source</a>
-      <a href="#experience">Experience</a>
-      <a class="bar__cv" href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV</a>
+      <a class="hide-sm" href="#shipped">Shipped</a>
+      <a class="hide-sm" href="#experience">Experience</a>
+      <a href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV</a>
+      <a class="bar__gh hide-sm" href="https://github.com/dhruvindave007" aria-label="GitHub">
+        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true" focusable="false"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+      </a>
     </nav>
   </div>
 </header>
 
 <main id="main">
-  <section class="intro col" aria-labelledby="h-intro">
-    <h1 id="h-intro" class="intro__h">AI that shows its evidence.</h1>
-    <p class="intro__p"><span class="hi">I’m Dhruvin Dave,</span> an applied AI engineer in Ahmedabad. I build AI systems that have to cite what they claim, and I measure when they don’t.</p>
-    <p class="intro__p"><span class="hi">Right now</span> I’m an Applied AI Engineering Intern at Intuitive.Cloud, building a security digital twin whose AI may only make claims it can cite. I’m applying for an MS in Computer Science for 2027.</p>
-    <div class="intro__act">
-      <a class="btn" href="/Dhruvin_Dave_AI_Engineer_CV.pdf">Download CV</a>
-      <a class="btn btn--ghost" href="mailto:davedhruvin307@gmail.com">Email me</a>
-      <span class="intro__proof"><b>4th</b> of ~3,000 teams at IBM Bob 2.0 <span class="sep" aria-hidden="true">·</span> <b>3</b> PRs merged into OpenSRE</span>
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="hero__amb" aria-hidden="true">
+      <div class="hero__plan">
+        <svg class="hero__svg" viewBox="0 0 640 400" width="1024" height="640" focusable="false"><use href="#fp-lines"/></svg>
+        <i class="hero__dot hero__dot--a"></i>
+        <i class="hero__dot hero__dot--b"></i>
+        <i class="hero__dot hero__dot--c"></i>
+      </div>
+    </div>
+    <div class="hero__in">
+      <a class="pill hero__i" href="/work/office-vision-twin.html"><span class="pill__dot" aria-hidden="true"></span>Now · Applied AI Engineering Intern at Intuitive.ai <span aria-hidden="true">→</span></a>
+      <h1 id="h-hero" class="hero__h hero__i">AI systems, built end to end.</h1>
+      <p class="hero__sub hero__i">I'm Dhruvin Dave, an Applied AI Engineer in Ahmedabad. I build the whole system: computer vision, forecasting and language models, plus the backend, dashboard and tests around them.</p>
+      <div class="hero__act hero__i">
+        <a class="btn btn--solid" href="/Dhruvin_Dave_AI_Engineer_CV.pdf">Download CV</a>
+        <a class="btn btn--ghost" href="#work">See the work</a>
+      </div>
+      <ul class="proof hero__i">
+        <li><a href="#experience">4th of ~3,000 teams · IBM Bob 2.0 Hackathon, team lead</a></li>
+        <li><a href="#shipped">Open-source contributor · OpenSRE, LiteLLM</a></li>
+        <li><a href="#shipped">Production report · 60-80 s to ~10 s</a></li>
+      </ul>
     </div>
   </section>
 
-  <section id="try" class="demo wide" aria-labelledby="h-demo">
-    <div class="demo__head col-in">
-      <h2 id="h-demo" class="h2">Be the model</h2>
-      <p class="muted">A real scenario from <a class="ul" href="/work/groundcheck.html">groundcheck</a>, my citation benchmark. Tap the log lines you would cite, then check. Half the other lines are decoys.</p>
+  <section id="twin" class="twin js" aria-labelledby="tw-title">
+    <div class="tw-panel">
+      <header class="tw-head">
+        <div class="tw-head__l">
+          <span class="tw-live needs-js"><span class="tw-live__dot" aria-hidden="true"></span>LIVE</span>
+          <h2 class="tw-title" id="tw-title">Office Vision Twin · replay in your browser</h2>
+        </div>
+        <div class="tw-scen needs-js" role="group" aria-labelledby="tw-scen-l">
+          <span class="tw-scen__l" id="tw-scen-l">Play a scenario:</span>
+          <div class="tw-seg">
+            <button type="button" class="tw-seg__b" data-scen="tailgating" aria-pressed="false">Tailgating</button>
+            <button type="button" class="tw-seg__b" data-scen="nobadge" aria-pressed="false">No badge</button>
+            <button type="button" class="tw-seg__b" data-scen="afterhours" aria-pressed="false">After hours</button>
+          </div>
+        </div>
+      </header>
+
+      <ol class="tw-chips needs-js" aria-label="Pipeline">
+        <li><span class="tw-chip" data-chip="camera" data-l="Camera">Camera</span></li>
+        <li><span class="tw-wire" aria-hidden="true"></span><span class="tw-chip" data-chip="detector" data-l="Detector">Detector</span></li>
+        <li><span class="tw-wire" aria-hidden="true"></span><span class="tw-chip" data-chip="twin" data-l="Twin">Twin</span></li>
+        <li><span class="tw-wire" aria-hidden="true"></span><span class="tw-chip" data-chip="rules" data-l="Rules">Rules</span></li>
+        <li><span class="tw-wire" aria-hidden="true"></span><span class="tw-chip" data-chip="incident" data-l="Incident">Incident</span></li>
+        <li><span class="tw-wire" aria-hidden="true"></span><span class="tw-chip" data-chip="llm" data-l="LLM write-up">LLM write-up</span></li>
+        <li><span class="tw-wire" aria-hidden="true"></span><span class="tw-chip" data-chip="check" data-l="Check">Check<span class="tw-ok" aria-hidden="true">ok</span></span></li>
+      </ol>
+
+      <div class="tw-body">
+        <div class="tw-main">
+          <div class="tw-plan">
+            <svg class="tw-svg" viewBox="0 0 640 400" role="img" aria-label="Floor plan. Lobby 2, Open office 7, Meeting room 3, Server room 0." focusable="false">
+              <defs>
+                <clipPath id="tw-clip-lobby"><rect x="20" y="210" width="180" height="170"/></clipPath>
+                <clipPath id="tw-clip-office"><rect x="200" y="20" width="300" height="360"/></clipPath>
+                <clipPath id="tw-clip-meeting"><rect x="20" y="20" width="180" height="190"/></clipPath>
+                <clipPath id="tw-clip-server"><rect x="500" y="200" width="120" height="180"/></clipPath>
+                <pattern id="tw-hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7"/></pattern>
+              </defs>
+
+              <g class="tw-rooms" aria-hidden="true">
+                <rect class="tw-floor" x="20" y="20" width="480" height="360"/>
+                <rect class="tw-floor" x="500" y="200" width="120" height="180"/>
+                <rect class="tw-floor tw-floor--restricted" x="500" y="200" width="120" height="180"/>
+              </g>
+
+              <g class="tw-cones" aria-hidden="true">
+                <g clip-path="url(#tw-clip-lobby)"><path class="tw-cone" d="M26 374 L42.0 283.4 A92 92 0 0 1 105.7 328.0Z"/><path class="tw-cone-hl" data-cam="C1" d="M26 374 L42.0 283.4 A92 92 0 0 1 105.7 328.0Z"/></g>
+                <g clip-path="url(#tw-clip-office)"><path class="tw-cone" d="M206 244 L268.4 300.2 A84 84 0 0 1 194.3 327.2Z"/><path class="tw-cone-hl" data-cam="C2" d="M206 244 L268.4 300.2 A84 84 0 0 1 194.3 327.2Z"/></g>
+                <g clip-path="url(#tw-clip-office)"><path class="tw-cone" d="M208 28 L326.2 48.8 A120 120 0 0 1 256.8 137.6Z"/><path class="tw-cone-hl" data-cam="C3" d="M208 28 L326.2 48.8 A120 120 0 0 1 256.8 137.6Z"/></g>
+                <g clip-path="url(#tw-clip-office)"><path class="tw-cone" d="M492 372 L373.8 351.2 A120 120 0 0 1 443.2 262.4Z"/><path class="tw-cone-hl" data-cam="C4" d="M492 372 L373.8 351.2 A120 120 0 0 1 443.2 262.4Z"/></g>
+                <g clip-path="url(#tw-clip-meeting)"><path class="tw-cone" d="M26 204 L65.0 107.6 A104 104 0 0 1 126.0 175.3Z"/><path class="tw-cone-hl" data-cam="C5" d="M26 204 L65.0 107.6 A104 104 0 0 1 126.0 175.3Z"/></g>
+                <g clip-path="url(#tw-clip-server)"><path class="tw-cone" d="M614 290 L513.2 328.7 A108 108 0 0 1 513.2 251.3Z"/><path class="tw-cone-hl" data-cam="C6" d="M614 290 L513.2 328.7 A108 108 0 0 1 513.2 251.3Z"/></g>
+              </g>
+
+              <g class="tw-furn" aria-hidden="true">
+                <rect x="58" y="92" width="92" height="46" rx="6"/>
+                <rect x="236" y="70" width="96" height="28" rx="3"/>
+                <rect x="364" y="70" width="96" height="28" rx="3"/>
+                <rect x="236" y="148" width="96" height="28" rx="3"/>
+                <rect x="364" y="148" width="96" height="28" rx="3"/>
+                <rect x="236" y="226" width="96" height="28" rx="3"/>
+                <rect x="40" y="350" width="64" height="16" rx="3"/>
+                <rect x="526" y="330" width="78" height="12" rx="2"/>
+                <rect x="526" y="350" width="78" height="12" rx="2"/>
+              </g>
+
+              <g class="tw-hls" aria-hidden="true">
+                <rect class="tw-room-hl" data-room="meeting" x="21" y="21" width="178" height="188"/>
+                <rect class="tw-room-hl" data-room="lobby" x="21" y="211" width="178" height="168"/>
+                <rect class="tw-room-hl" data-room="office" x="201" y="21" width="298" height="358"/>
+                <rect class="tw-room-hl" data-room="server" x="501" y="201" width="118" height="178"/>
+              </g>
+
+              <g class="tw-walls" aria-hidden="true">
+                <path d="M20 20 H500 V200 H620 V380 H20 V312 M20 288 V20"/>
+                <path d="M20 210 H200"/>
+                <path d="M200 20 V98 M200 122 V288 M200 312 V380"/>
+                <path d="M500 200 V278 M500 302 V380"/>
+              </g>
+              <g class="tw-swing" aria-hidden="true">
+                <path d="M20 288 L44 288 M44 288 A24 24 0 0 1 20 312"/>
+                <path d="M200 288 L224 288 M224 288 A24 24 0 0 1 200 312"/>
+                <path d="M500 278 L524 278 M524 278 A24 24 0 0 1 500 302"/>
+              </g>
+
+              <g class="tw-cams" aria-hidden="true">
+                <circle cx="26" cy="374" r="3.2"/><text class="tw-cam-l" x="34" y="376">C1</text>
+                <circle cx="206" cy="244" r="3.2"/><text class="tw-cam-l" x="213" y="240">C2</text>
+                <circle cx="208" cy="28" r="3.2"/><text class="tw-cam-l" x="215" y="58">C3</text>
+                <circle cx="492" cy="372" r="3.2"/><text class="tw-cam-l" x="484" y="364" text-anchor="end">C4</text>
+                <circle cx="26" cy="204" r="3.2"/><text class="tw-cam-l" x="34" y="202">C5</text>
+                <circle cx="614" cy="290" r="3.2"/><text class="tw-cam-l" x="610" y="281" text-anchor="end">C6</text>
+              </g>
+
+              <g class="tw-readers" aria-hidden="true">
+                <rect class="tw-reader" x="191" y="316" width="6" height="10"/>
+                <rect class="tw-reader-hl" data-door="D1" x="191" y="316" width="6" height="10"/>
+                <text class="tw-door-l" x="186" y="325" text-anchor="end">D1</text>
+                <rect class="tw-reader" x="491" y="306" width="6" height="10"/>
+                <rect class="tw-reader-hl" data-door="D2" x="491" y="306" width="6" height="10"/>
+                <text class="tw-door-l" x="486" y="315" text-anchor="end">D2</text>
+              </g>
+
+              <g class="tw-labels" aria-hidden="true">
+                <text class="tw-room-l" x="30" y="38">Meeting room</text>
+                <text class="tw-room-l" x="30" y="228">Lobby</text>
+                <text class="tw-room-l" x="224" y="38">Open office</text>
+                <text class="tw-room-l" x="504" y="246">Server room</text>
+                <text class="tw-room-l tw-room-l--sub" x="504" y="260">restricted</text>
+              </g>
+
+              <g class="tw-counts" aria-hidden="true">
+                <g class="tw-count" data-room="meeting" transform="translate(179 36)"><g class="tw-pill"><rect x="-13" y="-8" width="26" height="16" rx="8"/><text y="3.8" text-anchor="middle">3</text></g></g>
+                <g class="tw-count" data-room="lobby" transform="translate(179 226)"><g class="tw-pill"><rect x="-13" y="-8" width="26" height="16" rx="8"/><text y="3.8" text-anchor="middle">2</text></g></g>
+                <g class="tw-count" data-room="office" transform="translate(479 36)"><g class="tw-pill"><rect x="-13" y="-8" width="26" height="16" rx="8"/><text y="3.8" text-anchor="middle">7</text></g></g>
+                <g class="tw-count" data-room="server" transform="translate(599 216)"><g class="tw-pill"><rect x="-13" y="-8" width="26" height="16" rx="8"/><text y="3.8" text-anchor="middle">0</text></g></g>
+              </g>
+
+              <g class="tw-legend needs-js" aria-hidden="true">
+                <text class="tw-k" x="516" y="40">REPLAY CLOCK</text>
+                <text class="tw-clk" x="516" y="64">09:12:00</text>
+                <text class="tw-ah" x="516" y="82">AFTER HOURS</text>
+                <g class="tw-key">
+                  <circle cx="520" cy="128" r="3"/><text x="530" y="131">person</text>
+                  <rect x="517" y="141" width="6" height="10"/><text x="530" y="149">badge reader</text>
+                  <circle class="tw-key-cam" cx="520" cy="164" r="3.2"/><text x="530" y="167">camera</text>
+                </g>
+              </g>
+
+              <g class="tw-people" aria-hidden="true">
+                <g class="tw-p" transform="translate(78 292)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(128 338)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(262 112)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(318 56)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(410 112)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(284 192)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(392 214)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(446 300)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(318 322)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(70 80)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(126 154)"><circle class="tw-p__dot" r="3"/></g>
+                <g class="tw-p" transform="translate(166 112)"><circle class="tw-p__dot" r="3"/></g>
+              </g>
+            </svg>
+          </div>
+
+          <div class="tw-ctrl needs-js">
+            <div class="tw-btns">
+              <button type="button" class="tw-btn" data-act="badge" data-door="D1">Badge at D1</button>
+              <button type="button" class="tw-btn" data-act="walk" data-door="D1">Walk through D1</button>
+              <button type="button" class="tw-btn" data-act="badge" data-door="D2">Badge at D2</button>
+              <button type="button" class="tw-btn" data-act="walk" data-door="D2">Walk through D2</button>
+            </div>
+            <div class="tw-clockrow">
+              <label class="tw-clock__l" for="tw-clock">Clock <output class="tw-clock__v" for="tw-clock">09:12</output></label>
+              <div class="tw-range">
+                <div class="tw-range__track" aria-hidden="true">
+                  <span class="tw-range__ah" style="left:0;width:6.25%"></span>
+                  <span class="tw-range__ah" style="left:81.25%;width:18.75%"></span>
+                </div>
+                <input class="tw-range__in" id="tw-clock" type="range" min="420" max="1380" step="10" value="550" aria-valuetext="09:12">
+                <span class="tw-range__note" aria-hidden="true">after hours (replay setting)</span>
+              </div>
+              <button type="button" class="tw-btn tw-btn--ghost tw-reset" data-act="reset">Reset</button>
+            </div>
+            <p class="tw-hint">Or drag a person through a door.</p>
+          </div>
+        </div>
+
+        <div class="tw-side needs-js">
+          <section class="tw-inc" aria-labelledby="tw-inc-h">
+            <h3 class="tw-h" id="tw-inc-h" tabindex="-1">Incidents</h3>
+            <div class="tw-empty">
+              <div class="tw-ghost" aria-hidden="true"><i></i><i></i><i></i></div>
+              <p>No open incidents. Try walking two people through D1 on one badge.</p>
+              <button type="button" class="tw-btn tw-rm-play" data-act="example">Play the tailgating example</button>
+            </div>
+            <div class="tw-queue"></div>
+            <p class="sr-only" role="status" data-tw-announce></p>
+          </section>
+          <details class="tw-ev">
+            <summary class="tw-ev__s"><span class="tw-h">Events · 5 Hz</span><span class="tw-ev__last" aria-hidden="true"></span></summary>
+            <ol class="tw-log" role="log" aria-live="polite" aria-label="Event log"></ol>
+          </details>
+        </div>
+
+        <noscript>
+          <figure class="tw-fallback">
+            <img src="/assets/ovt-dashboard-800.webp" width="800" height="450" alt="The Office Vision Twin operator dashboard: six camera tiles with detection boxes, an incident queue and a floor plan.">
+            <figcaption>Office Vision Twin, the real operator dashboard. Turn on JavaScript to run the replay.</figcaption>
+          </figure>
+        </noscript>
+        <figure class="tw-fallback tw-fallback--err">
+          <img src="/assets/ovt-dashboard-800.webp" width="800" height="450" loading="lazy" alt="The Office Vision Twin operator dashboard: six camera tiles with detection boxes, an incident queue and a floor plan.">
+          <figcaption>Office Vision Twin, the real operator dashboard. Turn on JavaScript to run the replay.</figcaption>
+        </figure>
+      </div>
     </div>
-    <div class="demo__card">
-      <div class="demo__pane">
-        <div class="demo__label"><span>Event log</span><span class="faint">20 lines · select to cite</span></div>
-        <p class="demo__q">“Service billing crashed. Which host’s full disk caused the crash?”</p>
-        <ol class="log" data-log aria-label="Event log, 20 lines. Select the lines you would cite.">
-          <li data-k="d"><button type="button" aria-pressed="false"><code>L0496</code><code>host=web-11 disk=/data usage=90% WARN</code></button></li>
-          <li data-k="d"><button type="button" aria-pressed="false"><code>L0497</code><code>host=web-03 disk=/var usage=100% ENOSPC write failed</code></button></li>
-          <li><button type="button" aria-pressed="false"><code>L0498</code><code>service=inventory host=web-07 GET /health 200 5ms</code></button></li>
-          <li><button type="button" aria-pressed="false"><code>L0499</code><code>cron job=logrotate host=web-07 status=ok</code></button></li>
-          <li><button type="button" aria-pressed="false"><code>L0500</code><code>cron job=logrotate host=web-09 status=ok</code></button></li>
-          <li data-k="d"><button type="button" aria-pressed="false"><code>L0501</code><code>host=web-11 disk=/data usage=88% WARN</code></button></li>
-          <li><button type="button" aria-pressed="false"><code>L0502</code><code>cron job=logrotate host=web-01 status=ok</code></button></li>
-          <li><button type="button" aria-pressed="false"><code>L0503</code><code>cron job=logrotate host=web-05 status=ok</code></button></li>
-          <li><button type="button" aria-pressed="false"><code>L0504</code><code>host=web-06 ntp offset=2ms</code></button></li>
-          <li data-k="d"><button type="button" aria-pressed="false"><code>L0505</code><code>host=web-11 disk=/data usage=89% WARN</code></button></li>
-          <li data-k="d"><button type="button" aria-pressed="false"><code>L0506</code><code>service=checkout host=web-10 CRASH reason=ENOSPC</code></button></li>
-          <li data-k="d"><button type="button" aria-pressed="false"><code>L0507</code><code>host=web-01 disk=/var usage=100% ENOSPC write failed</code></button></li>
-          <li data-k="d"><button type="button" aria-pressed="false"><code>L0508</code><code>service=notifications host=web-01 CRASH reason=ENOSPC</code></button></li>
-          <li><button type="button" aria-pressed="false"><code>L0509</code><code>user=bob login SUCCESS src=10.1.5.223</code></button></li>
-          <li><button type="button" aria-pressed="false"><code>L0510</code><code>host=db-02 ntp offset=9ms</code></button></li>
-          <li data-k="d"><button type="button" aria-pressed="false"><code>L0511</code><code>service=billing host=web-11 health_check latency=788ms SLOW</code></button></li>
-          <li data-k="d"><button type="button" aria-pressed="false"><code>L0512</code><code>host=web-03 disk=/var usage=100% ENOSPC write failed</code></button></li>
-          <li data-k="g"><button type="button" aria-pressed="false"><code>L0513</code><code>host=web-11 disk=/var usage=100% ENOSPC write failed</code></button></li>
-          <li><button type="button" aria-pressed="false"><code>L0514</code><code>user=jun login SUCCESS src=10.1.167.162</code></button></li>
-          <li data-k="g"><button type="button" aria-pressed="false"><code>L0515</code><code>service=billing host=web-11 CRASH reason=ENOSPC</code></button></li>
-        </ol>
-      </div>
-      <div class="demo__pane demo__pane--side">
-        <div class="demo__label"><span>Score</span><span class="faint" data-count>0 cited</span></div>
-        <div class="meters" aria-live="polite">
-          <div class="meter"><span>Precision</span><b data-m="p">–</b><i><s data-bar="p"></s></i></div>
-          <div class="meter"><span>Recall</span><b data-m="r">–</b><i><s data-bar="r"></s></i></div>
-          <div class="meter"><span>F1</span><b data-m="f">–</b><i><s data-bar="f"></s></i></div>
-        </div>
-        <p class="demo__verdict" data-verdict>Keyword search scored F1 0.50 here. It found the crash, missed its cause and cited a slow health check.</p>
-        <div class="demo__act">
-          <button class="btn" type="button" data-check>Check my citations</button>
-          <button class="btn btn--ghost" type="button" data-reset>Reset</button>
-        </div>
-      </div>
+
+    <div class="tw-foot">
+      <p class="tw-note">A browser replay of the rules in Office Vision Twin, which I designed and built at Intuitive.ai. People, badges, event IDs, times and the write-ups here are generated in your browser. The real system reads 6 CCTV cameras at 5 fps with YOLO on OpenVINO on premises, reaches the twin in 95-121 ms at p95, and uses no facial recognition. In the real system an Amazon Bedrock model writes each incident up, and a second pass rejects anything the event records don't support. 313 backend and 33 dashboard tests.</p>
+      <p class="tw-links"><a href="/work/office-vision-twin.html">Read the case study →</a><span class="tw-links__sep" aria-hidden="true">·</span><a href="#work-ovt">See the real dashboard ↓</a></p>
     </div>
   </section>
 
-  <section id="work" class="work wide" aria-labelledby="h-work">
-    <div class="col-in">
-      <h2 id="h-work" class="h2">Work</h2>
-      <p class="muted">Each project is measured against a baseline, and each case study shows its evidence.</p>
-    </div>
+  <section id="work" class="sec wrap" aria-labelledby="h-work">
+    <header class="sec__head" data-reveal>
+      <h2 id="h-work" class="h2">Selected work</h2>
+      <p class="sec__intro">Five projects built on real data. Each has a written case study and the code on GitHub.</p>
+    </header>
 
-    <article class="proj proj--lead">
-      <a class="proj__media" href="/work/office-vision-twin.html" tabindex="-1" aria-hidden="true">
-        <img src="/assets/ovt-dashboard-1600.webp" width="1600" height="900" alt="" loading="lazy">
+    <article id="work-ovt" class="card card--lead" data-reveal>
+      <a class="card__media card__media--shot" href="/work/office-vision-twin.html" tabindex="-1" aria-hidden="true">
+        <img src="/assets/ovt-dashboard-1600.webp" srcset="/assets/ovt-dashboard-800.webp 800w, /assets/ovt-dashboard-1600.webp 1600w" sizes="(min-width: 1024px) 680px, 100vw" width="1600" height="900" loading="lazy" decoding="async" alt="The Office Vision Twin operator dashboard: six camera tiles with detection boxes, an incident queue and a floor plan.">
       </a>
-      <div class="proj__body">
-        <div class="proj__top"><h3 class="proj__t"><a href="/work/office-vision-twin.html">Office Vision Twin</a></h3><span class="faint">Intuitive.Cloud · 2026</span></div>
-        <p><span class="hi">A security digital twin that explains itself.</span> Cameras and badge readers become incidents through testable rules. A language model only explains them, citing an event ID for every claim, and a second pass rejects unsupported ones.</p>
-        <ul class="stats">
-          <li><b>121 ms</b><span>p95 frame to twin, 6 cameras</span></li>
-          <li><b>22 / 27</b><span>eval cases pass every check</span></li>
-          <li><b>346</b><span>backend and dashboard tests</span></li>
+      <div class="card__body">
+        <div class="card__top">
+          <h3 class="card__t"><a href="/work/office-vision-twin.html">Office Vision Twin</a></h3>
+          <span class="card__meta">Intuitive.ai · 2026</span>
+        </div>
+        <p class="card__p">A pilot-ready security digital twin. Six CCTV cameras and the badge readers feed a live floor plan of who is in which room, and explicit rules flag tailgating, unauthorised entry and after-hours breaches. Video is processed on premises with YOLO on OpenVINO, with no facial recognition. FastAPI backend, React operator dashboard, and Amazon Bedrock write-ups that a second pass checks against the event records.</p>
+        <dl class="stats">
+          <div><dt>p95 frame to twin, 6 cameras at 5 fps</dt><dd>95-121 ms</dd></div>
+          <div><dt>eval cases where the best model passed every check</dt><dd>22 / 27</dd></div>
+          <div><dt>backend and dashboard tests</dt><dd>313 + 33</dd></div>
+        </dl>
+        <ul class="chips" aria-label="Stack">
+          <li>Python</li><li>YOLO</li><li>OpenVINO</li><li>FastAPI</li><li>React</li><li>Amazon Bedrock</li>
         </ul>
-        <p class="proj__links"><a class="ul" href="/work/office-vision-twin.html">Case study</a><a class="ul" href="https://github.com/dhruvindave007/office-security-digital-twin-poc">Code</a></p>
+        <p class="links"><a href="/work/office-vision-twin.html">Case study <span aria-hidden="true">→</span></a><a href="https://github.com/dhruvindave007/office-security-digital-twin-poc">Code <span aria-hidden="true">↗</span></a></p>
       </div>
     </article>
 
     <div class="grid2">
-      <article class="proj">
-        <a class="proj__media proj__media--ui" href="/work/groundcheck.html" tabindex="-1" aria-hidden="true">
-          <div class="bars" data-ui>
-            <p class="bars__t">Keyword search, citation F1 by share of decoys</p>
-            <div class="bars__row"><span>0%</span><i style="--v:1"></i><b>1.00</b></div>
-            <div class="bars__row"><span>25%</span><i style="--v:.70"></i><b>0.70</b></div>
-            <div class="bars__row"><span>50%</span><i style="--v:.65"></i><b>0.65</b></div>
-            <div class="bars__row"><span>75%</span><i style="--v:.69"></i><b>0.69</b></div>
+      <article class="card" data-reveal>
+        <a class="card__media card__media--paper" href="/work/airfieldshield.html" tabindex="-1" aria-hidden="true">
+          <img src="/assets/afs-pr-curves-800.webp" width="800" height="655" loading="lazy" decoding="async" alt="">
+        </a>
+        <div class="card__body">
+          <div class="card__top">
+            <h3 class="card__t"><a href="/work/airfieldshield.html">AirfieldShield</a></h3>
+            <span class="card__meta">Forecasting · 2026</span>
           </div>
-        </a>
-        <div class="proj__body">
-          <div class="proj__top"><h3 class="proj__t"><a href="/work/groundcheck.html">groundcheck</a></h3><span class="faint">Open source · 2026</span></div>
-          <p><span class="hi">Do LLMs cite real evidence?</span> 123 scenarios score whether citations exist, cover the evidence and avoid decoys, with 95% confidence intervals.</p>
-          <p class="proj__links"><a class="ul" href="/work/groundcheck.html">Case study</a><a class="ul" href="https://github.com/dhruvindave007/groundcheck">Code</a></p>
+          <p class="card__p">Thunderstorm and strong-wind nowcasts for six Indian airfields, 1 h and 3 h ahead, trained on 470,057 station-hours of real METAR reports from 2016-2024. Calibrated gradient boosting, served through Django REST and Celery.</p>
+          <p class="metric">Next-hour thunderstorm PR-AUC <b>0.576</b> on held-out 2023-24 · persistence 0.409 · climatology 0.070</p>
+          <p class="links"><span class="links__note">63 tests</span><a href="/work/airfieldshield.html">Case study <span aria-hidden="true">→</span></a><a href="https://github.com/dhruvindave007/AIrfieldShield">Code <span aria-hidden="true">↗</span></a></p>
         </div>
       </article>
 
-      <article class="proj">
-        <a class="proj__media proj__media--paper" href="/work/airfieldshield.html" tabindex="-1" aria-hidden="true">
-          <img src="/assets/afs-pr-curves-800.webp" width="800" height="655" alt="" loading="lazy">
+      <article class="card" data-reveal>
+        <a class="card__media card__media--video" href="/work/musicai.html" tabindex="-1" aria-hidden="true">
+          <video src="/assets/musicai-loop.mp4" poster="/assets/musicai-demo-poster.webp" muted loop playsinline preload="none" width="1280" height="800" data-inview></video>
         </a>
-        <div class="proj__body">
-          <div class="proj__top"><h3 class="proj__t"><a href="/work/airfieldshield.html">AirfieldShield</a></h3><span class="faint">Forecasting · 2026</span></div>
-          <p><span class="hi">Thunderstorm nowcasts for six airfields.</span> 470,057 hours of real reports; next-hour PR-AUC 0.576 on unseen years, against 0.409 for persistence.</p>
-          <p class="proj__links"><a class="ul" href="/work/airfieldshield.html">Case study</a><a class="ul" href="https://github.com/dhruvindave007/AIrfieldShield">Code</a></p>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="proj__media" href="/work/musicai.html" tabindex="-1" aria-hidden="true">
-          <video style="object-position:50% 60%" src="/assets/musicai-loop.mp4" poster="/assets/musicai-results.webp" muted loop playsinline preload="none" width="1280" height="800" data-autoplay></video>
-        </a>
-        <div class="proj__body">
-          <div class="proj__top"><h3 class="proj__t"><a href="/work/musicai.html">MusicAI</a></h3><span class="faint">Recommender · 2026</span></div>
-          <p><span class="hi">Song recommendations, measured.</span> Across 43,998 tracks the top ten share the song’s artist 56.5% of the time, against 16.5% for random picks. Live demo on the case page.</p>
-          <p class="proj__links"><a class="ul" href="/work/musicai.html">Case study</a><a class="ul" href="https://github.com/dhruvindave007/MusicAI">Code</a></p>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="proj__media proj__media--ui" href="/work/janmitra.html" tabindex="-1" aria-hidden="true">
-          <ol class="chain" data-ui>
-            <li><b>Station</b><span>case filed</span></li>
-            <li><b>L3</b><span>after 48 h with no action</span></li>
-            <li><b>L4</b><span>after a further 48 h</span></li>
-          </ol>
-        </a>
-        <div class="proj__body">
-          <div class="proj__top"><h3 class="proj__t"><a href="/work/janmitra.html">JanMitra</a></h3><span class="faint">Backend · 2026</span></div>
-          <p><span class="hi">A case-management backend.</span> Cases nobody acts on climb the chain of command every 48 hours. I closed a data-access hole and a login lockout; 113 tests.</p>
-          <p class="proj__links"><a class="ul" href="/work/janmitra.html">Case study</a><a class="ul" href="https://github.com/dhruvindave007/janmitra">Code</a></p>
+        <div class="card__body">
+          <div class="card__top">
+            <h3 class="card__t"><a href="/work/musicai.html">MusicAI</a></h3>
+            <span class="card__meta">Recommender · 2026</span>
+          </div>
+          <p class="card__p">A content-based music recommender over 43,998 tracks. Pick a song and get ten more, live in your browser on the case page.</p>
+          <p class="metric">Top-10 artist hit-rate <b>0.565</b> · random 0.165</p>
+          <p class="links"><a href="/work/musicai.html">Try the demo <span aria-hidden="true">→</span></a><a href="https://github.com/dhruvindave007/MusicAI">Code <span aria-hidden="true">↗</span></a></p>
         </div>
       </article>
     </div>
+
+    <ul class="index" data-reveal>
+      <li class="index__row">
+        <a class="index__name" href="/work/janmitra.html">JanMitra<span class="index__arrow" aria-hidden="true">→</span></a>
+        <p class="index__d">Django REST case management for police intelligence reports. Untouched cases escalate every 48 h via Celery beat. I fixed a per-object access hole and the login lockout.</p>
+        <span class="index__m">113 tests</span>
+        <a class="index__code" href="https://github.com/dhruvindave007/janmitra">Code <span aria-hidden="true">↗</span></a>
+      </li>
+      <li class="index__row">
+        <a class="index__name" href="/work/groundcheck.html">groundcheck<span class="index__arrow" aria-hidden="true">→</span></a>
+        <p class="index__d">Open benchmark that tests whether LLM agents point to the right log lines. LLM runs are next.</p>
+        <span class="index__m">123 scenarios · keyword baseline F1 1.00 to 0.65 with decoys</span>
+        <a class="index__code" href="https://github.com/dhruvindave007/groundcheck">Code <span aria-hidden="true">↗</span></a>
+      </li>
+    </ul>
   </section>
 
-  <section id="open-source" class="col" aria-labelledby="h-oss">
-    <h2 id="h-oss" class="h2">Open source</h2>
-    <p class="muted"><span class="hi">Three fixes merged upstream</span> into OpenSRE, an open toolkit for AI SRE agents. One more is in review at LiteLLM.</p>
-    <ol class="timeline">
-      <li class="is-done"><time>Nov 5, 2026</time><div><a class="ul" href="https://github.com/Tracer-Cloud/opensre/pull/6970">OpenSRE #6970</a><p>Vercel: read runtime logs from the project endpoint and report failures.</p></div><span class="tag">Merged</span></li>
-      <li class="is-done"><time>Nov 5, 2026</time><div><a class="ul" href="https://github.com/Tracer-Cloud/opensre/pull/6969">OpenSRE #6969</a><p>Bitbucket: scope code search to the repository.</p></div><span class="tag">Merged</span></li>
-      <li class="is-open"><time>Oct 28, 2026</time><div><a class="ul" href="https://github.com/BerriAI/litellm/pull/48732">LiteLLM #48732</a><p>Keep the system role for OpenAI o3, o3-mini and o4-mini, and on Azure.</p></div><span class="tag">In review</span></li>
-      <li class="is-done"><time>Oct 22, 2026</time><div><a class="ul" href="https://github.com/Tracer-Cloud/opensre/pull/6840">OpenSRE #6840</a><p>Jira: move issue search to the enhanced JQL endpoint and fix pagination.</p></div><span class="tag">Merged</span></li>
-    </ol>
+  <section id="shipped" class="sec wrap" aria-labelledby="h-shipped">
+    <header class="sec__head" data-reveal>
+      <h2 id="h-shipped" class="h2">Shipped into other people's code</h2>
+    </header>
+    <div class="ship" data-reveal>
+      <div class="ship__lead">
+        <p class="ship__fig">4 PRs</p>
+        <p class="ship__line">Fixes I contributed to OpenSRE, an open-source toolkit for AI SRE agents, and to LiteLLM, the open-source LLM gateway.</p>
+      </div>
+      <ol class="log">
+        <li class="log__row log__row--prod">
+          <div class="log__head">
+            <span class="tag tag--prod">Production</span>
+            <span class="log__label">Catalyst Partners · Django + SQL Server</span>
+            <span class="log__date">Jun-Jul 2026</span>
+          </div>
+          <p class="log__txt">Rewrote the queries behind a business-critical report: 60-80 s to about 10 s, identical output, validated on 5,921 records, merged to main.</p>
+          <div class="bars" data-bars>
+            <div class="bars__row"><span class="bars__l">before 60-80 s</span><span class="bars__track"><i class="bars__b bars__b--before"></i></span></div>
+            <div class="bars__row"><span class="bars__l">after ~10 s</span><span class="bars__track"><i class="bars__b bars__b--after"></i></span></div>
+          </div>
+        </li>
+        <li class="log__row">
+          <span class="log__st"><i class="dot dot--merged" aria-hidden="true"></i>Contributed</span>
+          <a class="log__label" href="https://github.com/Tracer-Cloud/opensre/pull/6970">OpenSRE #6970</a>
+          <p class="log__txt">Vercel runtime logs and error reporting.</p>
+          <time class="log__date" datetime="2026-11-05">Nov 5, 2026</time>
+        </li>
+        <li class="log__row">
+          <span class="log__st"><i class="dot dot--merged" aria-hidden="true"></i>Contributed</span>
+          <a class="log__label" href="https://github.com/Tracer-Cloud/opensre/pull/6969">OpenSRE #6969</a>
+          <p class="log__txt">Bitbucket code search scoped to the repository.</p>
+          <time class="log__date" datetime="2026-11-05">Nov 5, 2026</time>
+        </li>
+        <li class="log__row">
+          <span class="log__st"><i class="dot dot--merged" aria-hidden="true"></i>Contributed</span>
+          <a class="log__label" href="https://github.com/Tracer-Cloud/opensre/pull/6840">OpenSRE #6840</a>
+          <p class="log__txt">Jira search moved to enhanced JQL, with pagination.</p>
+          <time class="log__date" datetime="2026-10-22">Oct 22, 2026</time>
+        </li>
+        <li class="log__row">
+          <span class="log__st"><i class="dot dot--merged" aria-hidden="true"></i>Contributed</span>
+          <a class="log__label" href="https://github.com/BerriAI/litellm/pull/48732">LiteLLM #48732</a>
+          <p class="log__txt">Keep the system role for OpenAI o3, o3-mini, o4-mini and on Azure.</p>
+          <time class="log__date" datetime="2026-10-28">Oct 28, 2026</time>
+        </li>
+      </ol>
+    </div>
   </section>
 
-  <section id="experience" class="col" aria-labelledby="h-exp">
-    <h2 id="h-exp" class="h2">Experience</h2>
-    <ol class="timeline">
-      <li class="is-now"><time>Aug 2026 – now</time><div><b>Intuitive.Cloud</b> <span class="faint">Applied AI Engineering Intern</span><p>Designed and built Office Vision Twin: the system design, Bedrock integration with per-claim citation checks, and its evaluation.</p></div></li>
-      <li class="is-done"><time>Sep 2026</time><div><b>IBM Bob 2.0 Hackathon</b> <span class="faint">Team leader, System DNA</span><p>4th of about 3,000 teams, with roughly 10,000 participants.</p></div></li>
-      <li class="is-done"><time>Jun – Jul 2026</time><div><b>Catalyst Partners</b> <span class="faint">Python Developer Intern</span><p>Cut a production report on SQL Server from 60–80 s to about 10 s, verified on 5,921 records. Built Selenium scrapers.</p></div></li>
-      <li class="is-done"><time>Jun 2025 – Feb 2026</time><div><b>Two Pointers</b> <span class="faint">Full Stack Web Development Intern</span><p>Built an online course platform in Django: authentication, roles and dynamic certificates.</p></div></li>
-      <li class="is-done"><time>2022 – 2026</time><div><b>LJ University</b> <span class="faint">B.E. Computer Engineering</span><p>All examinations completed. Led the technical club, 200+ students.</p></div></li>
-    </ol>
+  <section id="experience" class="sec wrap" aria-labelledby="h-exp">
+    <div class="exp">
+      <header class="sec__head" data-reveal>
+        <h2 id="h-exp" class="h2">Experience</h2>
+      </header>
+      <ol class="tl" data-reveal>
+        <li class="tl__row tl__row--now">
+          <span class="tl__date">Aug 2026 - now</span>
+          <span class="tl__node" aria-hidden="true"><i></i></span>
+          <div class="tl__body">
+            <p class="tl__org">Intuitive.ai <span>· Applied AI Engineering Intern</span></p>
+            <p class="tl__txt">Designed and built Office Vision Twin, a pilot-ready security digital twin.</p>
+          </div>
+        </li>
+        <li class="tl__row tl__row--raised">
+          <span class="tl__date">Sep 2026</span>
+          <span class="tl__node" aria-hidden="true"><i></i></span>
+          <div class="tl__body">
+            <p class="tl__org">IBM Bob 2.0 Hackathon, lablab.ai <span>· Team leader, <span class="nw">System DNA</span></span></p>
+            <p class="tl__txt">4th of about 3,000 teams, with roughly 10,000 participants.</p>
+          </div>
+          <p class="tl__fig" aria-hidden="true"><b>4th</b><span>of ~3,000 teams</span></p>
+        </li>
+        <li class="tl__row">
+          <span class="tl__date">Jun - Jul 2026</span>
+          <span class="tl__node" aria-hidden="true"><i></i></span>
+          <div class="tl__body">
+            <p class="tl__org">Catalyst Partners <span>· Python Developer Intern</span></p>
+            <p class="tl__txt">Cut a production report from 60-80 s to about 10 s with identical output on 5,921 validated records. Built Python and Selenium scrapers.</p>
+          </div>
+        </li>
+        <li class="tl__row">
+          <span class="tl__date">Jun 2025 - Feb 2026</span>
+          <span class="tl__node" aria-hidden="true"><i></i></span>
+          <div class="tl__body">
+            <p class="tl__org">Two Pointers Pvt. Ltd. <span>· Full Stack Web Development Intern</span></p>
+            <p class="tl__txt">Built a Django online-course website with authentication, roles, dynamic certificate generation and a responsive frontend, plus Python automation and scraping.</p>
+          </div>
+        </li>
+        <li class="tl__row">
+          <span class="tl__date">2022 - 2026</span>
+          <span class="tl__node" aria-hidden="true"><i></i></span>
+          <div class="tl__body">
+            <p class="tl__org">LJ University <span>· B.E. Computer Engineering</span></p>
+            <p class="tl__txt">All examinations complete. Led the university technical club, 200+ students.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
   </section>
 
-  <section id="about" class="col" aria-labelledby="h-about">
-    <h2 id="h-about" class="h2">Why a master’s</h2>
-    <p class="lead"><span class="hi">Building the checks showed me what I can’t yet explain.</span> I can make a model cite its evidence and catch it when it doesn’t. I can’t say why a model that sees the right evidence still cites a decoy with the same keywords. I want the theory to answer that, and groundcheck is where I’ll test it.</p>
+  <section id="contact" class="contact" aria-labelledby="h-contact">
+    <svg class="contact__plan" viewBox="0 0 640 400" aria-hidden="true" focusable="false"><use href="#fp-lines"/></svg>
+    <div class="wrap contact__in" data-reveal>
+      <h2 id="h-contact" class="contact__label">Contact</h2>
+      <p class="contact__line">Open to Applied AI, Forward Deployed and software engineering roles, and to conversations about graduate research. Email is fastest.</p>
+      <div class="contact__mail">
+        <a class="contact__email" href="mailto:davedhruvin307@gmail.com">davedhruvin307@<wbr>gmail.com</a>
+        <button class="copy" type="button" data-copy="davedhruvin307@gmail.com" aria-label="Copy email address">
+          <span class="copy__a">Copy</span><span class="copy__b" aria-hidden="true">Copied</span>
+        </button>
+        <span class="sr-only" role="status" data-copy-status></span>
+      </div>
+      <ul class="contact__links">
+        <li><a href="https://github.com/dhruvindave007">GitHub <span aria-hidden="true">↗</span></a></li>
+        <li><a href="https://www.linkedin.com/in/mrdhruvindave">LinkedIn <span aria-hidden="true">↗</span></a></li>
+        <li><a href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV, AI engineer</a></li>
+        <li><a href="/Dhruvin_Dave_Backend_Engineer_CV.pdf">CV, backend</a></li>
+      </ul>
+    </div>
   </section>
 </main>
 
-<footer class="foot col">
-  <p class="foot__big"><a href="mailto:davedhruvin307@gmail.com">davedhruvin307@gmail.com</a></p>
-  <ul class="foot__links">
-    <li><a class="ul" href="https://github.com/dhruvindave007">GitHub</a></li>
-    <li><a class="ul" href="https://www.linkedin.com/in/mrdhruvindave">LinkedIn</a></li>
-    <li><a class="ul" href="/Dhruvin_Dave_AI_Engineer_CV.pdf">CV, AI engineer</a></li>
-    <li><a class="ul" href="/Dhruvin_Dave_Backend_Engineer_CV.pdf">CV, backend</a></li>
-  </ul>
-  <p class="faint small">© 2026 Dhruvin Dave · Ahmedabad, India</p>
+<footer class="foot">
+  <div class="wrap"><p>© 2026 Dhruvin Dave · Ahmedabad, India</p></div>
 </footer>
 </body>
 </html>
