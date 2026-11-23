@@ -1,6 +1,12 @@
 name: Prio public showcase Playwright check
+
 on:
   pull_request:
+    paths:
+      - 'prio/**'
+      - '.github/workflows/prio-ui-check.yml'
+  push:
+    branches: [master]
     paths:
       - 'prio/**'
       - '.github/workflows/prio-ui-check.yml'
@@ -11,17 +17,25 @@ permissions:
 
 jobs:
   mobile-and-desktop:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     timeout-minutes: 15
+    env:
+      PRIO_SCREENSHOT_DIR: prio-test-results
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - name: Install Playwright CLI and browser
-        run: |
-          python -m pip install --upgrade pip
-          python -m pip install 'playwright>=1.56,<2'
-          python -m playwright install --with-deps chromium
-      - name: Test Prio public landing and interactive demo
+      - name: Install pinned Playwright
+        run: python -m pip install -r prio/tests/requirements.txt
+      - name: Install Chromium and system dependencies
+        run: python -m playwright install --with-deps --only-shell chromium
+      - name: Test the public Prio landing page
         run: python prio/tests/test_ui.py
+      - name: Upload browser screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: prio-ui-screenshots
+          path: prio-test-results/
+          if-no-files-found: ignore
