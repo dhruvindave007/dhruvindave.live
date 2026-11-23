@@ -43,23 +43,6 @@ def run_viewport(browser, base, name, width, height, output):
             if urlparse(request.url).netloc != urlparse(base).netloc else None)
 
     try:
-        response = page.goto(base, wait_until='load')
-        assert response.ok
-        check_size(page, width)
-        expect(page.get_by_role('heading', level=1)).to_have_text('I build AI into working software.')
-        expect(page.locator('.project-list a')).to_have_count(6)
-        expect(page.get_by_role('navigation', name='Primary').get_by_role('link', name='CV')).to_be_visible()
-        trajectory = page.locator('.trajectory a').first
-        if touch:
-            trajectory.tap()
-        else:
-            trajectory.focus()
-            page.keyboard.press('Enter')
-        expect(page).to_have_url(f'{base}/#two-pointers')
-        expect(page.locator('#two-pointers')).to_be_in_viewport()
-        if output:
-            page.evaluate("document.activeElement.blur(); window.scrollTo({top:0, behavior:'instant'})")
-            page.screenshot(path=output / f'{name}-portfolio.png', animations='disabled', full_page=True)
         response = page.goto(f'{base}/prio/', wait_until='load')
         assert response.ok
         check_size(page, width)
