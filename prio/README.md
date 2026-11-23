@@ -1,6 +1,6 @@
 # Prio portfolio landing page
 
-`/prio/` is a static introduction to Prio's AI Entry, review, and prioritization workflow. The page has no JavaScript, sign-in, product links, forms, integrations, or sample workspace. Keep private application URLs, data, and interfaces outside this repository.
+`/prio/` is a static introduction to Prio's AI Entry, review, and prioritization workflow. The interactive workflow illustration only switches explanatory stages in the browser. There is no sign-in, integration, or sample workspace. Keep private application URLs, data, and interfaces outside this repository.
 
 Use Python 3.12 to install and run the same browser checks as CI from the portfolio repository root:
 

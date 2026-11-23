@@ -16,6 +16,7 @@ VIEWPORTS = (
     ('intermediate', 1024, 768),
     ('desktop', 1440, 900),
 )
+
 def check_size(page, width):
     viewport, content = page.evaluate(
         '() => [document.documentElement.clientWidth, document.documentElement.scrollWidth]'
@@ -42,12 +43,30 @@ def run_viewport(browser, base, name, width, height, output):
             if urlparse(request.url).netloc != urlparse(base).netloc else None)
 
     try:
+        response = page.goto(base, wait_until='load')
+        assert response.ok
+        check_size(page, width)
+        expect(page.get_by_role('heading', level=1)).to_have_text('I build AI into working software.')
+        expect(page.locator('.project-list a')).to_have_count(6)
+        expect(page.get_by_role('navigation', name='Primary').get_by_role('link', name='CV')).to_be_visible()
+        trajectory = page.locator('.trajectory a').first
+        if touch:
+            trajectory.tap()
+        else:
+            trajectory.focus()
+            page.keyboard.press('Enter')
+        expect(page).to_have_url(f'{base}/#two-pointers')
+        expect(page.locator('#two-pointers')).to_be_in_viewport()
+        if output:
+            page.evaluate("document.activeElement.blur(); window.scrollTo({top:0, behavior:'instant'})")
+            page.screenshot(path=output / f'{name}-portfolio.png', animations='disabled', full_page=True)
         response = page.goto(f'{base}/prio/', wait_until='load')
         assert response.ok
         check_size(page, width)
         expect(page.get_by_role('heading', level=1)).to_have_text('From conversation to task.')
-        expect(page.locator('.workflow-steps li')).to_have_count(4)
-        expect(page.locator('script, form, button, input, iframe')).to_have_count(0)
+        expect(page.locator('[data-stage-button]')).to_have_count(4)
+        expect(page.locator('form, input, iframe')).to_have_count(0)
+        expect(page.locator('script')).to_have_attribute('src', './workflow.js')
         expect(page.locator('a:not([href="./"], [href="../"], [href^="#"])')).to_have_count(0)
 
         if output:
@@ -59,15 +78,36 @@ def run_viewport(browser, base, name, width, height, output):
         page.keyboard.press('Enter')
         expect(page.locator('main')).to_be_focused()
 
-        entry = page.get_by_role('link', name='See how AI Entry works')
+        if touch:
+            assert page.locator('.marks-input i').first.evaluate(
+                "el => getComputedStyle(el).animationName"
+            ) == 'none'
+
+        for label, heading in [('AI Entry', 'AI Entry'), ('Review', 'Team review'),
+                               ('Priorities', 'Team priorities'), ('Conversation', 'Conversation')]:
+            control = page.get_by_role('button', name=label, exact=True)
+            if touch:
+                control.tap()
+            else:
+                control.focus()
+                page.keyboard.press('Space')
+            expect(control).to_have_attribute('aria-pressed', 'true')
+            expect(page.locator('[data-stage-detail]:visible h3')).to_have_text(heading)
+            check_size(page, width)
+            if output and label == 'AI Entry':
+                page.evaluate("document.activeElement.blur(); window.scrollTo({top:0, behavior:'instant'})")
+                page.screenshot(path=output / f'{name}-prio-ai-entry.png',
+                                animations='disabled', full_page=True)
+
+        entry = page.get_by_role('link', name='Explore the workflow')
         if touch:
             entry.tap()
             assert page.evaluate("getComputedStyle(document.documentElement).scrollBehavior") == 'auto'
         else:
             entry.focus()
             page.keyboard.press('Enter')
-        expect(page).to_have_url(f'{base}/prio/#ai-entry')
-        expect(page.get_by_role('heading', name='The AI proposes. People decide.')).to_be_in_viewport()
+        expect(page).to_have_url(f'{base}/prio/#workflow-title')
+        expect(page.get_by_role('heading', name='How work enters Prio')).to_be_in_viewport()
 
         portfolio = page.get_by_role('link', name='Back to portfolio')
         expect(portfolio).to_have_attribute('href', '../')
@@ -102,7 +142,10 @@ def main():
                 browser.close()
                 request = playwright.request.new_context(base_url=base)
                 try:
-                    assert request.get('/').ok
+                    for path in ('/Dhruvin_Dave_AI_Engineer_CV.pdf', '/work/office-vision-twin.html',
+                                 '/work/airfieldshield.html', '/work/musicai.html',
+                                 '/work/janmitra.html', '/work/groundcheck.html'):
+                        assert request.get(path).ok, path
                     for former_asset in ('demo.html', 'demo.js'):
                         assert request.get(f'/prio/{former_asset}').status == 404
                 finally:

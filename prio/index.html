@@ -10,6 +10,7 @@
   <title>Prio — From conversation to task</title>
   <link rel="icon" href="./favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="./styles.css">
+  <script src="./workflow.js" defer></script>
 </head>
 <body>
   <a class="skip" href="#content">Skip to content</a>
@@ -26,18 +27,31 @@
         <p class="label">AI-powered task management</p>
         <h1 id="title">From conversation<br class="desktop-break"> <em>to task.</em></h1>
         <p class="intro">Prio turns action items from team conversations into proposed tasks. Review the AI’s suggestions, decide what matters first, and track the work through completion.</p>
-        <a class="cta" href="#ai-entry">See how AI Entry works <span aria-hidden="true">↓</span></a>
+        <a class="cta" href="#workflow-title">Explore the workflow <span aria-hidden="true">↓</span></a>
       </div>
 
-      <figure class="workflow" aria-labelledby="workflow-title">
-        <figcaption id="workflow-title">How work enters Prio</figcaption>
-        <ol class="workflow-steps">
-          <li class="step step-input"><span aria-hidden="true">01</span><strong>Conversation</strong></li>
-          <li class="step step-ai"><span aria-hidden="true">02</span><strong>AI Entry</strong><small>Proposes tasks</small></li>
-          <li class="step step-review"><span aria-hidden="true">03</span><strong>Team review</strong><small>Approve, edit, or reject</small></li>
-          <li class="step step-output"><span aria-hidden="true">04</span><strong>Team priorities</strong></li>
-        </ol>
-      </figure>
+      <section class="workflow" aria-labelledby="workflow-title" data-workflow data-stage="0">
+        <h2 id="workflow-title" tabindex="-1">How work enters Prio</h2>
+        <div class="workflow-art" aria-hidden="true">
+          <div class="track"><i></i><i></i><i></i><i></i></div>
+          <div class="marks marks-input"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="marks marks-ai"><i>Action items</i><i>Proposed tasks</i><i>Source context</i></div>
+          <div class="marks marks-review"><i>Proposal</i><i>Reviewer</i><i>Decision</i></div>
+          <div class="marks marks-priority"><i>Approved work</i><i>Team queue</i><i>Next steps</i></div>
+        </div>
+        <div class="stage-controls" aria-label="Workflow stages" hidden>
+          <button type="button" aria-pressed="true" data-stage-button="0">Conversation</button>
+          <button type="button" aria-pressed="false" data-stage-button="1">AI Entry</button>
+          <button type="button" aria-pressed="false" data-stage-button="2">Review</button>
+          <button type="button" aria-pressed="false" data-stage-button="3">Priorities</button>
+        </div>
+        <div class="stage-details" aria-live="polite">
+          <article data-stage-detail><h3>Conversation</h3><p>A team discussion contains context, decisions, and possible next steps.</p></article>
+          <article data-stage-detail><h3>AI Entry</h3><p>Prio reads for action items and turns them into proposed tasks.</p></article>
+          <article data-stage-detail><h3>Team review</h3><p>A person checks the source context and can edit, approve, or reject the proposal.</p></article>
+          <article data-stage-detail><h3>Team priorities</h3><p>Approved work enters the task workflow so the team can see what to tackle next.</p></article>
+        </div>
+      </section>
     </section>
 
     <section class="entry" id="ai-entry" aria-labelledby="entry-title">
