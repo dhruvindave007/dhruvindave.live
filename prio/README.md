@@ -22,7 +22,9 @@ DNS/TLS must be configured independently; publishing these files does not repair
 
 From the repository's root, serve statically: `python -m http.server 8000`. Test `http://localhost:8000/prio/` and `/prio/demo.html`.
 
-Use Playwright against Chromium at 390×844, 768×1024, and 1440×900 for layout and interactions, including task completion, filtering, creating and resetting tasks, approval decisions, keyboard Escape, and no horizontal overflow. Do not point browser tests at the internal production app.
+Install Playwright locally with `python -m pip install playwright && python -m playwright install chromium` and run `python prio/tests/test_ui.py` from the portfolio repo root. In CI, `.github/workflows/prio-ui-check.yml` installs Playwright and runs the test suite.
+
+Test against Chromium at 390×844, 768×1024, and 1440×900 for layout and interactions, including task completion, filtering, creating and resetting tasks, approval decisions, keyboard Escape, and no horizontal overflow. Do not point browser tests at the internal production app.
 
 ## Design references
 
