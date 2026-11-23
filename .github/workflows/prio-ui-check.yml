@@ -3,11 +3,15 @@ name: Prio public showcase Playwright check
 on:
   pull_request:
     paths:
+      - 'index.html'
+      - 'portfolio.css'
       - 'prio/**'
       - '.github/workflows/prio-ui-check.yml'
   push:
     branches: [master]
     paths:
+      - 'index.html'
+      - 'portfolio.css'
       - 'prio/**'
       - '.github/workflows/prio-ui-check.yml'
   workflow_dispatch:
@@ -30,7 +34,7 @@ jobs:
         run: python -m pip install -r prio/tests/requirements.txt
       - name: Install Chromium and system dependencies
         run: python -m playwright install --with-deps --only-shell chromium
-      - name: Test the public Prio landing page
+      - name: Test the portfolio and Prio landing page
         run: python prio/tests/test_ui.py
       - name: Upload browser screenshots
         if: always()
