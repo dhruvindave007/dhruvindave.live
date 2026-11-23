@@ -22,9 +22,17 @@ DNS/TLS must be configured independently; publishing these files does not repair
 
 From the repository's root, serve statically: `python -m http.server 8000`. Test `http://localhost:8000/prio/` and `/prio/demo.html`.
 
-Install Playwright locally with `python -m pip install playwright && python -m playwright install chromium` and run `python prio/tests/test_ui.py` from the portfolio repo root. In CI, `.github/workflows/prio-ui-check.yml` installs Playwright and runs the test suite.
+Run the same suite as CI from the portfolio repository root:
 
-Test against Chromium at 390×844, 768×1024, and 1440×900 for layout and interactions, including task completion, filtering, creating and resetting tasks, approval decisions, keyboard Escape, and no horizontal overflow. Do not point browser tests at the internal production app.
+```sh
+python -m pip install -r prio/tests/requirements.txt
+python -m playwright install --only-shell chromium
+PRIO_SCREENSHOT_DIR=/tmp/prio-screens python prio/tests/test_ui.py
+```
+
+The suite starts its own local HTTP server and loads the same assets and URLs as the public site. The screenshots directory is optional. CI uploads viewport screenshots and captures a failure screenshot when a page assertion fails. Linux CI installs Chromium system dependencies with `--with-deps`.
+
+Chromium checks cover widths of 360, 390, 768, 1024, and 1440 pixels. They exercise the launch links, touch and keyboard controls, modal focus, Escape and pointer dismissal, reduced motion, filtering, task and approval actions, persistence, reset, and recovery from invalid saved data.
 
 ## Design references
 

@@ -12,6 +12,6 @@ These files implement a separate, **fictional-data** public demo for the portfol
 
 Github Pages must publish the portfolio repo's root directory for `/prio/` and `/prio/demo.html` to work. The portfolio domain requires DNS and HTTPS configured separately.
 
-For local Playwright test tooling, use Python 3.11+ with `python -m pip install playwright` and `python -m playwright install chromium`; copy the Playwright test script from the accompanying development ZIP if needed.
+Run the HTTP-based Playwright suite following the setup in `prio/README.md`.
 
 No secret keys or production endpoints belong in this project.
