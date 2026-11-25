@@ -4,7 +4,7 @@
   var input=el.querySelector('#mus-q'),sug=el.querySelector('.demo-sug'),res=el.querySelector('.demo-res'),forEl=el.querySelector('.demo-for');
   var segBtns=[].slice.call(el.querySelectorAll('.seg button')),mode='all',F=10,data,vec,norm,cur=-1;
   function esc(s){return String(s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
-  fetch('../assets/img/musicai-sample.json').then(function(r){return r.json();}).then(function(j){
+  fetch('/assets/img/musicai-sample.json').then(function(r){return r.json();}).then(function(j){
     data=j;var N=j.tracks.length;vec=new Float32Array(N*F);
     for(var i=0;i<N;i++){var r=j.tracks[i],s=0;for(var f=0;f<F;f++){vec[i*F+f]=r[3+f];s+=r[3+f]*r[3+f];}s=Math.sqrt(s)||1;for(f=0;f<F;f++)vec[i*F+f]/=s;}
     pick(1);

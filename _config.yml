@@ -1,0 +1,7 @@
+# Keep working files out of the published site
+exclude:
+  - PRIO_SHOWCASE_AGENTS.md
+  - scripts
+  - prio/tests
+  - prio/README.md
+  - README.md

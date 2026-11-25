@@ -4,11 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MusicAI · Dhruvin Dave</title>
-<meta name="description" content="Dhruvin Dave, AI engineer in Ahmedabad.">
+<meta name="description" content="MusicAI: a music recommender using cosine nearest neighbours, with a live demo that runs in the browser.">
+<link rel="canonical" href="https://dhruvindave.live/work/musicai/">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Dhruvin Dave"><meta property="og:title" content="MusicAI · Dhruvin Dave"><meta property="og:description" content="MusicAI: a music recommender using cosine nearest neighbours, with a live demo that runs in the browser."><meta property="og:url" content="https://dhruvindave.live/work/musicai/"><meta property="og:image" content="https://dhruvindave.live/assets/og.png"><meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0B">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Inter+Tight:wght@400..700&display=swap">
-<link rel="stylesheet" href="../assets/base.css">
-<link rel="stylesheet" href="../assets/theme.css">
+<link rel="stylesheet" href="/assets/base.css">
+<link rel="stylesheet" href="/assets/theme.css">
 </head>
 <body>
 
@@ -17,20 +22,20 @@
   <symbol id="out" viewBox="0 0 16 16"><path d="M5 11l6.5-6.5M6 4.5h5.5V10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 <div class="wrap" id="top">
   <header class="top">
-    <a class="me" href="../index.html">Dhruvin Dave</a>
+    <a class="me" href="/">Dhruvin Dave</a>
     <span class="role">AI engineer at Intuitive.ai, Ahmedabad</span>
     <nav aria-label="Main">
-      <a href="../index.html#work">Work</a>
-      <a href="../index.html#open-source">Open source</a>
-      <a class="opt" href="../index.html#experience">Experience</a>
-      <a href="../gallery.html">Gallery</a>
+      <a href="/#work">Work</a>
+      <a href="/#open-source">Open source</a>
+      <a class="opt" href="/#experience">Experience</a>
+      <a href="/gallery/">Gallery</a>
       <a href="https://dhruvindave.live/Dhruvin_Dave_AI_Engineer_CV.pdf" target="_blank" rel="noopener">CV</a>
     </nav>
   </header>
 
   <!-- ============ HOME ============ -->
   <main class="view" id="musicai" aria-labelledby="mus-h">
-    <a class="back" href="../index.html#work"><svg class="arrow" aria-hidden="true"><use href="#arr"/></svg>All work</a>
+    <a class="back" href="/#work"><svg class="arrow" aria-hidden="true"><use href="#arr"/></svg>All work</a>
     <header class="g p-hero">
       <dl class="p-meta"><div><dt>Type</dt><dd>Personal project</dd></div><div><dt>Method</dt><dd>Exact cosine k-NN and K-Means moods over 43,998 tracks</dd></div><div><dt>Stack</dt><dd>Django</dd></div><div><dt>Code</dt><dd><a href="https://github.com/dhruvindave007/MusicAI" target="_blank" rel="noopener">GitHub</a></dd></div></dl>
       <div class="p-title">
@@ -83,7 +88,7 @@
             <p class="cap">How different the ten results are from each other. Higher means more varied lists; k-NN is far lower.</p>
           </figure>
           <figure class="shot">
-            <video src="../assets/img/musicai-demo.mp4" poster="../assets/img/musicai-demo-poster.webp" muted loop playsinline autoplay preload="metadata" aria-label="Screen recording of the MusicAI Django app"></video>
+            <video src="/assets/img/musicai-demo.mp4" poster="/assets/img/musicai-demo-poster.webp" muted loop playsinline autoplay preload="metadata" aria-label="Screen recording of the MusicAI Django app"></video>
             <figcaption class="cap">The Django app: search a song, get similar songs, the same mood and more from the artist.</figcaption>
           </figure>
         </section>
@@ -103,7 +108,7 @@
   <p class="sr" aria-live="polite" id="live"></p>
 </div>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
-<script src="../assets/site.js"></script>
-<script src="../assets/fx.js"></script><script src="../assets/musicai-demo.js"></script>
+<script src="/assets/site.js"></script>
+<script src="/assets/fx.js"></script><script src="/assets/musicai-demo.js"></script>
 </body>
 </html>

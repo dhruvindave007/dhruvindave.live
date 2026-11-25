@@ -166,8 +166,8 @@
 
 /* ---------- Phone tab bar: app-style navigation within thumb reach ---------- */
 (function(){
-  var d=document,inWork=/\/work\//.test(location.pathname),root=inWork?'../':'';
-  var path=location.pathname.split('/').pop()||'index.html',onHome=path===''||path==='index.html'||!/\.html$/.test(path);
+  var d=document,P=location.pathname,inWork=/^\/work\//.test(P),root='/';
+  var onHome=(P==='/'||P==='/index.html'),isGal=/^\/gallery/.test(P);
   var I={
     home:'<path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/>',
     work:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18M8 14h8"/>',
@@ -176,11 +176,11 @@
     mail:'<rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/>'
   };
   var items=[
-    ['Home',root+'index.html#top','home',onHome],
-    ['Work',root+'index.html#work','work',inWork],
-    ['Gallery',root+'gallery.html','gal',path==='gallery.html'],
+    ['Home','/#top','home',onHome],
+    ['Work','/#work','work',inWork],
+    ['Gallery','/gallery/','gal',isGal],
     ['CV','https://dhruvindave.live/Dhruvin_Dave_AI_Engineer_CV.pdf','cv',false],
-    ['Contact',root+'index.html#contact','mail',false]
+    ['Contact','/#contact','mail',false]
   ];
   var nav=d.createElement('nav');nav.className='tabbar';nav.setAttribute('aria-label','Primary');
   nav.innerHTML=items.map(function(t){

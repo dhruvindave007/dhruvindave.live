@@ -58,7 +58,7 @@
 
   /* ---------- Project pages ---------- */
   var ph=d.querySelector('.p-hero');
-  var slug=(location.pathname.split('/').pop()||'').replace('.html','');
+  var slug=(location.pathname.split('/').filter(Boolean).pop()||'').replace('.html','');
   if(ph){
     var p=mount(ph,'fx-page');
     if(slug==='office-vision-twin'){
