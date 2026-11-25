@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>System DNA · Dhruvin Dave</title>
+<meta name="description" content="Dhruvin Dave, AI engineer in Ahmedabad.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Inter+Tight:wght@400..700&display=swap">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/theme.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 16 16"><path d="M2.5 8h10.5M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="out" viewBox="0 0 16 16"><path d="M5 11l6.5-6.5M6 4.5h5.5V10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<div class="wrap" id="top">
+  <header class="top">
+    <a class="me" href="../index.html">Dhruvin Dave</a>
+    <span class="role">AI engineer at Intuitive.ai, Ahmedabad</span>
+    <nav aria-label="Main">
+      <a href="../index.html#work">Work</a>
+      <a href="../index.html#open-source">Open source</a>
+      <a class="opt" href="../index.html#experience">Experience</a>
+      <a href="../gallery.html">Gallery</a>
+      <a href="https://dhruvindave.live/Dhruvin_Dave_AI_Engineer_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </header>
+
+  <!-- ============ HOME ============ -->
+  <main class="view" id="system-dna" aria-labelledby="dna-h">
+    <a class="back" href="../index.html#work"><svg class="arrow" aria-hidden="true"><use href="#arr"/></svg>All work</a>
+    <header class="g p-hero">
+      <dl class="p-meta"><div><dt>Event</dt><dd>IBM Bob 2.0 Hackathon, lablab.ai, 25–27 Sep 2026</dd></div><div><dt>Result</dt><dd>4th on the public Top Submissions leaderboard, of 3,462 teams</dd></div><div><dt>My role</dt><dd>Team lead, team of six</dd></div><div><dt>Stack</dt><dd>Next.js, TypeScript, IBM Bob Shell, AWS, Terraform</dd></div><div><dt>Code</dt><dd><a href="https://github.com/pujarachchh-intuitive/AIGarage" target="_blank" rel="noopener">GitHub</a></dd></div></dl>
+      <div class="p-title">
+        <h1 style="view-transition-name:t-dna" id="dna-h" tabindex="-1">System DNA</h1>
+        <p class="p-intro">Find References for a whole system, and fix them all: System DNA predicts what a change will break across a codebase, then has IBM Bob agents fix every affected file under guard rails.</p>
+      </div>
+    </header>
+    <div class="g p-figs"><div><b>4th</b><p>on the public Top Submissions leaderboard, of 3,462 teams and 15,727 participants</p></div><div><b>6</b><p>people on the team, which I led</p></div><div><b>3</b><p>Bob agents: Fixer, Inspector, Cartographer</p></div><div><b>21</b><p>passing tests in the impact engine</p></div></div>
+    <div class="g p-body">
+      <nav class="toc" aria-label="On this page"><p>On this page</p><a href="#dna-problem">Problem</a><a href="#dna-approach">Approach</a><a href="#dna-results">Results</a><a href="#dna-team">My role</a><a href="#dna-code">Code</a></nav>
+      <div class="prose">
+        <section id="dna-problem" aria-labelledby="dna-problem-h">
+          <h2 id="dna-problem-h">Problem</h2>
+          <p>Rename a column, change a type or a function signature, and something breaks somewhere else: an API route, a dashboard, a test, a doc, a migration. grep misses dynamic uses, type checkers ignore SQL, config and docs, and AI assistants edit whatever they like with no proof the change is complete or stayed in scope.</p>
+        </section>
+        <section id="dna-approach" aria-labelledby="dna-approach-h">
+          <h2 id="dna-approach-h">Approach</h2>
+          <figure class="fig" data-live>
+            <div class="fig-head"><h4>Five steps, from change to pull request</h4></div>
+            <ol class="steps">
+              <li><b>Map</b><span>Scan the repo into a knowledge graph with the TypeScript compiler’s find-all-references.</span></li>
+              <li><b>Predict</b><span>Show what a change will break, in dependency waves, with a 0–100 risk score and a comparison against grep.</span></li>
+              <li><b>Fix</b><span>IBM Bob agents edit each affected file: one agent per file, with a permit for that file only.</span></li>
+              <li><b>Govern</b><span>Protected layers need a human. Edits outside a permit are reverted with git; edits that fail the type check roll back.</span></li>
+              <li><b>Prove</b><span>Type check, a Bob Inspector review, then one draft pull request built from exactly the previewed diff.</span></li>
+            </ol>
+          </figure>
+          <p>IBM Bob is the only AI in the product. Bob Shell runs headless on the server with cost, turn and time caps, and every agent is its own Bob process: Bob Fixer edits files, Bob Inspector reviews the result, and Bob Cartographer finds links the parser misses.</p>
+          <p>Governance is the point. An agent can only touch the file its permit names; anything else it changes is reverted, and a failed type check rolls the edit back before a human ever sees it.</p>
+        </section>
+        <section id="dna-results" aria-labelledby="dna-results-h">
+          <h2 id="dna-results-h">Results</h2>
+          <p>System DNA opened real draft pull requests through its own GitHub App on a sample marketplace dashboard, and its impact engine is covered by 21 passing tests. System DNA ranked 4th on the public Top Submissions leaderboard among 3,462 teams and 15,727 participants. The separate list of final winners shows three other projects, so 4th is the public ranking, not a judged placement.</p>
+        </section>
+        <section id="dna-team" aria-labelledby="dna-team-h">
+          <h2 id="dna-team-h">My role</h2>
+          <p>I led a team of six, two on cloud and platform and four forward-deployed engineers, from the first commit on 25 September to the submission on the 27th.</p>
+        </section>
+        <section id="dna-code" aria-labelledby="dna-code-h">
+          <h2 id="dna-code-h">Code</h2>
+          <p>The source is on <a href="https://github.com/pujarachchh-intuitive/AIGarage" target="_blank" rel="noopener">GitHub</a>. The demo video is not public yet.</p>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer class="foot"><span>Dhruvin Dave · designed and built by hand in Ahmedabad · set in Inter · <span data-ist>IST</span></span><a href="#top">Back to top</a></footer>
+  <p class="sr" aria-live="polite" id="live"></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="../assets/site.js"></script>
+<script src="../assets/fx.js"></script>
+</body>
+</html>

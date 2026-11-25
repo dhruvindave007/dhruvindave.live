@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Gallery · Dhruvin Dave</title>
+<meta name="description" content="Dhruvin Dave, AI engineer in Ahmedabad.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..700&family=Inter+Tight:wght@400..700&display=swap">
+<link rel="stylesheet" href="assets/base.css">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="arr" viewBox="0 0 16 16"><path d="M2.5 8h10.5M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="out" viewBox="0 0 16 16"><path d="M5 11l6.5-6.5M6 4.5h5.5V10" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+<div class="wrap" id="top">
+  <header class="top">
+    <a class="me" href="#top">Dhruvin Dave</a>
+    <span class="role">AI engineer at Intuitive.ai, Ahmedabad</span>
+    <nav aria-label="Main">
+      <a href="#work">Work</a>
+      <a href="#open-source">Open source</a>
+      <a class="opt" href="#experience">Experience</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="https://dhruvindave.live/Dhruvin_Dave_AI_Engineer_CV.pdf" target="_blank" rel="noopener">CV</a>
+    </nav>
+  </header>
+
+  <!-- ============ HOME ============ -->
+  <main class="view" id="gallery" aria-labelledby="gal-h">
+    <section class="hero" style="padding-bottom:0">
+      <h1 id="gal-h">Gallery</h1>
+      <div class="g under"><p class="eyebrow"><b>Screens, charts and recordings</b>from the projects</p><div class="right"><p class="lede">Real captures from the systems on this site. Each one opens its project.</p></div></div>
+    </section>
+    <section class="sec">
+      <div class="gallery">
+        <figure class="shot g-item wide">
+          <a class="shot-link" href="work/office-vision-twin.html"><img src="assets/img/ovt-dashboard-1600.webp" alt="Office Vision Twin: The operator dashboard: six cameras, the incident queue and the live floor plan." loading="lazy" decoding="async"></a>
+          <figcaption class="cap"><b>Office Vision Twin</b> · The operator dashboard: six cameras, the incident queue and the live floor plan.</figcaption>
+        </figure>
+        <figure class="shot g-item ">
+          <a class="shot-link" href="work/office-vision-twin.html"><img src="assets/img/ovt-cam3-348.webp" alt="Office Vision Twin: Camera 3, vision lab: nine people tracked, 1.9 fps, 361 ms delay." loading="lazy" decoding="async"></a>
+          <figcaption class="cap"><b>Office Vision Twin</b> · Camera 3, vision lab: nine people tracked, 1.9 fps, 361 ms delay.</figcaption>
+        </figure>
+        <figure class="shot g-item ">
+          <a class="shot-link" href="work/office-vision-twin.html"><img src="assets/img/ovt-incidents-544.webp" alt="Office Vision Twin: The incident queue, one rule per incident." loading="lazy" decoding="async"></a>
+          <figcaption class="cap"><b>Office Vision Twin</b> · The incident queue, one rule per incident.</figcaption>
+        </figure>
+        <figure class="shot g-item wide light">
+          <a class="shot-link" href="work/airfieldshield.html"><img src="assets/img/afs-pr-curves-1471.webp" alt="AirfieldShield: Precision-recall on held-out 2023–24, model against baselines." loading="lazy" decoding="async"></a>
+          <figcaption class="cap"><b>AirfieldShield</b> · Precision-recall on held-out 2023–24, model against baselines.</figcaption>
+        </figure>
+        <figure class="shot g-item light">
+          <a class="shot-link" href="work/airfieldshield.html"><img src="assets/img/afs-reliability-1000.webp" alt="AirfieldShield: Reliability of the calibrated forecasts." loading="lazy" decoding="async"></a>
+          <figcaption class="cap"><b>AirfieldShield</b> · Reliability of the calibrated forecasts.</figcaption>
+        </figure>
+        <figure class="shot g-item ">
+          <a class="shot-link" href="work/musicai.html"><video src="assets/img/musicai-demo.mp4" poster="assets/img/musicai-demo-poster.webp" muted loop playsinline autoplay preload="metadata" aria-label="MusicAI screen recording"></video></a>
+          <figcaption class="cap"><b>MusicAI</b> · The Django app in use: search, similar songs, same mood.</figcaption>
+        </figure>
+        <figure class="shot g-item ">
+          <a class="shot-link" href="work/musicai.html"><img src="assets/img/musicai-results.webp" alt="MusicAI: Search results in the app." loading="lazy" decoding="async"></a>
+          <figcaption class="cap"><b>MusicAI</b> · Search results in the app.</figcaption>
+        </figure>
+        <figure class="shot g-item wide">
+          <a class="shot-link" href="work/prio.html"><img src="assets/img/prio-my-tasks.webp" alt="Prio: Prio, My Tasks in dark mode. Fictional demo data." loading="lazy" decoding="async"></a>
+          <figcaption class="cap"><b>Prio</b> · Prio, My Tasks in dark mode. Fictional demo data.</figcaption>
+        </figure>
+      </div>
+      <p class="cap" style="margin-top:24px">System DNA has no public screens yet; Prio is internal, so its screen uses fictional demo data.</p>
+    </section>
+  </main>
+  <footer class="foot"><span>Dhruvin Dave · designed and built by hand in Ahmedabad · set in Inter · <span data-ist>IST</span></span><a href="#top">Back to top</a></footer>
+  <p class="sr" aria-live="polite" id="live"></p>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="assets/site.js"></script>
+<script src="assets/fx.js"></script>
+</body>
+</html>
